@@ -7,7 +7,8 @@ import { User } from './models/user.model';
   providedIn: 'root'
 })
 export class UserService {
-  url = '';
+  
+  url = 'https://azuretraining-em-10202021.azurewebsites.net/api/Users';
 
   constructor(private httpClient: HttpClient) { }
 
