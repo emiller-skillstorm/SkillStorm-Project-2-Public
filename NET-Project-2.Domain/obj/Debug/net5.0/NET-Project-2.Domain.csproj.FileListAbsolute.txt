@@ -1,0 +1,14 @@
+/Users/ericmiller/Projects/NET-Project-2/NET-Project-2.Domain/bin/Debug/net5.0/NET-Project-2.Domain.deps.json
+/Users/ericmiller/Projects/NET-Project-2/NET-Project-2.Domain/bin/Debug/net5.0/NET-Project-2.Domain.runtimeconfig.json
+/Users/ericmiller/Projects/NET-Project-2/NET-Project-2.Domain/bin/Debug/net5.0/NET-Project-2.Domain.runtimeconfig.dev.json
+/Users/ericmiller/Projects/NET-Project-2/NET-Project-2.Domain/bin/Debug/net5.0/NET-Project-2.Domain.dll
+/Users/ericmiller/Projects/NET-Project-2/NET-Project-2.Domain/bin/Debug/net5.0/ref/NET-Project-2.Domain.dll
+/Users/ericmiller/Projects/NET-Project-2/NET-Project-2.Domain/bin/Debug/net5.0/NET-Project-2.Domain.pdb
+/Users/ericmiller/Projects/NET-Project-2/NET-Project-2.Domain/obj/Debug/net5.0/NET-Project-2.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ericmiller/Projects/NET-Project-2/NET-Project-2.Domain/obj/Debug/net5.0/NET-Project-2.Domain.AssemblyInfoInputs.cache
+/Users/ericmiller/Projects/NET-Project-2/NET-Project-2.Domain/obj/Debug/net5.0/NET-Project-2.Domain.AssemblyInfo.cs
+/Users/ericmiller/Projects/NET-Project-2/NET-Project-2.Domain/obj/Debug/net5.0/NET-Project-2.Domain.csproj.CoreCompileInputs.cache
+/Users/ericmiller/Projects/NET-Project-2/NET-Project-2.Domain/obj/Debug/net5.0/NET-Project-2.Domain.dll
+/Users/ericmiller/Projects/NET-Project-2/NET-Project-2.Domain/obj/Debug/net5.0/ref/NET-Project-2.Domain.dll
+/Users/ericmiller/Projects/NET-Project-2/NET-Project-2.Domain/obj/Debug/net5.0/NET-Project-2.Domain.pdb
+/Users/ericmiller/Projects/NET-Project-2/NET-Project-2.Domain/obj/Debug/net5.0/NET-Project-2.Domain.genruntimeconfig.cache
