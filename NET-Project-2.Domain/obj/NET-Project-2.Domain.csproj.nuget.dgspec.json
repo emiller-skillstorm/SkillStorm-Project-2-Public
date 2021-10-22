@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/ericmiller/Projects/SkillStorm/NET%20Project%202/NET-Project-2.Domain/NET-Project-2.Domain.csproj": {}
+    "/Users/ericmiller/Projects/SkillStorm/Project2/NET-Project-2.Domain/NET-Project-2.Domain.csproj": {}
   },
   "projects": {
-    "/Users/ericmiller/Projects/SkillStorm/NET%20Project%202/NET-Project-2.Domain/NET-Project-2.Domain.csproj": {
+    "/Users/ericmiller/Projects/SkillStorm/Project2/NET-Project-2.Domain/NET-Project-2.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ericmiller/Projects/SkillStorm/NET%20Project%202/NET-Project-2.Domain/NET-Project-2.Domain.csproj",
+        "projectUniqueName": "/Users/ericmiller/Projects/SkillStorm/Project2/NET-Project-2.Domain/NET-Project-2.Domain.csproj",
         "projectName": "NET-Project-2.Domain",
-        "projectPath": "/Users/ericmiller/Projects/SkillStorm/NET%20Project%202/NET-Project-2.Domain/NET-Project-2.Domain.csproj",
+        "projectPath": "/Users/ericmiller/Projects/SkillStorm/Project2/NET-Project-2.Domain/NET-Project-2.Domain.csproj",
         "packagesPath": "/Users/ericmiller/.nuget/packages/",
-        "outputPath": "/Users/ericmiller/Projects/SkillStorm/NET%20Project%202/NET-Project-2.Domain/obj/",
+        "outputPath": "/Users/ericmiller/Projects/SkillStorm/Project2/NET-Project-2.Domain/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
@@ -40,6 +40,14 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.11, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -50,6 +58,11 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
           "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
         }
       }

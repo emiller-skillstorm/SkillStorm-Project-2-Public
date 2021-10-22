@@ -1,17 +1,108 @@
 {
   "format": 1,
   "restore": {
-    "/Users/ericmiller/Projects/SkillStorm/NET%20Project%202/Net-Project-2.Data/Net-Project-2.Data.csproj": {}
+    "/Users/ericmiller/Projects/SkillStorm/Project2/Net-Project-2.Data/Net-Project-2.Data.csproj": {}
   },
   "projects": {
-    "/Users/ericmiller/Projects/SkillStorm/NET%20Project%202/Net-Project-2.Data/Net-Project-2.Data.csproj": {
+    "/Users/ericmiller/Projects/SkillStorm/Project2/Net-Project-2.Data/Net-Project-2.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ericmiller/Projects/SkillStorm/NET%20Project%202/Net-Project-2.Data/Net-Project-2.Data.csproj",
+        "projectUniqueName": "/Users/ericmiller/Projects/SkillStorm/Project2/Net-Project-2.Data/Net-Project-2.Data.csproj",
         "projectName": "Net-Project-2.Data",
-        "projectPath": "/Users/ericmiller/Projects/SkillStorm/NET%20Project%202/Net-Project-2.Data/Net-Project-2.Data.csproj",
+        "projectPath": "/Users/ericmiller/Projects/SkillStorm/Project2/Net-Project-2.Data/Net-Project-2.Data.csproj",
         "packagesPath": "/Users/ericmiller/.nuget/packages/",
-        "outputPath": "/Users/ericmiller/Projects/SkillStorm/NET%20Project%202/Net-Project-2.Data/obj/",
+        "outputPath": "/Users/ericmiller/Projects/SkillStorm/Project2/Net-Project-2.Data/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/ericmiller/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/Users/ericmiller/Projects/SkillStorm/Project2/NET-Project-2.Domain/NET-Project-2.Domain.csproj": {
+                "projectPath": "/Users/ericmiller/Projects/SkillStorm/Project2/NET-Project-2.Domain/NET-Project-2.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
+            "Microsoft.Extensions.Configuration.AzureKeyVault": {
+              "target": "Package",
+              "version": "[3.1.20, )"
+            },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/ericmiller/Projects/SkillStorm/Project2/NET-Project-2.Domain/NET-Project-2.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/ericmiller/Projects/SkillStorm/Project2/NET-Project-2.Domain/NET-Project-2.Domain.csproj",
+        "projectName": "NET-Project-2.Domain",
+        "projectPath": "/Users/ericmiller/Projects/SkillStorm/Project2/NET-Project-2.Domain/NET-Project-2.Domain.csproj",
+        "packagesPath": "/Users/ericmiller/.nuget/packages/",
+        "outputPath": "/Users/ericmiller/Projects/SkillStorm/Project2/NET-Project-2.Domain/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
@@ -40,6 +131,14 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.11, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -50,6 +149,11 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
           "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
         }
       }
