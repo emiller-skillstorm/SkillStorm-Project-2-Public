@@ -757,28 +757,26 @@
     ]
   },
   "packageFolders": {
-    "/Users/ericmiller/.nuget/packages/": {},
-    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "C:\\Users\\Justin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/ericmiller/Projects/SkillStorm/Project2/NET-Project-2.Domain/NET-Project-2.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\Justin\\Source\\Repos\\AzureProject2\\NET-Project-2.Domain\\NET-Project-2.Domain.csproj",
       "projectName": "NET-Project-2.Domain",
-      "projectPath": "/Users/ericmiller/Projects/SkillStorm/Project2/NET-Project-2.Domain/NET-Project-2.Domain.csproj",
-      "packagesPath": "/Users/ericmiller/.nuget/packages/",
-      "outputPath": "/Users/ericmiller/Projects/SkillStorm/Project2/NET-Project-2.Domain/obj/",
+      "projectPath": "C:\\Users\\Justin\\Source\\Repos\\AzureProject2\\NET-Project-2.Domain\\NET-Project-2.Domain.csproj",
+      "packagesPath": "C:\\Users\\Justin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Justin\\Source\\Repos\\AzureProject2\\NET-Project-2.Domain\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "/Users/ericmiller/.config/NuGet/NuGet.Config"
+        "C:\\Users\\Justin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -819,7 +817,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
