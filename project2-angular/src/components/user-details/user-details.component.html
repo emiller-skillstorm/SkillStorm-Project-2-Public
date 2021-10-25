@@ -1,0 +1,28 @@
+<h1>User Details</h1>
+
+<div>
+    <h4>Personal Info</h4>
+    <hr />
+    <dl class="row" *ngIf="user">
+        <dt class = "col-sm-2">
+            First Name
+        </dt>
+        <dd class = "col-sm-10">
+            {{ user.firstName }}
+        </dd>
+        <dt class = "col-sm-2">
+            Last Name
+        </dt>
+        <dd class = "col-sm-10">
+            {{ user.lastName }}
+        </dd>
+        <dt class = "col-sm-2">
+            Email Address
+        </dt>
+        <dd class = "col-sm-10">
+            {{ user.email }}
+        </dd>
+    </dl>
+</div>
+
+<!-- Add the user's name, email, plans, devices, etc. using components-->

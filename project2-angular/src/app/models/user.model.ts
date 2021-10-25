@@ -1,3 +1,5 @@
+import { Device } from "./device.model";
+import { PhoneNumber } from "./phonenumber.model";
 import { Plan } from "./plan.model";
 
 export class User {
@@ -5,6 +7,10 @@ export class User {
     firstName: string = "";
     lastName: string = "";
     email: string = "";
+    passHash: string = "";
+    devices: Device[] = [];
+    phoneNumber: PhoneNumber[] = [];
+    plans: Plan[] = [];
 
     /**
      *

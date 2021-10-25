@@ -7,7 +7,6 @@ export const environment = {
   userAPIurl : 'https://azuretraining-em-10202021.azurewebsites.net/api/Users',
   deviceAPIurl: 'https://azuretraining-em-10202021.azurewebsites.net/api/Devices',
   planAPIurl: 'https://azuretraining-em-10202021.azurewebsites.net/api/Plan'
-  //TODO: after successful login, we might want to save the user's id to use during the session
 };
 
 /*

@@ -18,6 +18,10 @@ export class UserService {
     return this.httpClient.post<User>(this.url, user);
   }
 
+  find(user: User): Observable<User> {
+    return this.httpClient.get<User>(this.url + `/${user.userId}`);
+  }
+
   //returns all users
   findAll(): Observable<User[]> {
     return this.httpClient.get<User[]>(this.url);

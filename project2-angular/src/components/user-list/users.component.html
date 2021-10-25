@@ -1,19 +1,19 @@
 <div id="user-listing">
     <h2>View All Users</h2>
 
-    <table id="user-list" class="table table-hover table-bordered table-striped" >
+    <table id="user-list" class="table table-hover table-bordered table-striped">
         <thead>
             <tr>
-                <td>First Name</td>
-                <td>Last Name</td>
-                <!-- <td></td> -->
+                <td scope="col">First Name</td>
+                <td scope="col">Last Name</td>
+                <td></td>
             </tr>
         </thead>
         <tbody id="user-list-body">
             <tr *ngFor="let user of UserList">
                 <td>{{ user.firstName }}</td>
                 <td>{{ user.lastName }}</td>
-                <!-- <td><button (click)="details(user)">Details</button></td> -->
+                <td><button (click)="details(user)" class="btn btn-primary">Details</button></td>
             </tr>
         </tbody>
     </table>

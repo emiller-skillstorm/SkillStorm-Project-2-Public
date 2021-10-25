@@ -9,14 +9,16 @@ import { DeviceService } from '../../app/services/device.service';
   templateUrl: './devices.component.html',
   styleUrls: ['./devices.component.css']
 })
+
 export class DevicesComponent implements OnInit {
   DeviceList: Device[] = [];
+  userId: number = 4; //Testing
 
   constructor(private deviceService: DeviceService, private router: Router) { }
 
   //Testing on user 4
   ngOnInit(): void {
-    this.deviceService.findDevicesForUser(4).subscribe( data => 
+    this.deviceService.findDevicesForUser(this.userId).subscribe( data => 
       {
         this.DeviceList = data;
         console.log(this.DeviceList);
