@@ -4,19 +4,26 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UsersComponent } from '../components/usersTest/users.component';
+import { UsersComponent } from '../components/user-list/users.component';
 import { DevicesComponent } from '../components/device-list/devices.component';
+import { NewUserComponent } from '../components/new-user/new-user.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserDetailsComponent } from '../components/user-details/user-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
-    DevicesComponent
+    DevicesComponent,
+    NewUserComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

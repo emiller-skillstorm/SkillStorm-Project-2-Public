@@ -22,4 +22,11 @@ export class UsersComponent implements OnInit {
       });
   }
 
+  details(user: User): void {
+    let route = this.router.config.find(r => r.path === 'user-details/:id');
+    if (route) {
+      route.data = user;
+      this.router.navigateByUrl(`/user-details/${user.userId}`);
+    }
+  }
 }

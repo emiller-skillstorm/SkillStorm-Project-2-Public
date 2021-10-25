@@ -4,7 +4,7 @@ export class Device {
     deviceId: number = 0;
     brand: string = "";
     model: string = "";
-    phoneNumber!: PhoneNumber;
+    phoneNumber: PhoneNumber;
 
     /**
      *
