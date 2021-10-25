@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { User } from '../models/user.model';
 
 @Injectable({
@@ -8,7 +9,7 @@ import { User } from '../models/user.model';
 })
 export class UserService {
   
-  url = 'https://azuretraining-em-10202021.azurewebsites.net/api/Users';
+  url = environment.userAPIurl;
 
   constructor(private httpClient: HttpClient) { }
 

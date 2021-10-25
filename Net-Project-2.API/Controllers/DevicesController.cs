@@ -42,6 +42,20 @@ namespace Net_Project_2.API.Controllers
             return device;
         }
 
+        // GET: api/UserDevices/5
+        [HttpGet("UserDevices/{userId}")]
+        public async Task<ActionResult<IEnumerable<Device>>> GetDevicesForUser(int userId)
+        {
+            var deviceList = await _context.Devices.Include(d => d.PhoneNumber).Where(d => d.UserId == userId).ToListAsync();
+
+            if (deviceList == null)
+            {
+                return NotFound();
+            }
+
+            return deviceList;
+        }
+
         // PUT: api/Devices/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
