@@ -15,17 +15,17 @@ export class DeviceService {
   constructor(private httpClient: HttpClient) { }
 
   //Add new device
-  find(device: Device): Observable<Device> {
+  addDevice(device: Device): Observable<Device> {
     return this.httpClient.post<Device>(this.url, device);
   }
 
   //Returns all devices
-  findAll(): Observable<Device[]> {
+  findAllDevices(): Observable<Device[]> {
     return this.httpClient.get<Device[]>(this.url);
   }
 
   //Returns all devices for a given user
-  findAllForUser(user: User): Observable<Device[]> {
-    return this.httpClient.get<Device[]>(`${this.url}/UserDevices/${user.userId}`);
+  findDevicesForUser(id: number): Observable<Device[]> {
+    return this.httpClient.get<Device[]>(`${this.url}/UserDevices/${id}`);
   }
 }

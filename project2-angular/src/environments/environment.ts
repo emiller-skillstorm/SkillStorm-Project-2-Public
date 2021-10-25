@@ -2,12 +2,11 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-import { User } from "src/app/models/user.model";
-
 export const environment = {
   production: false,
   userAPIurl : 'https://azuretraining-em-10202021.azurewebsites.net/api/Users',
-  deviceAPIurl: 'https://azuretraining-em-10202021.azurewebsites.net/api/Devices'
+  deviceAPIurl: 'https://azuretraining-em-10202021.azurewebsites.net/api/Devices',
+  //TODO: after successful login, we might want to save the user's id to use during the session
 };
 
 /*

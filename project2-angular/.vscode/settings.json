@@ -1,0 +1,4 @@
+{
+    "appService.deploySubpath": "TelecomApp",
+    "appService.defaultWebAppToDeploy": "/subscriptions/b8bc6e0a-4092-45fe-8320-2d2f94e8fd17/resourceGroups/AzureTraining/providers/Microsoft.Web/sites/ejw-skillstorm-project-2"
+}
