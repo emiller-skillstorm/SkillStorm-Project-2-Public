@@ -19,5 +19,8 @@ export class PlanService {
     return this.httpClient.get<Plan[]>(this.url);
   }
 
+  findPlansForUser(id: number): Observable<Plan[]> {
+    return this.httpClient.get<Plan[]>(`${this.url}/UserPlans/${id}`);
+  }
 
 }

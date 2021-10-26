@@ -42,6 +42,20 @@ namespace Net_Project_2.API.Controllers
             return plan;
         }
 
+        //I have not tested this to see if this works
+        [HttpGet("UserPlans/{userId}")]
+        public async Task<ActionResult<IEnumerable<Device>>> GetPlansForUser(int userId)
+        {
+            var planList = await _context.Plans.Include(d => d.Users).Where(d => d.UserId == userId).ToListAsync();
+
+            if (planList == null)
+            {
+                return NotFound();
+            }
+
+            return planList;
+        }
+
         // PUT: api/Plans/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]

@@ -5,6 +5,7 @@ import { UsersComponent } from '../components/user-list/users.component';
 import { PlansListComponent } from '../components/plans-list/plans-list.component';
 import { NewUserComponent } from 'src/components/new-user/new-user.component';
 import { UserDetailsComponent } from 'src/components/user-details/user-details.component';
+import { HomeComponent } from 'src/components/home/home.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,9 @@ const routes: Routes = [
   },
   { 
     path: 'plans', component: PlansListComponent
+  },
+  { 
+    path: 'home', component: HomeComponent
   }
 ];
 

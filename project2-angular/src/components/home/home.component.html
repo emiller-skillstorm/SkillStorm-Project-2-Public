@@ -1,0 +1,46 @@
+<div id="device-listing">
+    <h2>My Devices</h2>
+
+    <table id="device-list" class="table table-hover table-bordered table-striped" >
+        <thead>
+            <tr>
+                <td>Brand</td>
+                <td>Model</td>
+                <td>Phone Number</td>
+                <!-- <td></td> -->
+            </tr>
+        </thead>
+        <tbody id="device-list-body">
+            <tr *ngFor="let device of DeviceList">
+                <td>{{ device.brand }}</td>
+                <td>{{ device.model }}</td>
+                <td>{{ device.phoneNumber.phoneNumberVal }}</td>
+                <td><button (click)="editDevice(device)">Edit</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div id="plan-listing">
+    <h2>My Plans</h2>
+
+    <table id="plan-list" class="table table-hover table-bordered table-striped" >
+        <thead>
+            <tr>
+                <td>Plan Name</td>
+                <td>Price</td>
+                <td>Device Limit</td>
+                <td>Data Limit</td>
+                <td></td> 
+            </tr>
+        </thead>
+        <tbody id="plan-list-body">
+            <tr *ngFor="let plan of PlanList">
+                <td>{{ plan.name }}</td>
+                <td>{{ plan.price }}</td>
+                <td>{{ plan.deviceLimit }}</td>
+                <td>{{ plan.dataLimit }}</td>
+                <td><button (click)="details(plan)">Details</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
