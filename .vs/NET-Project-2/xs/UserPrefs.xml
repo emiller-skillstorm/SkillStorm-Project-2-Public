@@ -1,19 +1,31 @@
 ﻿<Properties StartupConfiguration="{0D6FC3D6-CE4A-427E-B3B2-17AC7A64D45B}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Net-Project-2.Data/Migrations/20211026212839_UpdatedPlans.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Net-Project-2.Data/Migrations/20211026224004_DBContextUpdate2.cs">
     <Files>
       <File FileName="Net-Project-2.API/Controllers/DevicesController.cs" Line="56" Column="31" />
       <File FileName="Net-Project-2.API/appsettings.json" />
       <File FileName="Net-Project-2.API/Properties/launchSettings.json" />
-      <File FileName="NET-Project-2.Domain/User.cs" />
-      <File FileName="NET-Project-2.Domain/Plan.cs" Line="16" Column="11" />
+      <File FileName="NET-Project-2.Domain/User.cs" Line="21" Column="2" />
+      <File FileName="NET-Project-2.Domain/Plan.cs" Line="16" Column="9" />
       <File FileName="NET-Project-2.Domain/PhoneNumber.cs" />
-      <File FileName="NET-Project-2.Domain/Device.cs" />
-      <File FileName="Net-Project-2.API/Controllers/UsersController.cs" Line="107" Column="1" />
-      <File FileName="Net-Project-2.Data/Project2Context.cs" />
+      <File FileName="NET-Project-2.Domain/Device.cs" Line="14" Column="53" />
+      <File FileName="Net-Project-2.API/Controllers/UsersController.cs" Line="49" Column="85" />
+      <File FileName="Net-Project-2.Data/Project2Context.cs" Line="23" Column="42" />
       <File FileName="Net-Project-2.API/Startup.cs" Line="1" Column="1" />
-      <File FileName="Net-Project-2.API/Controllers/PlansController.cs" Line="50" Column="1" />
+      <File FileName="Net-Project-2.API/Controllers/PlansController.cs" Line="49" Column="69" />
       <File FileName="../../../../../usr/local/share/dotnet/sdk/5.0.402/Sdks/Microsoft.NET.Sdk/targets/Microsoft.PackageDependencyResolution.targets" Line="241" Column="5" />
       <File FileName="Net-Project-2.Data/Migrations/20211026212839_UpdatedPlans.cs" Line="1" Column="1" />
+      <File FileName="NET-Project-2.Domain/UserPlan.cs" Line="4" Column="26" />
+      <File FileName="Net-Project-2.Data/Migrations/20211026221733_UserPlan.cs" Line="1" Column="1" />
+      <File FileName="Net-Project-2.Data/Migrations/20211026221733_UserPlan.Designer.cs" Line="1" Column="1" />
+      <File FileName="Net-Project-2.Data/Migrations/20211026212839_UpdatedPlans.Designer.cs" Line="1" Column="1" />
+      <File FileName="Net-Project-2.Data/Migrations/20211022182103_UpdateUser.Designer.cs" Line="1" Column="1" />
+      <File FileName="Net-Project-2.Data/Migrations/20211022182103_UpdateUser.cs" Line="1" Column="1" />
+      <File FileName="Net-Project-2.Data/Migrations/20211026222047_PlansAndUsers.cs" Line="1" Column="1" />
+      <File FileName="Net-Project-2.Data/Migrations/20211026222136_PlansAndUsers2.cs" Line="1" Column="1" />
+      <File FileName="Net-Project-2.Data/Migrations/20211026223338_ContextUpdate.cs" Line="1" Column="1" />
+      <File FileName="Net-Project-2.Data/Migrations/20211026222136_PlansAndUsers2.Designer.cs" Line="1" Column="1" />
+      <File FileName="Net-Project-2.Data/Migrations/20211026223338_ContextUpdate.Designer.cs" Line="32" Column="48" />
+      <File FileName="Net-Project-2.Data/Migrations/20211026224004_DBContextUpdate2.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -25,7 +37,7 @@
             </Node>
             <Node name="Net-Project-2.Data" expanded="True">
               <Node name="Migrations" expanded="True">
-                <Node name="20211026212839_UpdatedPlans.cs" selected="True" />
+                <Node name="20211026224004_DBContextUpdate2.cs" selected="True" />
               </Node>
             </Node>
             <Node name="NET-Project-2.Domain" expanded="True" />

@@ -25,7 +25,7 @@ namespace Net_Project_2.API.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Plan>>> GetPlans()
         {
-            return await _context.Plans.ToListAsync();
+            return await _context.Plans.Distinct().ToListAsync();
         }
 
         // GET: api/Plans/5
@@ -42,13 +42,12 @@ namespace Net_Project_2.API.Controllers
             return plan;
         }
 
-        //Made some adjustments
+        //GET: api/Plans/UserPlans/5
         [HttpGet("UserPlans/{userId}")]
-        public ActionResult<IEnumerable<Plan>> GetPlansForUser(int userId)
+        public async Task<ActionResult<IEnumerable<Plan>>> GetPlansForUser(int userId)
         {
-            var userAndPlans = _context.Users.Include(u => u.Plans).Where(u => u.UserId == userId).ToList().FirstOrDefault();
-
-            var planList = userAndPlans.Plans;
+            var user = _context.Users.FindAsync(userId);
+            var planList = await _context.Plans.Where(p => p.Users.Contains(user.Result)).ToListAsync();
 
             if (planList == null)
             {

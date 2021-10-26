@@ -12,7 +12,6 @@ namespace NET_Project_2.Domain
         public string Brand { get; set; }
         public string Model { get; set; }
         public PhoneNumber PhoneNumber { get; set; }
-        // public int PhoneNumberId { get; set; }
         public User User { get; set; }
 
 

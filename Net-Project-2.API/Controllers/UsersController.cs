@@ -42,6 +42,22 @@ namespace Net_Project_2.API.Controllers
             return user;
         }
 
+        // GET: api/Login
+        [HttpGet("Login")]
+        public ActionResult<User> Login(string inCredentials)
+        {
+            //username and password hash should come in the form "username:passHash"
+            string[] credentials = inCredentials.Split(":");
+            var user = _context.Users.Where(u => u.Email == credentials[0] && u.PassHash == credentials[1]).FirstOrDefault();
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            return user;
+        }
+
         // PUT: api/Users/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]

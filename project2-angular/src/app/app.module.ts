@@ -13,6 +13,7 @@ import { UserDetailsComponent } from '../components/user-details/user-details.co
 import { HomeComponent } from '../components/home/home.component';
 import { DeviceDetailsComponent } from '../components/device-details/device-details.component';
 import { PlanDetailsComponent } from '../components/plan-details/plan-details.component';
+import { UserLoginComponent } from '../components/user-login/user-login.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { PlanDetailsComponent } from '../components/plan-details/plan-details.co
     UserDetailsComponent,
     HomeComponent,
     DeviceDetailsComponent,
-    PlanDetailsComponent
+    PlanDetailsComponent,
+    UserLoginComponent
   ],
   imports: [
     BrowserModule,

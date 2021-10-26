@@ -26,4 +26,10 @@ export class UserService {
   findAll(): Observable<User[]> {
     return this.httpClient.get<User[]>(this.url);
   }
+
+  userLogin(loginString: string): Observable<User> {
+    var currentUser = this.httpClient.post<User>(this.url + '/Login', loginString);
+    console.log(currentUser);
+    return currentUser;
+  }
 }

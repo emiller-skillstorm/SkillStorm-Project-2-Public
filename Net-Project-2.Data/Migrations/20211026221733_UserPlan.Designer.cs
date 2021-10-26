@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Net_Project_2.Data;
 
 namespace Net_Project_2.Data.Migrations
 {
     [DbContext(typeof(Project2Context))]
-    partial class Project2ContextModelSnapshot : ModelSnapshot
+    [Migration("20211026221733_UserPlan")]
+    partial class UserPlan
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -86,27 +88,14 @@ namespace Net_Project_2.Data.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
+                    b.Property<int?>("UserId")
+                        .HasColumnType("int");
+
                     b.HasKey("PlanId");
 
+                    b.HasIndex("UserId");
+
                     b.ToTable("Plans");
-                });
-
-            modelBuilder.Entity("NET_Project_2.Domain.PlanUser", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("PlanId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("PlanUsers");
                 });
 
             modelBuilder.Entity("NET_Project_2.Domain.User", b =>
@@ -131,21 +120,6 @@ namespace Net_Project_2.Data.Migrations
                     b.HasKey("UserId");
 
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("PlanUser", b =>
-                {
-                    b.Property<int>("PlansPlanId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UsersUserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("PlansPlanId", "UsersUserId");
-
-                    b.HasIndex("UsersUserId");
-
-                    b.ToTable("PlanUser");
                 });
 
             modelBuilder.Entity("NET_Project_2.Domain.Device", b =>
@@ -176,19 +150,11 @@ namespace Net_Project_2.Data.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("PlanUser", b =>
+            modelBuilder.Entity("NET_Project_2.Domain.Plan", b =>
                 {
-                    b.HasOne("NET_Project_2.Domain.Plan", null)
-                        .WithMany()
-                        .HasForeignKey("PlansPlanId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("NET_Project_2.Domain.User", null)
-                        .WithMany()
-                        .HasForeignKey("UsersUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany("Plans")
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("NET_Project_2.Domain.User", b =>
@@ -196,6 +162,8 @@ namespace Net_Project_2.Data.Migrations
                     b.Navigation("Devices");
 
                     b.Navigation("PhoneNumbers");
+
+                    b.Navigation("Plans");
                 });
 #pragma warning restore 612, 618
         }

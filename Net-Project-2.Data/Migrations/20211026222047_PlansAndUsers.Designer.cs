@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Net_Project_2.Data;
 
 namespace Net_Project_2.Data.Migrations
 {
     [DbContext(typeof(Project2Context))]
-    partial class Project2ContextModelSnapshot : ModelSnapshot
+    [Migration("20211026222047_PlansAndUsers")]
+    partial class PlansAndUsers
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -89,24 +91,6 @@ namespace Net_Project_2.Data.Migrations
                     b.HasKey("PlanId");
 
                     b.ToTable("Plans");
-                });
-
-            modelBuilder.Entity("NET_Project_2.Domain.PlanUser", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("PlanId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("PlanUsers");
                 });
 
             modelBuilder.Entity("NET_Project_2.Domain.User", b =>
