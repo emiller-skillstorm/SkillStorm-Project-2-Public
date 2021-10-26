@@ -15,7 +15,7 @@ namespace NET_Project_2.Domain
         public string Email { get; set; }
         public string PassHash { get; set; }
         // private enum Role { ADMIN, USER }
-        public List<Plan> Plans { get; set; } = new List<Plan>();
+        public List<Plan> Plans { get; set; } = new List<Plan>(); //I think we should have a UserPlans Table
         public List<PhoneNumber> PhoneNumbers { get; set; } = new List<PhoneNumber>();
         public List<Device> Devices { get; set; } = new List<Device>();
     }
