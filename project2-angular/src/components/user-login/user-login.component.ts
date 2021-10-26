@@ -10,7 +10,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class UserLoginComponent implements OnInit {
   username: string = "";
-  myPlaintextPassword: string = "";
+  password: string = "";
   credentials: string = "";
   
   constructor(private userService: UserService, private router: Router) { }
@@ -19,17 +19,16 @@ export class UserLoginComponent implements OnInit {
   }
 
   attemptLogin(): void {
-    var hashValue = (+this.myPlaintextPassword % 30 + 16).toString();
-    
-    console.log(hashValue);
+    // Testing -- Still need to get this hashed for security
+    // var hashValue = (+this.password % 30 + 16).toString();
 
-    this.credentials = this.username + ":" + hashValue;
+    this.credentials = this.username + "-" + this.password;
 
      this.userService.userLogin(this.credentials).subscribe(data => {
-       let route = this.router.config.find(r => r.path === 'devices');
+       let route = this.router.config.find(r => r.path === 'home');
         
        if(route){
-          this.router.navigateByUrl('/devices' +`/${data.userId}`);
+          this.router.navigateByUrl('/home');
         }
       });
   }

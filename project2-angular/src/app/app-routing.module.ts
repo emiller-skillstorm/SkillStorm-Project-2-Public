@@ -8,6 +8,7 @@ import { UserDetailsComponent } from 'src/components/user-details/user-details.c
 import { HomeComponent } from 'src/components/home/home.component';
 import { DeviceDetailsComponent } from 'src/components/device-details/device-details.component';
 import { PlanDetailsComponent } from 'src/components/plan-details/plan-details.component';
+import { UserLoginComponent } from 'src/components/user-login/user-login.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,9 @@ const routes: Routes = [
   },
   { 
     path: 'new-user', component: NewUserComponent
+  },
+  {
+    path: 'user-login', component: UserLoginComponent
   },
   { 
     path: 'user-details', component: UserDetailsComponent

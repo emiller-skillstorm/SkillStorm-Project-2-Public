@@ -43,11 +43,11 @@ namespace Net_Project_2.API.Controllers
         }
 
         // GET: api/Login
-        [HttpGet("Login")]
-        public ActionResult<User> Login(string inCredentials)
+        [HttpGet("Login/{loginString}")]
+        public ActionResult<User> Login(string loginString)
         {
-            //username and password hash should come in the form "username:passHash"
-            string[] credentials = inCredentials.Split(":");
+            //username and password hash should come in the form "username-passHash"
+            string[] credentials = loginString.Split("-");
             var user = _context.Users.Where(u => u.Email == credentials[0] && u.PassHash == credentials[1]).FirstOrDefault();
 
             if (user == null)
