@@ -6,7 +6,8 @@ import { PlansListComponent } from '../components/plans-list/plans-list.componen
 import { NewUserComponent } from 'src/components/new-user/new-user.component';
 import { UserDetailsComponent } from 'src/components/user-details/user-details.component';
 import { HomeComponent } from 'src/components/home/home.component';
-
+import { DeviceDetailsComponent } from 'src/components/device-details/device-details.component';
+import { PlanDetailsComponent } from 'src/components/plan-details/plan-details.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,12 @@ const routes: Routes = [
   },
   { 
     path: 'home', component: HomeComponent
+  },
+  {
+    path: 'device-details/:id', component: DeviceDetailsComponent
+  },
+  {
+    path: 'plan-details/:id', component: PlanDetailsComponent
   }
 ];
 

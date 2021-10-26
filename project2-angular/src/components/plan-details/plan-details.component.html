@@ -1,0 +1,42 @@
+<h1>Plan Details</h1>
+
+<div>
+    <h4>Your Plan</h4>
+    <hr />
+    <dl class="row" *ngIf="plan">
+        <dt class = "col-sm-2">
+            Plan ID:
+        </dt>
+        <dd class = "col-sm-10">
+            {{ plan.planId }}
+        </dd>
+        <dt class = "col-sm-2">
+            Plan Name:
+        </dt>
+        <dd class = "col-sm-10">
+            {{ plan.name }}
+        </dd>
+        <dt class = "col-sm-2">
+            Price/month:
+        </dt>
+        <dd class = "col-sm-10">
+            {{ plan.price }}
+        </dd>
+        <dt class = "col-sm-2">
+            Maximum # of Devices:
+        </dt>
+        <dd class = "col-sm-10">
+            {{ plan.deviceLimit }}
+        </dd>
+        <dt class = "col-sm-2">
+            Data Limit:
+        </dt>
+        <dd class = "col-sm-10">
+            {{ plan.dataLimit }}
+        </dd>
+    </dl>
+</div>
+<div>
+    <a [routerLink]="['/home']">Back To HomePage</a> |
+   
+</div>

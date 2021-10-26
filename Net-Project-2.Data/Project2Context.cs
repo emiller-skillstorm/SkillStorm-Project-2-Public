@@ -24,6 +24,11 @@ namespace Net_Project_2.Data
 
              modelBuilder.Entity<Device>().Property(d => d.PhoneNumber)
                  .IsRequired(false);
+
+            modelBuilder.Entity<Device>()
+                .HasOptional(d => d.PhoneNumber)
+                .WithRequired(pn => pn.Device);
+
          }
         */
     }

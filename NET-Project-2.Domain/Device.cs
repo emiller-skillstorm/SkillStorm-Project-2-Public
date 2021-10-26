@@ -14,6 +14,11 @@ namespace NET_Project_2.Domain
         public PhoneNumber PhoneNumber { get; set; }
         // public int PhoneNumberId { get; set; }
         public User User { get; set; }
+
+
+        // I dont think we need this as Entity should figure this out for us? As long as we have the line above
         public int UserId { get; set; }
+
+        //public Plan Plan { get; set; } makes a many to one relationship with plan
     }
 }

@@ -28,4 +28,9 @@ export class DeviceService {
   findDevicesForUser(id: number): Observable<Device[]> {
     return this.httpClient.get<Device[]>(`${this.url}/UserDevices/${id}`);
   }
+
+  //Returns a specific device
+  find(device: Device): Observable<Device> {
+    return this.httpClient.get<Device>(this.url + `/${device.deviceId}`);
+  }
 }

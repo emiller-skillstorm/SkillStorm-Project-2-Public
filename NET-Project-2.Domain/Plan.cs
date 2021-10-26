@@ -15,4 +15,5 @@ namespace NET_Project_2.Domain
         public int DataLimit { get; set; }
         //public List<User> Users { get; set; } = new List<User>();
     }
+
 }

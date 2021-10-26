@@ -47,9 +47,9 @@ export class HomeComponent implements OnInit {
     let route = this.router.config.find(r => r.path === 'device-details/:id');
     if (route) {
       route.data = device;
-      this.router.navigateByUrl(`/plan-details/${device.deviceId}`);
+      this.router.navigateByUrl(`/device-details/${device.deviceId}`);
     }
   }
 
-
+  
 }
