@@ -42,11 +42,13 @@ namespace Net_Project_2.API.Controllers
             return plan;
         }
 
-        //I have not tested this to see if this works
+        //Made some adjustments
         [HttpGet("UserPlans/{userId}")]
-        public async Task<ActionResult<IEnumerable<Device>>> GetPlansForUser(int userId)
+        public ActionResult<IEnumerable<Plan>> GetPlansForUser(int userId)
         {
-            var planList = await _context.Plans.Include(d => d.Users).Where(d => d.UserId == userId).ToListAsync();
+            var userAndPlans = _context.Users.Include(u => u.Plans).Where(u => u.UserId == userId).ToList().FirstOrDefault();
+
+            var planList = userAndPlans.Plans;
 
             if (planList == null)
             {
