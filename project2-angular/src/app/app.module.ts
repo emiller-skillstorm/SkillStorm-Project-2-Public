@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserDetailsComponent } from '../components/user-details/user-details.component';
 import { HomeComponent } from '../components/home/home.component';
 import { DeviceDetailsComponent } from '../components/device-details/device-details.component';
+import { PlanDetailsComponent } from '../components/plan-details/plan-details.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DeviceDetailsComponent } from '../components/device-details/device-deta
     NewUserComponent,
     UserDetailsComponent,
     HomeComponent,
-    DeviceDetailsComponent
+    DeviceDetailsComponent,
+    PlanDetailsComponent
   ],
   imports: [
     BrowserModule,
