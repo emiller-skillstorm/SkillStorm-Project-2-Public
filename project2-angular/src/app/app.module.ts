@@ -11,6 +11,7 @@ import { NewUserComponent } from '../components/new-user/new-user.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserDetailsComponent } from '../components/user-details/user-details.component';
 import { HomeComponent } from '../components/home/home.component';
+import { DeviceDetailsComponent } from '../components/device-details/device-details.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HomeComponent } from '../components/home/home.component';
     PlansListComponent,
     NewUserComponent,
     UserDetailsComponent,
-    HomeComponent
+    HomeComponent,
+    DeviceDetailsComponent
   ],
   imports: [
     BrowserModule,

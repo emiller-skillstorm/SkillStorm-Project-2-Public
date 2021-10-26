@@ -1,0 +1,36 @@
+<h1>Details</h1>
+
+<div>
+    <h4>Your Device</h4>
+    <hr />
+    <dl class="row" *ngIf="device">
+        <dt class = "col-sm-2">
+            Device ID:
+        </dt>
+        <dd class = "col-sm-10">
+            {{ device.deviceId }}
+        </dd>
+        <dt class = "col-sm-2">
+            Brand:
+        </dt>
+        <dd class = "col-sm-10">
+            {{ device.brand }}
+        </dd>
+        <dt class = "col-sm-2">
+            Model:
+        </dt>
+        <dd class = "col-sm-10">
+            {{ device.model }}
+        </dd>
+        <dt class = "col-sm-2">
+            Phone Number:
+        </dt>
+        <dd class = "col-sm-10">
+            {{ device.phoneNumber.phoneNumberVal }}
+        </dd>
+    </dl>
+</div>
+<div>
+    <a [routerLink]="['/home']">Back To HomePage</a> |
+   <!-- <a [routerLink]="['/my-numbers']">Add a Phone Number to this device</a> -->
+</div>
