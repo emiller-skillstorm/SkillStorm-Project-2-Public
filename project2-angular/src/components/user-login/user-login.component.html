@@ -1,0 +1,24 @@
+<div id="returning-user-login">
+    <h2>Log In</h2>
+    <form id="returning-user" (ngSubmit)="attemptLogin()" #userRegistrationForm >
+    <div class="form-group">
+            <label for="Email">Email</label>
+            <input [(ngModel)]="username" type="text"name="Email" class="form-control" id="firstName" type="email" required maxlength="100" #Username="ngModel" />
+            <div class="alert" *ngIf="Username.invalid && (Username.dirty || Username.touched)">
+                <div *ngIf="Username.errors?.required">Email address is required</div>
+                <div *ngIf="Username.errors?.maxlength">Email cannot be more than 100 characters</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="Password">Password</label>
+            <input [(ngModel)]="myPlaintextPassword" type="text"name="Password" class="form-control" id="password" type="password" required #Password="ngModel" />
+            <div class="alert" *ngIf="Password.invalid && (Password.dirty || Password.touched)">
+                <div *ngIf="Password.errors?.required">Password is required</div>
+            </div>
+        </div>
+        <div>
+            <input class="btn btn-primary submit-button" type="submit" value="Log In" style="margin-top: 5px;" />
+        </div>
+    </form>
+</div>

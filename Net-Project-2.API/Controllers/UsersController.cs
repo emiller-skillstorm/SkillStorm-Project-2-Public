@@ -104,5 +104,21 @@ namespace Net_Project_2.API.Controllers
         {
             return _context.Users.Any(e => e.UserId == id);
         }
+
+        // GET: api/Login/UserNamePassHash
+        [HttpPost("Login")]
+        public ActionResult<User> UserLogin(string credentials)
+        {
+            string[] inCredentials = credentials.Split(":");
+            
+            var user = _context.Users.Where(p => p.Email == inCredentials[0]).FirstOrDefault();
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            return user;
+        }
     }
 }

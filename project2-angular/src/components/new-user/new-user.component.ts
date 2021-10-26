@@ -23,11 +23,10 @@ export class NewUserComponent implements OnInit {
     this.userService.registerNewUser(this.newUser).subscribe(data => {
       console.log("Added new user: " + data);
 
-      let route = this.router.config.find(r => r.path === 'users');
+      let route = this.router.config.find(r => r.path === 'user-details');
       if(route){
         this.router.navigateByUrl('/user-details' +`/${data.userId}`);
       }
     });
   }
-
 }
