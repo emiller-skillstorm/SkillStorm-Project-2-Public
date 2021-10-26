@@ -29,5 +29,4 @@ export class NewUserComponent implements OnInit {
       }
     });
   }
-
 }
