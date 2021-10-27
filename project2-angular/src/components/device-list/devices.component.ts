@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from 'src/app/models/user.model';
 import { environment } from 'src/environments/environment';
 import { Device } from '../../app/models/device.model';
 import { DeviceService } from '../../app/services/device.service';
@@ -11,6 +12,7 @@ import { DeviceService } from '../../app/services/device.service';
 })
 
 export class DevicesComponent implements OnInit {
+  @Input() currentUser: User = new User();
   DeviceList: Device[] = [];
   userId: number = 4; //Testing
 
@@ -23,5 +25,15 @@ export class DevicesComponent implements OnInit {
         this.DeviceList = data;
         console.log(this.DeviceList);
       });
+  }
+
+  // When we click the details button, we can present a list of actions:
+  // Change the phone number, remove the device, etc.
+  details(device: Device): void {
+    let route = this.router.config.find(r => r.path === 'device-details/:id');
+    if (route) {
+      route.data = device;
+      this.router.navigateByUrl(`/device-details/${device.deviceId}`);
+    }
   }
 }

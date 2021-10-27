@@ -1,0 +1,17 @@
+{
+  "hosting": [
+    {
+      "app": {
+        "project": "project2-angular",
+        "target": "build",
+        "configuration": "production",
+        "path": "dist/project2-angular"
+      },
+      "azureHosting": {
+        "subscription": "b8bc6e0a-4092-45fe-8320-2d2f94e8fd17",
+        "resourceGroupName": "AzureTraining",
+        "account": "project2angularstatic"
+      }
+    }
+  ]
+}

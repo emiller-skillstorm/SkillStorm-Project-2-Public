@@ -1,29 +1,30 @@
 ﻿<Properties StartupConfiguration="{0D6FC3D6-CE4A-427E-B3B2-17AC7A64D45B}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Net-Project-2.Data/Project2Context.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Net-Project-2.API/Controllers/UsersController.cs">
     <Files>
       <File FileName="Net-Project-2.API/Controllers/DevicesController.cs" Line="56" Column="31" />
       <File FileName="Net-Project-2.API/appsettings.json" />
       <File FileName="Net-Project-2.API/Properties/launchSettings.json" />
-      <File FileName="NET-Project-2.Domain/User.cs" Line="21" Column="2" />
-      <File FileName="NET-Project-2.Domain/Plan.cs" Line="16" Column="9" />
+      <File FileName="NET-Project-2.Domain/User.cs" Line="12" Column="1" />
+      <File FileName="NET-Project-2.Domain/Plan.cs" />
       <File FileName="NET-Project-2.Domain/PhoneNumber.cs" />
-      <File FileName="NET-Project-2.Domain/Device.cs" Line="14" Column="53" />
-      <File FileName="Net-Project-2.API/Controllers/UsersController.cs" Line="49" Column="85" />
-      <File FileName="Net-Project-2.Data/Project2Context.cs" Line="26" Column="6" />
-      <File FileName="Net-Project-2.API/Startup.cs" Line="1" Column="1" />
-      <File FileName="Net-Project-2.API/Controllers/PlansController.cs" Line="57" Column="29" />
+      <File FileName="NET-Project-2.Domain/Device.cs" />
+      <File FileName="Net-Project-2.API/Controllers/UsersController.cs" Line="61" Column="1" />
+      <File FileName="Net-Project-2.Data/Project2Context.cs" />
+      <File FileName="Net-Project-2.API/Startup.cs" />
+      <File FileName="Net-Project-2.API/Controllers/PlansController.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="NET-Project-2" expanded="True">
             <Node name="Net-Project-2.API" expanded="True">
-              <Node name="Controllers" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="UsersController.cs" selected="True" />
+              </Node>
               <Node name="Properties" expanded="True" />
             </Node>
             <Node name="Net-Project-2.Data" expanded="True">
               <Node name="Migrations" expanded="True" />
-              <Node name="Project2Context.cs" selected="True" />
             </Node>
             <Node name="NET-Project-2.Domain" expanded="True" />
           </Node>
@@ -34,7 +35,9 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/ericmiller/Projects/SkillStorm/Project2/Net-Project-2.API/Controllers/UsersController.cs" relfile="Net-Project-2.API/Controllers/UsersController.cs" line="51" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.Net-Project-2.API PreferredExecutionTarget="/Applications/Safari.app" />
