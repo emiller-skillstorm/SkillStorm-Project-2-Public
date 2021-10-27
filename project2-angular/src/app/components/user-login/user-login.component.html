@@ -1,4 +1,4 @@
-<div id="returning-user-login">
+<div id="returning-user-login" (loggedIn)="loginSuccess">
     <h2>Log In</h2>
     <form id="returning-user" (ngSubmit)="attemptLogin()" #userRegistrationForm >
     <div class="form-group">

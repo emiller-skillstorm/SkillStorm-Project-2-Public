@@ -5,6 +5,9 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   title = 'project2-angular';
+  loggedIn: boolean = false;
+  loginSuccess: boolean = false;
 }
