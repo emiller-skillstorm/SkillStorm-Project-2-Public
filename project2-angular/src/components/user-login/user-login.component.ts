@@ -41,8 +41,6 @@ export class UserLoginComponent implements OnInit {
   }
 
   attemptLogin(): void {
-    // Testing -- Still need to get this hashed for security
-
     this.credentials = this.username + "-" + this.hashPassword();
     console.log(this.credentials);
 

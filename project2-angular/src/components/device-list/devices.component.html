@@ -7,15 +7,18 @@
                 <td>Brand</td>
                 <td>Model</td>
                 <td>Phone Number</td>
-                <!-- <td></td> -->
+                <td></td>
             </tr>
         </thead>
         <tbody id="device-list-body">
             <tr *ngFor="let device of DeviceList">
                 <td>{{ device.brand }}</td>
                 <td>{{ device.model }}</td>
-                <td>{{ device.phoneNumber.phoneNumberVal }}</td>
-                <!-- <td><button (click)="details(device)">Details</button></td> -->
+                <td *ngIf="device.phoneNumber != null">{{ device.phoneNumber.phoneNumberVal }}</td>
+                <ng-template #elseBlock>
+                    <td type="text"> No phone number </td>
+                </ng-template>
+                <td><button (click)="details(device)">Details</button></td>
             </tr>
         </tbody>
     </table>
