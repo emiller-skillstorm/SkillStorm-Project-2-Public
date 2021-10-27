@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { User } from './models/user.model';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +10,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'project2-angular';
   loggedIn: boolean = false;
-  loginSuccess: boolean = false;
+  currentUser!: User;
 }

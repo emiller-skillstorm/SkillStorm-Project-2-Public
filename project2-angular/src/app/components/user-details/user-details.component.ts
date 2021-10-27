@@ -10,7 +10,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class UserDetailsComponent implements OnInit {
   userId: any;
-  @Input() user = new User() ;
+  user!: User;
 
   constructor(private userService: UserService, private activeRoute: ActivatedRoute) { }
 

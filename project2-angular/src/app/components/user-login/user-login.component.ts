@@ -19,7 +19,8 @@ export class UserLoginComponent implements OnInit {
 
   currentUser: User = new User();
 
-  @Output() loginSuccess = new EventEmitter<boolean>();
+  @Output() loginSuccess = new EventEmitter<boolean>(); // Notifies parent of login success
+  @Output() user = new EventEmitter<User>(); // Notifies parent of user
 
   constructor(private userService: UserService, private router: Router) { }
 
@@ -32,6 +33,7 @@ export class UserLoginComponent implements OnInit {
        if(data != null) {
          this.currentUser = data;
          this.loginSuccess.emit(true);
+         this.user.emit(this.currentUser);
 
          console.log(this.currentUser);
 
