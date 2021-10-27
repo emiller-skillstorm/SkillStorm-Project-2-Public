@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/models/user.model';
 import { UserService } from 'src/app/services/user.service';
@@ -10,7 +10,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class UserDetailsComponent implements OnInit {
   userId: any;
-  user!: User;
+  @Input() user = new User() ;
 
   constructor(private userService: UserService, private activeRoute: ActivatedRoute) { }
 
