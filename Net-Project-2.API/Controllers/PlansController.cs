@@ -47,7 +47,7 @@ namespace Net_Project_2.API.Controllers
         public async Task<ActionResult<IEnumerable<Plan>>> GetPlansForUser(int userId)
         {
             var user = _context.Users.FindAsync(userId);
-            var planList = await _context.Plans.Where(p => p.Users.Contains(user.Result)).ToListAsync();
+            var planList = await _context.Plans.Where(p => p.User.Equals(user)).ToListAsync();
 
             if (planList == null)
             {

@@ -27,3 +27,18 @@
 /Users/ericmiller/Projects/SkillStorm/Project2/NET-Project-2.Domain/obj/Debug/net5.0/NET-Project-2.Domain.pdb
 /Users/ericmiller/Projects/SkillStorm/Project2/NET-Project-2.Domain/obj/Debug/net5.0/NET-Project-2.Domain.genruntimeconfig.cache
 /Users/ericmiller/Projects/SkillStorm/Project2/NET-Project-2.Domain/obj/Debug/net5.0/NET-Project-2.Domain.csproj.AssemblyReference.cache
+C:\Users\Wyatt\Source\Repos\NET Project 2-Azure\NET-Project-2.Domain\bin\Debug\net5.0\NET-Project-2.Domain.deps.json
+C:\Users\Wyatt\Source\Repos\NET Project 2-Azure\NET-Project-2.Domain\bin\Debug\net5.0\NET-Project-2.Domain.runtimeconfig.json
+C:\Users\Wyatt\Source\Repos\NET Project 2-Azure\NET-Project-2.Domain\bin\Debug\net5.0\NET-Project-2.Domain.runtimeconfig.dev.json
+C:\Users\Wyatt\Source\Repos\NET Project 2-Azure\NET-Project-2.Domain\bin\Debug\net5.0\NET-Project-2.Domain.dll
+C:\Users\Wyatt\Source\Repos\NET Project 2-Azure\NET-Project-2.Domain\bin\Debug\net5.0\ref\NET-Project-2.Domain.dll
+C:\Users\Wyatt\Source\Repos\NET Project 2-Azure\NET-Project-2.Domain\bin\Debug\net5.0\NET-Project-2.Domain.pdb
+C:\Users\Wyatt\Source\Repos\NET Project 2-Azure\NET-Project-2.Domain\obj\Debug\net5.0\NET-Project-2.Domain.csproj.AssemblyReference.cache
+C:\Users\Wyatt\Source\Repos\NET Project 2-Azure\NET-Project-2.Domain\obj\Debug\net5.0\NET-Project-2.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Wyatt\Source\Repos\NET Project 2-Azure\NET-Project-2.Domain\obj\Debug\net5.0\NET-Project-2.Domain.AssemblyInfoInputs.cache
+C:\Users\Wyatt\Source\Repos\NET Project 2-Azure\NET-Project-2.Domain\obj\Debug\net5.0\NET-Project-2.Domain.AssemblyInfo.cs
+C:\Users\Wyatt\Source\Repos\NET Project 2-Azure\NET-Project-2.Domain\obj\Debug\net5.0\NET-Project-2.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Wyatt\Source\Repos\NET Project 2-Azure\NET-Project-2.Domain\obj\Debug\net5.0\NET-Project-2.Domain.dll
+C:\Users\Wyatt\Source\Repos\NET Project 2-Azure\NET-Project-2.Domain\obj\Debug\net5.0\ref\NET-Project-2.Domain.dll
+C:\Users\Wyatt\Source\Repos\NET Project 2-Azure\NET-Project-2.Domain\obj\Debug\net5.0\NET-Project-2.Domain.pdb
+C:\Users\Wyatt\Source\Repos\NET Project 2-Azure\NET-Project-2.Domain\obj\Debug\net5.0\NET-Project-2.Domain.genruntimeconfig.cache

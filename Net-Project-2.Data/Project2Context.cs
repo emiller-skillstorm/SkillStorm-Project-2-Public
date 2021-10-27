@@ -19,9 +19,9 @@ namespace Net_Project_2.Data
         //Fluent API - we may need this later
         protected override void OnModelCreating(ModelBuilder modelBuilder)
          {
-             modelBuilder.Entity<User>()
-                 .HasMany(p => p.Plans)
-                 .WithMany(u => u.Users);
+             //modelBuilder.Entity<User>()
+             //    .HasMany(p => p.Plans)
+             //    .WithMany(u => u.Users);
          }
     }
 }
