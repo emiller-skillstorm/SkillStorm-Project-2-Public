@@ -9,7 +9,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./new-user.component.css']
 })
 export class NewUserComponent implements OnInit {
-  newUser: User = new User("FirstName", "LastName", "Email@mail.com");
+  newUser: User = new User();
 
   constructor(private userService: UserService, private router: Router) { }
 
