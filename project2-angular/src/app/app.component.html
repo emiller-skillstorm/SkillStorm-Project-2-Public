@@ -5,16 +5,19 @@
       <div>
         <h1>Project 2 Test Page</h1>
       </div>
-      <div>
+      <div (loggedIn)="$event">
+        <div  *ngIf="!loggedIn">
         <!-- Log in or Sign up -->
         <a [routerLink]="['/new-user']">New User </a> | 
         <a [routerLink]="['/user-login']">Returning User</a>
         <router-outlet></router-outlet>
-        <div *ngIf="loginSuccess">
-          <a [routerLink]="['/users']">Users</a> | 
-          <a [routerLink]="['/devices']">Devices</a> | 
-          <a [routerLink]="['/plans']">Plans</a> 
-          <router-outlet></router-outlet>
+        </div>
+
+        <div ng-template #elseBlock>
+            <a [routerLink]="['/users']">Users</a> | 
+            <a [routerLink]="['/devices']">Devices</a> | 
+            <a [routerLink]="['/plans']">Plans</a> 
+            <router-outlet></router-outlet>
         </div>
       </div>
   <svg id="clouds" xmlns="http://www.w3.org/2000/svg" width="2611.084" height="485.677" viewBox="0 0 2611.084 485.677">
