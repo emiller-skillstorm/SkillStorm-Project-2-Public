@@ -757,28 +757,31 @@
     ]
   },
   "packageFolders": {
-    "/Users/ericmiller/.nuget/packages/": {},
-    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "C:\\Users\\Wyatt\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/ericmiller/Projects/SkillStorm/Project2/NET-Project-2.Domain/NET-Project-2.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\Wyatt\\Source\\Repos\\NET Project 2-Azure\\NET-Project-2.Domain\\NET-Project-2.Domain.csproj",
       "projectName": "NET-Project-2.Domain",
-      "projectPath": "/Users/ericmiller/Projects/SkillStorm/Project2/NET-Project-2.Domain/NET-Project-2.Domain.csproj",
-      "packagesPath": "/Users/ericmiller/.nuget/packages/",
-      "outputPath": "/Users/ericmiller/Projects/SkillStorm/Project2/NET-Project-2.Domain/obj/",
+      "projectPath": "C:\\Users\\Wyatt\\Source\\Repos\\NET Project 2-Azure\\NET-Project-2.Domain\\NET-Project-2.Domain.csproj",
+      "packagesPath": "C:\\Users\\Wyatt\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Wyatt\\Source\\Repos\\NET Project 2-Azure\\NET-Project-2.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "/Users/ericmiller/.config/NuGet/NuGet.Config"
+        "C:\\Users\\Wyatt\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -819,7 +822,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

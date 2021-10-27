@@ -1,16 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\Net-Project-2.API",
-    "\\Net-Project-2.API\\Controllers",
-    "\\NET-Project-2.Domain",
-    "\\project2-angular",
-    "\\project2-angular\\src",
-    "\\project2-angular\\src\\components",
-    "\\project2-angular\\src\\components\\device-list",
-    "\\project2-angular\\src\\components\\user-details",
-    "\\project2-angular\\src\\components\\user-list"
+    ""
   ],
-  "SelectedNode": "\\Net-Project-2.API\\Controllers\\DevicesController.cs",
+  "SelectedNode": "\\NET-Project-2.sln",
   "PreviewInSolutionExplorer": false
 }

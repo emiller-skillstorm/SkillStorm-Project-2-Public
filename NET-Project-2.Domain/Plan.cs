@@ -13,7 +13,10 @@ namespace NET_Project_2.Domain
         public double Price { get; set; }
         public int DeviceLimit { get; set; }
         public int DataLimit { get; set; }
-        public List<User> Users { get; set; } = new List<User>();
+        public List<Device> Devices { get; set; } = new List<Device>();
+        public User User { get; set; }
+        public int UserId { get; set; }
+
     }
 
 }
