@@ -43,7 +43,7 @@ namespace Net_Project_2.API.Controllers
         }
 
         // GET: api/Login
-        [HttpGet("Login/{loginString}")]
+        [HttpGet("Login/{loginString}")] //Testing
         public async Task<ActionResult<User>> Login(string loginString)
         {
             //username and password hash should come in the form "username-passHash"
