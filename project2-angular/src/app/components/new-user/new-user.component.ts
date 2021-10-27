@@ -11,7 +11,9 @@ import { UserService } from 'src/app/services/user.service';
 export class NewUserComponent implements OnInit {
   newUser: User = new User();
   currentUser!: User;
-  @Output() loginSuccess = new EventEmitter<boolean>()
+
+  @Output() loginSuccess = new EventEmitter<boolean>(); // Notifies parent of login success
+  @Output() user = new EventEmitter<User>(); // Notifies parent of user
 
   constructor(private userService: UserService, private router: Router) { }
 
@@ -27,6 +29,7 @@ export class NewUserComponent implements OnInit {
       console.log("Added new user: " + data);
       this.currentUser = data;
       this.loginSuccess.emit(true);
+      this.user.emit(this.currentUser);
 
       let route = this.router.config.find(r => r.path === 'home');
       if(route){

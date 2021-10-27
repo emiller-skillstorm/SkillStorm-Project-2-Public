@@ -12,12 +12,10 @@ import { User } from 'src/app/models/user.model';
 export class PlansListComponent implements OnInit {
   
   PlanList: Plan[] = [];
-
   @Input() user!: User;
 
   constructor(private planService: PlanService, private router: Router) { }
-
-
+  
   //Returns All Plans
   ngOnInit(): void {
     this.planService.findPlansForUser(this.user.userId).subscribe(data => 
