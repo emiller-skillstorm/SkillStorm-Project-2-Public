@@ -44,18 +44,20 @@ namespace Net_Project_2.API.Controllers
 
         // GET: api/Login
         [HttpGet("Login/{loginString}")]
-        public ActionResult<User> Login(string loginString)
+        public async Task<ActionResult<User>> Login(string loginString)
         {
             //username and password hash should come in the form "username-passHash"
             string[] credentials = loginString.Split("-");
-            var user = _context.Users.Where(u => u.Email == credentials[0] && u.PassHash == credentials[1]).FirstOrDefault();
+            Console.WriteLine(credentials[0] + " " + credentials[1]);
+
+            var user = await _context.Users.Where(u => u.Email == credentials[0] && u.PassHash == credentials[1]).ToListAsync();
 
             if (user == null)
             {
                 return NotFound();
             }
 
-            return user;
+            return user.FirstOrDefault();
         }
 
         // PUT: api/Users/5

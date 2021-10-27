@@ -1,3 +1,4 @@
+import { parseSelectorToR3Selector } from '@angular/compiler/src/core';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -18,11 +19,26 @@ export class UserLoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  hashPassword(): string {
+    var hash = "";
+
+    for(let i = 1; i < this.password.length - 1; i++) {
+      hash += this.password[this.password.length - i]
+    }
+
+    for(let k = this.username.length; k > 0; k--) {
+      hash += this.username[this.username.length % k]
+    }
+    
+    console.log(hash);
+    return hash;
+  }
+
   attemptLogin(): void {
     // Testing -- Still need to get this hashed for security
-    // var hashValue = (+this.password % 30 + 16).toString();
 
-    this.credentials = this.username + "-" + this.password;
+    this.credentials = this.username + "-" + this.hashPassword();
+    console.log(this.credentials);
 
      this.userService.userLogin(this.credentials).subscribe(data => {
        let route = this.router.config.find(r => r.path === 'home');
