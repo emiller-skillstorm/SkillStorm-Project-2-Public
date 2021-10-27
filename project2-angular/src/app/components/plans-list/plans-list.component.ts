@@ -14,14 +14,13 @@ export class PlansListComponent implements OnInit {
   PlanList: Plan[] = [];
 
   @Input() user!: User;
-  userId: number = this.user.userId;
 
   constructor(private planService: PlanService, private router: Router) { }
 
 
   //Returns All Plans
   ngOnInit(): void {
-    this.planService.findAll().subscribe(data => 
+    this.planService.findPlansForUser(this.user.userId).subscribe(data => 
       {
         this.PlanList = data;
         console.log(this.PlanList);

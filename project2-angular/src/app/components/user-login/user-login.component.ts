@@ -16,7 +16,6 @@ export class UserLoginComponent implements OnInit {
   username: string = "";
   password: string = "";
   credentials: string = "";
-  loggedIn: boolean = false;
 
   currentUser: User = new User();
 
@@ -25,14 +24,14 @@ export class UserLoginComponent implements OnInit {
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
+    this.loginSuccess.emit(false);
   }
 
   attemptLogin(): void {
      this.userService.userLogin(this.username, this.password).subscribe(data => {
        if(data != null) {
          this.currentUser = data;
-         this.loggedIn = true;
-         this.loginSuccess.emit(this.loggedIn);
+         this.loginSuccess.emit(true);
 
          console.log(this.currentUser);
 

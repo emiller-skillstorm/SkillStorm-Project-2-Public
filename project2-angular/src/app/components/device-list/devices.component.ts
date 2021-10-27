@@ -16,13 +16,12 @@ export class DevicesComponent implements OnInit {
   DeviceList: Device[] = [];
 
   @Input() user!: User;
-  userId: number = this.user.userId; //Testing
 
   constructor(private deviceService: DeviceService, private router: Router) { }
 
-  //Testing on user 4
+  // Display the list of devices for the current user
   ngOnInit(): void {
-    this.deviceService.findDevicesForUser(this.userId).subscribe( data => 
+    this.deviceService.findDevicesForUser(this.user.userId).subscribe( data => 
       {
         this.DeviceList = data;
         console.log(this.DeviceList);
