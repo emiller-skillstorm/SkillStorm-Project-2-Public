@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { Device } from '../../app/models/device.model';
-import { DeviceService } from '../../app/services/device.service';
+import { Component, Input, OnInit } from '@angular/core';
+import { Device } from '../../models/device.model';
+import { DeviceService } from '../../services/device.service';
 import { Router } from '@angular/router';
-import { Plan } from '../../app/models/plan.model';
-import { PlanService } from '../../app/services/plan.service';
+import { Plan } from '../../models/plan.model';
+import { PlanService } from '../../services/plan.service';
+import { User } from 'src/app/models/user.model';
 
 @Component({
   selector: 'app-home',
@@ -15,8 +16,8 @@ export class HomeComponent implements OnInit {
   DeviceList: Device[] = [];
   PlanList: Plan[] = [];
 
-  //placeholder until we get user authentication done
-  userId = 4;
+  @Input() currentUser!: User;
+  userId: number = this.currentUser.userId;
 
   constructor(private planService: PlanService, private deviceService: DeviceService, private router: Router) { }
 

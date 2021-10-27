@@ -46,5 +46,7 @@
     </table>
 </div>
 -->
-<app-devices></app-devices>
-<app-plans-list></app-plans-list>
+<div>
+    <app-devices [user]="currentUser"></app-devices>
+    <app-plans-list [user]="currentUser"></app-plans-list>
+</div>

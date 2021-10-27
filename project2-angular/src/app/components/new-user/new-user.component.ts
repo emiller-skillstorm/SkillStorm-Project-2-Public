@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user.model';
 import { UserService } from 'src/app/services/user.service';
@@ -10,10 +10,13 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class NewUserComponent implements OnInit {
   newUser: User = new User();
+  currentUser!: User;
+  @Output() loginSuccess = new EventEmitter<boolean>()
 
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
+    this.loginSuccess.emit(false);
   }
 
   registerNewUser(): void {
@@ -22,10 +25,12 @@ export class NewUserComponent implements OnInit {
 
     this.userService.registerNewUser(this.newUser).subscribe(data => {
       console.log("Added new user: " + data);
+      this.currentUser = data;
+      this.loginSuccess.emit(true);
 
-      let route = this.router.config.find(r => r.path === 'users');
+      let route = this.router.config.find(r => r.path === 'home');
       if(route){
-        this.router.navigateByUrl('/user-details' +`/${data.userId}`);
+        this.router.navigateByUrl('/home');
       }
     });
   }
