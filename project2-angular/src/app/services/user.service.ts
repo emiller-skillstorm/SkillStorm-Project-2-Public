@@ -46,7 +46,7 @@ export class UserService {
   }
 
   userLogin(username: string, password: string): Observable<User> {
-    var currentUser = this.httpClient.get<User>(this.url + '/Login/' + `${this.hashPassword(username, password)}`);
+    var currentUser = this.httpClient.post<User>(this.url + '/Login', [username, this.hashPassword(username, password)]);
     console.log(currentUser);
     return currentUser;
   }

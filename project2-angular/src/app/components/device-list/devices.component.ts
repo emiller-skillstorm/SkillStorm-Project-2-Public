@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/models/user.model';
 import { environment } from 'src/environments/environment';
 import { Device } from '../../models/device.model';
@@ -14,18 +14,22 @@ import { DeviceService } from '../../services/device.service';
 export class DevicesComponent implements OnInit {
   
   DeviceList: Device[] = [];
+  user!: User;
+  userId: any;
 
-  @Input() user!: User;
-
-  constructor(private deviceService: DeviceService, private router: Router) { }
+  constructor(private deviceService: DeviceService,private router: Router, private activeRoute: ActivatedRoute) { }
 
   // Display the list of devices for the current user
   ngOnInit(): void {
-    this.deviceService.findDevicesForUser(this.user.userId).subscribe( data => 
+    this.activeRoute.data.subscribe(id =>  {
+      this.userId = id;
+    
+    this.deviceService.findDevicesForUser(this.userId).subscribe(data => 
       {
         this.DeviceList = data;
         console.log(this.DeviceList);
       });
+    });
   }
 
   // When we click the details button, we can present a list of actions:

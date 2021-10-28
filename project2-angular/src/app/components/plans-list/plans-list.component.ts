@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { PlanService } from '../../services/plan.service';
 import { Plan } from '../../models/plan.model';
-import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { User } from 'src/app/models/user.model';
 
 @Component({
@@ -12,17 +12,23 @@ import { User } from 'src/app/models/user.model';
 export class PlansListComponent implements OnInit {
   
   PlanList: Plan[] = [];
-  @Input() user!: User;
+  user!: User;
+  userId: any;
 
-  constructor(private planService: PlanService, private router: Router) { }
+
+  constructor(private planService: PlanService, private activeRoute: ActivatedRoute) { }
   
   //Returns All Plans
   ngOnInit(): void {
-    this.planService.findPlansForUser(this.user.userId).subscribe(data => 
+    this.activeRoute.data.subscribe(id =>  {
+      this.userId = id;
+    
+    this.planService.findPlansForUser(this.userId).subscribe(data => 
       {
         this.PlanList = data;
         console.log(this.PlanList);
       });
+    });
   }
 
 }

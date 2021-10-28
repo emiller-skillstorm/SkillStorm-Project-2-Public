@@ -8,6 +8,12 @@ import { User } from '../../models/user.model';
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css']
 })
+
+/*
+// This should only be used during testing.
+// No normal user should see a list of all the other users.
+*/
+
 export class UsersComponent implements OnInit {
 
   UserList: User[] = [];
