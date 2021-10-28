@@ -9,6 +9,8 @@ import { User } from './models/user.model';
 
 export class AppComponent {
   title = 'project2-angular';
+  
   loggedIn: boolean = false;
   currentUser!: User;
+  
 }

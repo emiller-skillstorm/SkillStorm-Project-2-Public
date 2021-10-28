@@ -31,9 +31,9 @@ export class NewUserComponent implements OnInit {
       this.loginSuccess.emit(true);
       this.user.emit(this.currentUser);
 
-      let route = this.router.config.find(r => r.path === 'home');
+      let route = this.router.config.find(r => r.path === 'nav-canvas');
       if(route){
-        this.router.navigateByUrl('/home');
+        this.router.navigateByUrl('/nav-canvas');
       }
     });
   }

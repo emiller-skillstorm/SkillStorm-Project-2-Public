@@ -4,9 +4,15 @@
       <div>
         <h1>Project 2 Test Page</h1>
       </div>
-      <div (loggedIn)="$event">
+      <div>
+        <app-login-canvas></app-login-canvas>
+        <router-outlet></router-outlet>
+      <!-- 
+        <div (loggedIn)="$event">
         <div  *ngIf="!loggedIn">
+        -->
         <!-- Log in or Sign up -->
+        <!--
         <a [routerLink]="['/new-user']">New User </a> | 
         <a [routerLink]="['/user-login']">Returning User</a>
         <router-outlet></router-outlet>
@@ -25,7 +31,7 @@
             <a [routerLink]="['/plans']">Plans</a> 
             <router-outlet></router-outlet>
         </div>
-      </div>
+      </div> -->
     </div>
 
     <div>

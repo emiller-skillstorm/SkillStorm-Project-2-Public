@@ -37,9 +37,9 @@ export class UserLoginComponent implements OnInit {
 
          console.log(this.currentUser);
 
-         let route = this.router.config.find(r => r.path === 'home');
+         let route = this.router.config.find(r => r.path === 'nav-canvas');
          if(route){
-           this.router.navigateByUrl('/home');
+           this.router.navigateByUrl('/nav-canvas');
           }
         }
       });

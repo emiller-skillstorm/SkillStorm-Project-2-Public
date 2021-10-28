@@ -9542,42 +9542,39 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Wyatt\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/Users/ericmiller/.nuget/packages/": {},
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Wyatt\\Source\\Repos\\NET Project 2-Azure\\Net-Project-2.API\\Net-Project-2.API.csproj",
+      "projectUniqueName": "/Users/ericmiller/Projects/SkillStorm/Project2/Net-Project-2.API/Net-Project-2.API.csproj",
       "projectName": "Net-Project-2.API",
-      "projectPath": "C:\\Users\\Wyatt\\Source\\Repos\\NET Project 2-Azure\\Net-Project-2.API\\Net-Project-2.API.csproj",
-      "packagesPath": "C:\\Users\\Wyatt\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Wyatt\\Source\\Repos\\NET Project 2-Azure\\Net-Project-2.API\\obj\\",
+      "projectPath": "/Users/ericmiller/Projects/SkillStorm/Project2/Net-Project-2.API/Net-Project-2.API.csproj",
+      "packagesPath": "/Users/ericmiller/.nuget/packages/",
+      "outputPath": "/Users/ericmiller/Projects/SkillStorm/Project2/Net-Project-2.API/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Wyatt\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/ericmiller/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Wyatt\\Source\\Repos\\NET Project 2-Azure\\Net-Project-2.Data\\Net-Project-2.Data.csproj": {
-              "projectPath": "C:\\Users\\Wyatt\\Source\\Repos\\NET Project 2-Azure\\Net-Project-2.Data\\Net-Project-2.Data.csproj"
+            "/Users/ericmiller/Projects/SkillStorm/Project2/Net-Project-2.Data/Net-Project-2.Data.csproj": {
+              "projectPath": "/Users/ericmiller/Projects/SkillStorm/Project2/Net-Project-2.Data/Net-Project-2.Data.csproj"
             },
-            "C:\\Users\\Wyatt\\Source\\Repos\\NET Project 2-Azure\\NET-Project-2.Domain\\NET-Project-2.Domain.csproj": {
-              "projectPath": "C:\\Users\\Wyatt\\Source\\Repos\\NET Project 2-Azure\\NET-Project-2.Domain\\NET-Project-2.Domain.csproj"
+            "/Users/ericmiller/Projects/SkillStorm/Project2/NET-Project-2.Domain/NET-Project-2.Domain.csproj": {
+              "projectPath": "/Users/ericmiller/Projects/SkillStorm/Project2/NET-Project-2.Domain/NET-Project-2.Domain.csproj"
             }
           }
         }
@@ -9641,7 +9638,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -14,6 +14,8 @@ import { HomeComponent } from './components/home/home.component';
 import { DeviceDetailsComponent } from './components/device-details/device-details.component';
 import { PlanDetailsComponent } from './components/plan-details/plan-details.component';
 import { UserLoginComponent } from './components/user-login/user-login.component';
+import { NavCanvasComponent } from './components/nav-canvas/nav-canvas.component';
+import { LoginCanvasComponent } from './components/login-canvas/login-canvas.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { UserLoginComponent } from './components/user-login/user-login.component
     HomeComponent,
     DeviceDetailsComponent,
     PlanDetailsComponent,
-    UserLoginComponent
+    UserLoginComponent,
+    NavCanvasComponent,
+    LoginCanvasComponent
   ],
   imports: [
     BrowserModule,
