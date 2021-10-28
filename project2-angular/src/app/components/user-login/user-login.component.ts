@@ -17,29 +17,24 @@ export class UserLoginComponent implements OnInit {
   password: string = "";
   credentials: string = "";
 
-  currentUser: User = new User();
-
-  @Output() loginSuccess = new EventEmitter<boolean>(); // Notifies parent of login success
-  @Output() user = new EventEmitter<User>(); // Notifies parent of user
+  user!: User;
+  userId: any;
 
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
-    this.loginSuccess.emit(false);
   }
 
   attemptLogin(): void {
      this.userService.userLogin(this.username, this.password).subscribe(data => {
        if(data != null) {
-         this.currentUser = data;
-         this.loginSuccess.emit(true);
-         this.user.emit(this.currentUser);
+         this.user = data;
 
-         console.log(this.currentUser);
+         console.log(this.user);
 
-         let route = this.router.config.find(r => r.path === 'nav-canvas');
+         let route = this.router.config.find(r => r.path === 'nav-canvas/:id');
          if(route){
-           this.router.navigateByUrl('/nav-canvas');
+           this.router.navigateByUrl( `/nav-canvas/${this.userId}`);
           }
         }
       });

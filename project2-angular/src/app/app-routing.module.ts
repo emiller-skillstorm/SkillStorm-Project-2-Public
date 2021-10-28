@@ -9,10 +9,18 @@ import { HomeComponent } from 'src/app/components/home/home.component';
 import { DeviceDetailsComponent } from 'src/app/components/device-details/device-details.component';
 import { PlanDetailsComponent } from 'src/app/components/plan-details/plan-details.component';
 import { UserLoginComponent } from 'src/app/components/user-login/user-login.component';
+import { LoginCanvasComponent } from './components/login-canvas/login-canvas.component';
+import { NavCanvasComponent } from './components/nav-canvas/nav-canvas.component';
 
 const routes: Routes = [
   {
     path: 'users', component: UsersComponent
+  },
+  {
+    path: 'login-canvas', component: LoginCanvasComponent
+  },
+  {
+    path: 'nav-canvas', component: NavCanvasComponent
   },
   { 
     path: 'new-user', component: NewUserComponent

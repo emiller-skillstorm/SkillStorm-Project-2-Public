@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { User } from '../models/user.model';
@@ -46,7 +46,10 @@ export class UserService {
   }
 
   userLogin(username: string, password: string): Observable<User> {
-    var currentUser = this.httpClient.post<User>(this.url + '/Login', [username, this.hashPassword(username, password)]);
+    let body = new HttpParams();
+    body = body.set('username', username);
+    body = body.set('passHash', this.hashPassword(username, password));
+    var currentUser = this.httpClient.post<User>(this.url + '/Login/', body);
     console.log(currentUser);
     return currentUser;
   }
