@@ -7,23 +7,37 @@ import { Router } from '@angular/router';
   styleUrls: ['./login-canvas.component.css']
 })
 export class LoginCanvasComponent implements OnInit {
+  showSignup: boolean = false;
+  showSignupButton: boolean = true;
+  showLogin: boolean = false;
+  showLoginButton: boolean = true;
+
+  loginSucceeded: boolean = false;
 
   constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  goToLogin(){
-    let route = this.router.config.find(r => r.path === 'user-login');
-      if(route){
-        this.router.navigateByUrl('/user-login');
-      }
+  displayLogin(){
+    this.showLogin = true;
+    this.showLoginButton = false;
+    this.showSignup = false;
+    this.showSignupButton = true;
+    // let route = this.router.config.find(r => r.path === 'user-login');
+    //   if(route){
+    //     this.router.navigateByUrl('/user-login');
+    //   }
   }
 
-  goToSignup(){
-    let route = this.router.config.find(r => r.path === 'new-user');
-      if(route){
-        this.router.navigateByUrl('/new-user');
-      }
+  displaySignup(){
+    this.showSignup = true;
+    this.showSignupButton = false;
+    this.showLogin = false;
+    this.showLoginButton = true;
+    // let route = this.router.config.find(r => r.path === 'new-user');
+    //   if(route){
+    //     this.router.navigateByUrl('/new-user');
+    //   }
   }
 }

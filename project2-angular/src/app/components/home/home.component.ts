@@ -1,10 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Device } from '../../models/device.model';
 import { DeviceService } from '../../services/device.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Plan } from '../../models/plan.model';
 import { PlanService } from '../../services/plan.service';
 import { User } from 'src/app/models/user.model';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-home',
@@ -16,41 +17,38 @@ export class HomeComponent implements OnInit {
   DeviceList: Device[] = [];
   PlanList: Plan[] = [];
 
-  @Input() currentUser!: User;
-  userId: number = this.currentUser.userId;
+  user!: User;
+  userId: any;
 
-  constructor(private planService: PlanService, private deviceService: DeviceService, private router: Router) { }
+  constructor(private userService: UserService, private activeRoute: ActivatedRoute, private router: Router) { }
 
   //placeholder until we get user authentication done
   ngOnInit(): void {
-    this.deviceService.findDevicesForUser(this.userId).subscribe( data => 
-      {
-        this.DeviceList = data;
-        console.log(this.DeviceList);
-      });
+    this.activeRoute.data.subscribe(id => {
+      this.userId = id;
 
-      this.planService.findPlansForUser(this.userId).subscribe( data => 
+      this.userService.find(this.userId).subscribe(data => 
         {
-          this.PlanList = data;
-          console.log(this.PlanList);
+          this.user = data;
+          console.log(this.user);
         });
+    });
   }
 
-  details(plan: Plan): void {
-    let route = this.router.config.find(r => r.path === 'plan-details/:id');
-    if (route) {
-      route.data = plan;
-      this.router.navigateByUrl(`/plan-details/${plan.planId}`);
-    }
-  }
+  // details(plan: Plan): void {
+  //   let route = this.router.config.find(r => r.path === 'plan-details/:id');
+  //   if (route) {
+  //     route.data = plan;
+  //     this.router.navigateByUrl(`/plan-details/${plan.planId}`);
+  //   }
+  // }
 
-  editDevice(device: Device): void {
-    let route = this.router.config.find(r => r.path === 'device-details/:id');
-    if (route) {
-      route.data = device;
-      this.router.navigateByUrl(`/device-details/${device.deviceId}`);
-    }
-  }
-
+  // editDevice(device: Device): void {
+  //   let route = this.router.config.find(r => r.path === 'device-details/:id');
+  //   if (route) {
+  //     route.data = device;
+  //     this.router.navigateByUrl(`/device-details/${device.deviceId}`);
+  //   }
+  //}
   
 }

@@ -46,7 +46,12 @@
     </table>
 </div>
 -->
-<div>
-    <app-devices></app-devices>
-    <app-plans-list></app-plans-list>
+<div class="container">
+    <div class="row">
+        <a [routerLink]="['/plan-list']">My Plans</a> | 
+        <a [routerLink]="['/device-list']">My Devices</a> | 
+        <a [routerLink]="['/phone-number-list']">My Phone Numbers</a> | 
+        <a [routerLink]="['/billing']">My Billing</a>
+    </div>
+    <router-outlet></router-outlet>
 </div>

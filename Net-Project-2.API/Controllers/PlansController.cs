@@ -45,9 +45,8 @@ namespace Net_Project_2.API.Controllers
         //GET: api/Plans/UserPlans/5
         [HttpGet("UserPlans/{userId}")]
         public async Task<ActionResult<IEnumerable<Plan>>> GetPlansForUser(int userId)
-        {
-            var user = _context.Users.FindAsync(userId);
-            var planList = await _context.Plans.Where(p => p.User.Equals(user)).ToListAsync();
+        { 
+            var planList = await _context.Plans.Where(p => p.UserId == userId).ToListAsync();
 
             if (planList == null)
             {

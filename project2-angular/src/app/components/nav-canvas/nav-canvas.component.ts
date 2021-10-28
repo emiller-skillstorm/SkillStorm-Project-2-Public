@@ -27,31 +27,31 @@ export class NavCanvasComponent implements OnInit {
     });
   }
 
-goToPlans() {
+goToPlans(user: User) {
   let route = this.router.config.find(r => r.path === 'plans-list/:id');
         if(route){
-          this.router.navigateByUrl(`/plans-list/${this.userId}`);
+          this.router.navigateByUrl(`/plans-list/${user.userId}`);
         }
   }
 
-goToDevices() {
+goToDevices(user: User) {
   let route = this.router.config.find(r => r.path === 'device-list/:id');
         if(route){
-          this.router.navigateByUrl(`/device-list/${this.userId}`);
+          this.router.navigateByUrl(`/device-list/${user.userId}`);
         }
   }
 
-goToPhoneNumbers(){
+goToPhoneNumbers(user: User){
   let route = this.router.config.find(r => r.path === 'phone-umbers/:id');
         if(route){
-          this.router.navigateByUrl(`/phone-numbers/${this.userId}`);
+          this.router.navigateByUrl(`/phone-numbers/${user.userId}`);
         }
   }
 
-goToBilling(){
+goToBilling(user: User){
   let route = this.router.config.find(r => r.path === 'billing/:id');
         if(route){
-          this.router.navigateByUrl(`/billing/${this.userId}`);
+          this.router.navigateByUrl(`/billing/${user.userId}`);
         }
   }
 }

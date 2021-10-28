@@ -11,6 +11,7 @@ import { UserService } from 'src/app/services/user.service';
 export class NewUserComponent implements OnInit {
   newUser: User = new User();
   currentUser!: User;
+  @Output() loggedIn = new EventEmitter<boolean>();
 
   constructor(private userService: UserService, private router: Router) { }
 
@@ -24,11 +25,14 @@ export class NewUserComponent implements OnInit {
     this.userService.registerNewUser(this.newUser).subscribe(data => {
       this.currentUser = data;
       console.log("Added new user: " + this.currentUser);
+      this.loggedIn.emit(true);
 
-      let route = this.router.config.find(r => r.path === 'nav-canvas/:id');
-      if(route){
-        this.router.navigateByUrl(`/nav-canvas/${this.currentUser.userId}`);
-      }
+    //   let route = this.router.config.find(r => r.path === 'home/:id');
+    //   if(route){
+    //     this.router.navigateByUrl(`/home/${this.currentUser.userId}`);
+    //   }
+    // });
+  //}
     });
   }
 }
