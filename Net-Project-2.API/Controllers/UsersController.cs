@@ -43,12 +43,12 @@ namespace Net_Project_2.API.Controllers
         }
 
         // GET: api/Login
-        [HttpPost("Login")] //Testing
-        public async Task<ActionResult<User>> Login(string username, string passHash)
+        [HttpGet("Login/{loginString}")] //Testing
+        public async Task<ActionResult<User>> Login(string loginString)
         {
-            Console.WriteLine(username + " " + passHash);
+            string[] s = loginString.Split('-');
 
-            var user = await _context.Users.Where(u => u.Email == username && u.PassHash == passHash).ToListAsync();
+            var user = await _context.Users.Where(u => u.Email == s[0] && u.PassHash == s[1]).ToListAsync();
 
             if (user == null)
             {

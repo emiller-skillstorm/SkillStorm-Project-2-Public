@@ -18,7 +18,6 @@ export class UserLoginComponent implements OnInit {
   credentials: string = "";
 
   user!: User;
-  userId: any;
 
   constructor(private userService: UserService, private router: Router) { }
 
@@ -26,15 +25,14 @@ export class UserLoginComponent implements OnInit {
   }
 
   attemptLogin(): void {
-     this.userService.userLogin(this.username, this.password).subscribe(data => {
+    this.userService.userLogin(this.username, this.password).subscribe(data => {
        if(data != null) {
          this.user = data;
-
          console.log(this.user);
 
          let route = this.router.config.find(r => r.path === 'nav-canvas/:id');
          if(route){
-           this.router.navigateByUrl( `/nav-canvas/${this.userId}`);
+           this.router.navigateByUrl( `/nav-canvas/${this.user.userId}`);
           }
         }
       });

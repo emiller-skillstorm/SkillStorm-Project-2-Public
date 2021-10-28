@@ -7,8 +7,10 @@ import { User } from '../models/user.model';
 @Injectable({
   providedIn: 'root'
 })
+
 export class UserService {
   url = environment.userAPIurl;
+  currentUser!: User;
 
   constructor(private httpClient: HttpClient) { }
 
@@ -29,8 +31,6 @@ export class UserService {
 
   //New user registration
   registerNewUser(user: User): Observable<User> {
-    // The user will be sent with a plain text password.
-    // We need to hash it first, then store the hashed password as thier passHash.
     user.passHash = this.hashPassword(user.email, user.passHash);
 
     return this.httpClient.post<User>(this.url, user);
@@ -46,11 +46,9 @@ export class UserService {
   }
 
   userLogin(username: string, password: string): Observable<User> {
-    let body = new HttpParams();
-    body = body.set('username', username);
-    body = body.set('passHash', this.hashPassword(username, password));
-    var currentUser = this.httpClient.post<User>(this.url + '/Login/', body);
-    console.log(currentUser);
-    return currentUser;
+    let hashedPass = this.hashPassword(username, password);
+    let loginString = username + '-' + hashedPass;
+    
+    return this.httpClient.get<User>(this.url + `/Login/${loginString}`);
   }
 }

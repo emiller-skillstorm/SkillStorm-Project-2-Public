@@ -12,13 +12,9 @@ export class NewUserComponent implements OnInit {
   newUser: User = new User();
   currentUser!: User;
 
-  @Output() loginSuccess = new EventEmitter<boolean>(); // Notifies parent of login success
-  @Output() user = new EventEmitter<User>(); // Notifies parent of user
-
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
-    this.loginSuccess.emit(false);
   }
 
   registerNewUser(): void {
@@ -26,14 +22,12 @@ export class NewUserComponent implements OnInit {
     //Store that hash in the user's passHas property before adding them to the database
 
     this.userService.registerNewUser(this.newUser).subscribe(data => {
-      console.log("Added new user: " + data);
       this.currentUser = data;
-      this.loginSuccess.emit(true);
-      this.user.emit(this.currentUser);
+      console.log("Added new user: " + this.currentUser);
 
-      let route = this.router.config.find(r => r.path === 'nav-canvas');
+      let route = this.router.config.find(r => r.path === 'nav-canvas/:id');
       if(route){
-        this.router.navigateByUrl('/nav-canvas');
+        this.router.navigateByUrl(`/nav-canvas/${this.currentUser.userId}`);
       }
     });
   }
