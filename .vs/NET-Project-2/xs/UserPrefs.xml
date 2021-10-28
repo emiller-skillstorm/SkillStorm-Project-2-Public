@@ -1,26 +1,30 @@
 ﻿<Properties StartupConfiguration="{0D6FC3D6-CE4A-427E-B3B2-17AC7A64D45B}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Net-Project-2.API/Controllers/UsersController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Net-Project-2.Data/Migrations/20211028151201_DB-Reset-Eric.cs">
     <Files>
       <File FileName="Net-Project-2.API/Controllers/DevicesController.cs" Line="56" Column="31" />
-      <File FileName="Net-Project-2.API/appsettings.json" />
+      <File FileName="Net-Project-2.API/appsettings.json" Line="1" Column="1" />
       <File FileName="Net-Project-2.API/Properties/launchSettings.json" />
       <File FileName="NET-Project-2.Domain/User.cs" />
       <File FileName="NET-Project-2.Domain/Plan.cs" />
       <File FileName="NET-Project-2.Domain/PhoneNumber.cs" />
       <File FileName="NET-Project-2.Domain/Device.cs" />
-      <File FileName="Net-Project-2.API/Controllers/UsersController.cs" Line="60" Column="42" />
-      <File FileName="Net-Project-2.Data/Project2Context.cs" />
+      <File FileName="Net-Project-2.API/Controllers/UsersController.cs" Line="57" Column="1" />
+      <File FileName="Net-Project-2.Data/Project2Context.cs" Line="1" Column="1" />
       <File FileName="Net-Project-2.API/Startup.cs" />
       <File FileName="Net-Project-2.API/Controllers/PlansController.cs" />
       <File FileName="Net-Project-2.API/Controllers/PhoneNumbersController.cs" />
+      <File FileName="Net-Project-2.Data/Migrations/20211028151201_DB-Reset-Eric.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="NET-Project-2" expanded="True">
             <Node name="Net-Project-2.API" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="UsersController.cs" selected="True" />
+              <Node name="Controllers" expanded="True" />
+            </Node>
+            <Node name="Net-Project-2.Data" expanded="True">
+              <Node name="Migrations" expanded="True">
+                <Node name="20211028151201_DB-Reset-Eric.cs" selected="True" />
               </Node>
             </Node>
             <Node name="NET-Project-2.Domain" expanded="True" />

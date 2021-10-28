@@ -2,26 +2,10 @@
 
 namespace Net_Project_2.Data.Migrations
 {
-    public partial class EricLocalMigration : Migration
+    public partial class DBResetEric : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.CreateTable(
-                name: "Plans",
-                columns: table => new
-                {
-                    PlanId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Price = table.Column<double>(type: "float", nullable: false),
-                    DeviceLimit = table.Column<int>(type: "int", nullable: false),
-                    DataLimit = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Plans", x => x.PlanId);
-                });
-
             migrationBuilder.CreateTable(
                 name: "Users",
                 columns: table => new
@@ -29,7 +13,9 @@ namespace Net_Project_2.Data.Migrations
                     UserId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PassHash = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -57,24 +43,23 @@ namespace Net_Project_2.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "PlanUser",
+                name: "Plans",
                 columns: table => new
                 {
-                    PlansPlanId = table.Column<int>(type: "int", nullable: false),
-                    UsersUserId = table.Column<int>(type: "int", nullable: false)
+                    PlanId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Price = table.Column<double>(type: "float", nullable: false),
+                    DeviceLimit = table.Column<int>(type: "int", nullable: false),
+                    DataLimit = table.Column<int>(type: "int", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PlanUser", x => new { x.PlansPlanId, x.UsersUserId });
+                    table.PrimaryKey("PK_Plans", x => x.PlanId);
                     table.ForeignKey(
-                        name: "FK_PlanUser_Plans_PlansPlanId",
-                        column: x => x.PlansPlanId,
-                        principalTable: "Plans",
-                        principalColumn: "PlanId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_PlanUser_Users_UsersUserId",
-                        column: x => x.UsersUserId,
+                        name: "FK_Plans_Users_UserId",
+                        column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "UserId",
                         onDelete: ReferentialAction.Cascade);
@@ -88,8 +73,9 @@ namespace Net_Project_2.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Brand = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Model = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PhoneNumberId = table.Column<int>(type: "int", nullable: false),
-                    UserId = table.Column<int>(type: "int", nullable: false)
+                    PhoneNumberId = table.Column<int>(type: "int", nullable: true),
+                    UserId = table.Column<int>(type: "int", nullable: false),
+                    PlanId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -99,19 +85,30 @@ namespace Net_Project_2.Data.Migrations
                         column: x => x.PhoneNumberId,
                         principalTable: "PhoneNumbers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Devices_Plans_PlanId",
+                        column: x => x.PlanId,
+                        principalTable: "Plans",
+                        principalColumn: "PlanId",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Devices_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "UserId",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Devices_PhoneNumberId",
                 table: "Devices",
                 column: "PhoneNumberId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Devices_PlanId",
+                table: "Devices",
+                column: "PlanId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Devices_UserId",
@@ -124,18 +121,15 @@ namespace Net_Project_2.Data.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_PlanUser_UsersUserId",
-                table: "PlanUser",
-                column: "UsersUserId");
+                name: "IX_Plans_UserId",
+                table: "Plans",
+                column: "UserId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
                 name: "Devices");
-
-            migrationBuilder.DropTable(
-                name: "PlanUser");
 
             migrationBuilder.DropTable(
                 name: "PhoneNumbers");

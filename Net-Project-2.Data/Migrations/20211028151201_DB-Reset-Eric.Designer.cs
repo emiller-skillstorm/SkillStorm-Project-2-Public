@@ -10,8 +10,8 @@ using Net_Project_2.Data;
 namespace Net_Project_2.Data.Migrations
 {
     [DbContext(typeof(Project2Context))]
-    [Migration("20211026212839_UpdatedPlans")]
-    partial class UpdatedPlans
+    [Migration("20211028151201_DB-Reset-Eric")]
+    partial class DBResetEric
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -37,12 +37,17 @@ namespace Net_Project_2.Data.Migrations
                     b.Property<int?>("PhoneNumberId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("PlanId")
+                        .HasColumnType("int");
+
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("DeviceId");
 
                     b.HasIndex("PhoneNumberId");
+
+                    b.HasIndex("PlanId");
 
                     b.HasIndex("UserId");
 
@@ -88,7 +93,7 @@ namespace Net_Project_2.Data.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
-                    b.Property<int?>("UserId")
+                    b.Property<int>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("PlanId");
@@ -128,6 +133,10 @@ namespace Net_Project_2.Data.Migrations
                         .WithMany()
                         .HasForeignKey("PhoneNumberId");
 
+                    b.HasOne("NET_Project_2.Domain.Plan", null)
+                        .WithMany("Devices")
+                        .HasForeignKey("PlanId");
+
                     b.HasOne("NET_Project_2.Domain.User", "User")
                         .WithMany("Devices")
                         .HasForeignKey("UserId")
@@ -152,9 +161,18 @@ namespace Net_Project_2.Data.Migrations
 
             modelBuilder.Entity("NET_Project_2.Domain.Plan", b =>
                 {
-                    b.HasOne("NET_Project_2.Domain.User", null)
+                    b.HasOne("NET_Project_2.Domain.User", "User")
                         .WithMany("Plans")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("NET_Project_2.Domain.Plan", b =>
+                {
+                    b.Navigation("Devices");
                 });
 
             modelBuilder.Entity("NET_Project_2.Domain.User", b =>
