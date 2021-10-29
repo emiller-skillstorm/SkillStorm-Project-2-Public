@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/models/user.model';
 import { environment } from 'src/environments/environment';
@@ -14,22 +14,25 @@ import { DeviceService } from '../../services/device.service';
 export class DevicesComponent implements OnInit {
   
   DeviceList: Device[] = [];
-  user!: User;
+  @Input() user!: User;
   userId: any;
 
-  constructor(private deviceService: DeviceService,private router: Router, private activeRoute: ActivatedRoute) { }
+  @Output() back = new EventEmitter<boolean>();
+
+  constructor(private deviceService: DeviceService, private router: Router, private activeRoute: ActivatedRoute) { }
 
   // Display the list of devices for the current user
   ngOnInit(): void {
-    this.activeRoute.data.subscribe(id =>  {
-      this.userId = id;
-    
-    this.deviceService.findDevicesForUser(this.userId).subscribe(data => 
+    // this.activeRoute.data.subscribe(id =>  {
+    //   this.userId = id;
+    console.log("Showing devices for user " + this.user.userId);
+
+    this.deviceService.findDevicesForUser(this.user.userId).subscribe(data => 
       {
         this.DeviceList = data;
         console.log(this.DeviceList);
       });
-    });
+   // });
   }
 
   // When we click the details button, we can present a list of actions:
@@ -40,5 +43,9 @@ export class DevicesComponent implements OnInit {
       route.data = device;
       this.router.navigateByUrl(`/device-details/${device.deviceId}`);
     }
+  }
+
+  backToNav(){
+    this.back.emit(true);
   }
 }

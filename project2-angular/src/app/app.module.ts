@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UsersComponent } from './components/user-list/users.component';
 import { DevicesComponent } from './components/device-list/devices.component';
-import { PlansListComponent } from './components/plans-list/plans-list.component';
+import { PlansComponent } from './components/plans-list/plans.component';
 import { NewUserComponent } from './components/new-user/new-user.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
@@ -22,7 +22,7 @@ import { LoginCanvasComponent } from './components/login-canvas/login-canvas.com
     AppComponent,
     UsersComponent,
     DevicesComponent,
-    PlansListComponent,
+    PlansComponent,
     NewUserComponent,
     UserDetailsComponent,
     HomeComponent,

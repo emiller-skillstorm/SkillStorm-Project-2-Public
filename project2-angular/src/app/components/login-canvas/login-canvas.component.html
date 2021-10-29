@@ -4,20 +4,20 @@
             <div class="col-sm">
                 <button class="btn btn-primary" (click)="displaySignup()" *ngIf="showSignupButton">Register</button>
                 <div *ngIf="showSignup">
-                    <app-new-user (loggedIn)="loginSucceeded = $event"></app-new-user>
+                    <app-new-user (loggedIn)="loginSucceeded = $event" (currentUser)="user = $event"></app-new-user>
                 </div>
             </div>
             <br>
             <div class="col-sm">
                 <button class="btn btn-primary" (click)="displayLogin()" *ngIf="showLoginButton">Log In</button>
                 <div *ngIf="showLogin">
-                    <app-user-login (loggedIn)="loginSucceeded = $event"></app-user-login>
+                    <app-user-login (loggedIn)="loginSucceeded = $event" (currentUser)="user = $event"></app-user-login>
                 </div>
             </div>
         </div>
 
         <div *ngIf="loginSucceeded" class="row">
-            <app-nav-canvas></app-nav-canvas>
+            <app-nav-canvas [user]="user"></app-nav-canvas>
         </div>
     </div>
 </div>

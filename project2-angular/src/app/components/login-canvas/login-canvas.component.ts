@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from 'src/app/models/user.model';
 
 @Component({
   selector: 'app-login-canvas',
@@ -13,8 +14,9 @@ export class LoginCanvasComponent implements OnInit {
   showLoginButton: boolean = true;
 
   loginSucceeded: boolean = false;
+  user: User = new User();
 
-  constructor(private router: Router) { }
+  constructor() { }
 
   ngOnInit(): void {
   }

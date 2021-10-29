@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DevicesComponent } from 'src/app/components/device-list/devices.component';
 import { UsersComponent } from './components/user-list/users.component';
-import { PlansListComponent } from './components/plans-list/plans-list.component';
+import { PlansComponent } from 'src/app/components/plans-list/plans.component';
 import { NewUserComponent } from 'src/app/components/new-user/new-user.component';
 import { UserDetailsComponent } from 'src/app/components/user-details/user-details.component';
 import { HomeComponent } from 'src/app/components/home/home.component';
@@ -35,7 +35,7 @@ const routes: Routes = [
     path: 'devices', component: DevicesComponent
   },
   { 
-    path: 'plans', component: PlansListComponent
+    path: 'plans', component: PlansComponent
   },
   { 
     path: 'home', component: HomeComponent

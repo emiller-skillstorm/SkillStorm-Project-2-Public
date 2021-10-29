@@ -1,10 +1,27 @@
 <div class="container">
-    <div class="row">
-        <button class="btn btn-primary" (click)="goToPlans(user)">My Plans</button>
-        <button class="btn btn-primary" (click)="goToDevices(user)">My Devices</button>
-    </div> 
-    <div class="row">
-        <button class="btn btn-primary" (click)="goToPhoneNumbers(user)">My Phone Numbers</button>
-        <button class="btn btn-primary" (click)="goToBilling(user)">My Bill</button>
+    <p>(We can show or hide these buttons if we want)</p>
+    <div [ngModel]="userNavigatedBack" (ngModelChange)="resetNavCanvas()">
+        <div class="row" *ngIf="showNavButtons">
+            <button class="btn btn-primary" (click)="goToPlans()">My Plans</button>
+            <button class="btn btn-primary" (click)="goToDevices()">My Devices</button>
+            <button class="btn btn-primary" (click)="goToPhoneNumbers()">My Phone Numbers</button>
+            <button class="btn btn-primary" (click)="goToBilling()">My Bill</button>
+        </div>
+        <div *ngIf="showPlans">
+            <!-- Back button is not working yet -->
+            <app-plans [user]="user" (back)="userNavigatedBack = $event"></app-plans>
+        </div>
+        <div *ngIf="showDevices">
+            <app-devices [user]="user" (back)="userNavigatedBack = $event"></app-devices>
+        </div>
+        <!-- Not implemented yet
+        <div *ngIf="showPhoneNumbers">
+            <app-phone-numbers [user]="user"></app-phone-numbers>
+        </div>
+        <div *ngIf="showBilling">
+            <app-billing [user]="user"></app-billing>
+        </div>
+        -->
+        <router-outlet></router-outlet>
     </div>
 </div>

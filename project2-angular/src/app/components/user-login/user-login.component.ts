@@ -19,6 +19,7 @@ export class UserLoginComponent implements OnInit {
   @Output() loggedIn = new EventEmitter<boolean>();
 
   user = new User();
+  @Output() currentUser = new EventEmitter<User>();
 
   constructor(private userService: UserService, private router: Router) { }
 
@@ -29,8 +30,11 @@ export class UserLoginComponent implements OnInit {
     this.userService.userLogin(this.username, this.password).subscribe(data => {
        if(data != null) {
          this.user = data;
+
          console.log(this.user);
+
          this.loggedIn.emit(true);
+         this.currentUser.emit(this.user);
         
         //  let route = this.router.config.find(r => r.path === 'home/:id');
         //  if(route){

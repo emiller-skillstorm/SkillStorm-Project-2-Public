@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/models/user.model';
 import { UserService } from 'src/app/services/user.service';
@@ -10,49 +10,94 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class NavCanvasComponent implements OnInit {
 
-  user!: User;
+  @Input() user!: User;
   userId: any;
+
+  showPlans: boolean = false;
+  showDevices: boolean = false;
+  showPhoneNumbers: boolean = false;
+  showBilling: boolean = false;
+  showNavButtons: boolean = true;
+  userNavigatedBack: boolean = false;
   
   constructor(private userservice: UserService, private router: Router, private activeRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.activeRoute.data.subscribe(id =>  {
-      this.userId = id;
-    
-    this.userservice.find(this.userId).subscribe(data => 
-      {
-        this.user = data;
-        console.log(this.user);
-      });
-    });
+    // this.activeRoute.data.subscribe(id =>  {
+    //   this.userId = id;
+    console.log("Displaying nav for user " + this.user.userId);
+
+    // this.userservice.find(this.user).subscribe(data => 
+    //   {
+    //     this.user = data;
+    //     console.log(this.user);
+    //   });
+    // });
   }
 
-goToPlans(user: User) {
-  let route = this.router.config.find(r => r.path === 'plans-list/:id');
-        if(route){
-          this.router.navigateByUrl(`/plans-list/${user.userId}`);
-        }
+goToPlans() {
+  //this.showNavButtons = false;
+  this.showPlans = true;
+  this.showDevices = false;
+  this.showPhoneNumbers = false;
+  this.showBilling = false;
+
+  // let route = this.router.config.find(r => r.path === 'plans-list/:id');
+  //       if(route){
+  //         this.router.navigateByUrl(`/plans-list/${user.userId}`);
+  //       }
   }
 
-goToDevices(user: User) {
-  let route = this.router.config.find(r => r.path === 'device-list/:id');
-        if(route){
-          this.router.navigateByUrl(`/device-list/${user.userId}`);
-        }
+goToDevices() {
+  //this.showNavButtons = false;
+  this.showDevices = true;
+  this.showPlans = false;
+  this.showPhoneNumbers = false;
+  this.showBilling = false;
+  
+
+  // let route = this.router.config.find(r => r.path === 'device-list/:id');
+  //       if(route){
+  //         this.router.navigateByUrl(`/device-list/${user.userId}`);
+  //       }
   }
 
-goToPhoneNumbers(user: User){
-  let route = this.router.config.find(r => r.path === 'phone-umbers/:id');
-        if(route){
-          this.router.navigateByUrl(`/phone-numbers/${user.userId}`);
-        }
+goToPhoneNumbers(){
+  //this.showNavButtons = false;
+  this.showPhoneNumbers = true;
+  this.showDevices = false;
+  this.showPlans = false;
+  this.showBilling = false;
+  
+
+  // let route = this.router.config.find(r => r.path === 'phone-umbers/:id');
+  //       if(route){
+  //         this.router.navigateByUrl(`/phone-numbers/${user.userId}`);
+  //       }
   }
 
-goToBilling(user: User){
-  let route = this.router.config.find(r => r.path === 'billing/:id');
-        if(route){
-          this.router.navigateByUrl(`/billing/${user.userId}`);
-        }
+goToBilling(){
+  //this.showNavButtons = false;
+  this.showBilling = true;
+  this.showDevices = false;
+  this.showPlans = false;
+  this.showPhoneNumbers = false;
+  
+
+  // let route = this.router.config.find(r => r.path === 'billing/:id');
+  //       if(route){
+  //         this.router.navigateByUrl(`/billing/${user.userId}`);
+  //       }
+  }
+
+  resetNavCanvas(){
+    this.showNavButtons = true;
+    this.showPlans = false;
+    this.showDevices = false;
+    this.showPhoneNumbers = false;
+    this.showBilling = false;
+
+    this.userNavigatedBack = false;
   }
 }
 

@@ -10,8 +10,9 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class NewUserComponent implements OnInit {
   newUser: User = new User();
-  currentUser!: User;
+  user!: User;
   @Output() loggedIn = new EventEmitter<boolean>();
+  @Output() currentUser = new EventEmitter<User>();
 
   constructor(private userService: UserService, private router: Router) { }
 
@@ -23,9 +24,11 @@ export class NewUserComponent implements OnInit {
     //Store that hash in the user's passHas property before adding them to the database
 
     this.userService.registerNewUser(this.newUser).subscribe(data => {
-      this.currentUser = data;
-      console.log("Added new user: " + this.currentUser);
+      this.user = data;
+      console.log("Added new user: " + this.user);
+
       this.loggedIn.emit(true);
+      this.currentUser.emit(this.user);
 
     //   let route = this.router.config.find(r => r.path === 'home/:id');
     //   if(route){
