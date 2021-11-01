@@ -14,10 +14,10 @@
         <div *ngIf="showDevices">
             <app-devices [user]="user" (back)="userNavigatedBack = $event"></app-devices>
         </div>
-        <!-- Not implemented yet
         <div *ngIf="showPhoneNumbers">
-            <app-phone-numbers [user]="user"></app-phone-numbers>
+            <app-phonenumbers [user]="user"></app-phonenumbers>
         </div>
+        <!-- Not implemented yet
         <div *ngIf="showBilling">
             <app-billing [user]="user"></app-billing>
         </div>

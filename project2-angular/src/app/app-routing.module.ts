@@ -11,6 +11,7 @@ import { PlanDetailsComponent } from 'src/app/components/plan-details/plan-detai
 import { UserLoginComponent } from 'src/app/components/user-login/user-login.component';
 import { LoginCanvasComponent } from './components/login-canvas/login-canvas.component';
 import { NavCanvasComponent } from './components/nav-canvas/nav-canvas.component';
+import { PhonenumbersListComponent } from './components/phonenumbers-list/phonenumbers-list.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,9 @@ const routes: Routes = [
   },
   { 
     path: 'devices', component: DevicesComponent
+  },
+  {
+    path: 'phonenumbers', component: PhonenumbersListComponent
   },
   { 
     path: 'plans', component: PlansComponent

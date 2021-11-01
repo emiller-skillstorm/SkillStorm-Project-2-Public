@@ -1,0 +1,21 @@
+<div id="phonenumber-listing">
+    <h2>User {{user.userId}}'s Phone Numbers</h2>
+
+    <table id="device-list" class="table table-hover table-bordered table-striped" >
+        <thead>
+            <tr>
+                <td>Phone Number</td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody id="device-list-body">
+            <tr *ngFor="let phone of PhoneNumberList">
+                <td>{{ formatPhoneNumber(phone) }}</td>
+                <td><button (click)="details(phone)">Details</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <button class="btn btn-primary" (click)="backToNav()">Back</button>
+    </div>
+</div>

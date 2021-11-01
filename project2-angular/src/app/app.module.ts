@@ -16,6 +16,7 @@ import { PlanDetailsComponent } from './components/plan-details/plan-details.com
 import { UserLoginComponent } from './components/user-login/user-login.component';
 import { NavCanvasComponent } from './components/nav-canvas/nav-canvas.component';
 import { LoginCanvasComponent } from './components/login-canvas/login-canvas.component';
+import { PhonenumbersListComponent } from './components/phonenumbers-list/phonenumbers-list.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { LoginCanvasComponent } from './components/login-canvas/login-canvas.com
     PlanDetailsComponent,
     UserLoginComponent,
     NavCanvasComponent,
-    LoginCanvasComponent
+    LoginCanvasComponent,
+    PhonenumbersListComponent
   ],
   imports: [
     BrowserModule,

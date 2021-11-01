@@ -42,6 +42,20 @@ namespace Net_Project_2.API.Controllers
             return phoneNumber;
         }
 
+        //GET: api/PhoneNumbers/UserPhoneNumbers/5 
+        [HttpGet("UserPhoneNumbers/{userId}")]
+        public async Task<ActionResult<IEnumerable<PhoneNumber>>> GetPhoneNumbersForUser(int userId)
+        {
+            var phoneList = await _context.PhoneNumbers.Where(p => p.UserId == userId).ToListAsync();
+
+            if (phoneList == null)
+            {
+                return NotFound();
+            }
+
+            return phoneList;
+        }
+
         // PUT: api/PhoneNumbers/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]

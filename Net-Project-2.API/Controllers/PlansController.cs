@@ -42,7 +42,7 @@ namespace Net_Project_2.API.Controllers
             return plan;
         }
 
-        //GET: api/Plans/UserPlans/5
+        //GET: api/Plans/UserPlans/5 
         [HttpGet("UserPlans/{userId}")]
         public async Task<ActionResult<IEnumerable<Plan>>> GetPlansForUser(int userId)
         { 
