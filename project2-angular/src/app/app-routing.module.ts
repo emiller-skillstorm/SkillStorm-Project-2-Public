@@ -12,11 +12,9 @@ import { UserLoginComponent } from 'src/app/components/user-login/user-login.com
 import { LoginCanvasComponent } from './components/login-canvas/login-canvas.component';
 import { NavCanvasComponent } from './components/nav-canvas/nav-canvas.component';
 import { PhonenumbersListComponent } from './components/phonenumbers-list/phonenumbers-list.component';
+import { PhonenumberDetailsComponent } from './components/phonenumber-details/phonenumber-details.component';
 
 const routes: Routes = [
-  {
-    path: 'users', component: UsersComponent
-  },
   {
     path: 'login-canvas', component: LoginCanvasComponent
   },
@@ -29,6 +27,9 @@ const routes: Routes = [
   {
     path: 'user-login', component: UserLoginComponent
   },
+  {
+    path: 'users', component: UsersComponent
+  },
   { 
     path: 'user-details', component: UserDetailsComponent
   },
@@ -36,19 +37,22 @@ const routes: Routes = [
     path: 'devices', component: DevicesComponent
   },
   {
+    path: 'device-details/:id', component: DeviceDetailsComponent
+  },
+  {
     path: 'phonenumbers', component: PhonenumbersListComponent
+  },
+  {
+    path: 'phonenumber-details/:id', component: PhonenumberDetailsComponent
   },
   { 
     path: 'plans', component: PlansComponent
   },
-  { 
-    path: 'home', component: HomeComponent
-  },
-  {
-    path: 'device-details/:id', component: DeviceDetailsComponent
-  },
   {
     path: 'plan-details/:id', component: PlanDetailsComponent
+  },
+  { 
+    path: 'home', component: HomeComponent
   }
 ];
 

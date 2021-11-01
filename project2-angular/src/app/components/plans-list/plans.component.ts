@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { PlanService } from '../../services/plan.service';
 import { Plan } from '../../models/plan.model';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/models/user.model';
 
 @Component({
@@ -15,10 +15,10 @@ export class PlansComponent implements OnInit {
   @Input() user!: User;
   userId: any;
 
-  @Output() back = new EventEmitter<boolean>();
+  @Output() hideList = new EventEmitter<boolean>();
+  showPlanDetails: boolean = false;
 
-
-  constructor(private planService: PlanService, private activeRoute: ActivatedRoute) { }
+  constructor(private planService: PlanService, private router: Router,private activeRoute: ActivatedRoute) { }
   
   //Returns All Plans
   ngOnInit(): void {
@@ -33,8 +33,15 @@ export class PlansComponent implements OnInit {
       });
     // });
   }
+  
+  details(plan: Plan){
+    let route = this.router.config.find(r => r.path === 'plan-details/:id');
 
-  backToNav() {
-    this.back.emit(true);
+    if (route) {
+      route.data = plan;
+      this.router.navigateByUrl(`/plan-details/${plan.planId}`);
+    }
+
+    this.showPlanDetails = true;
   }
 }

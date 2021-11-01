@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { PlanService } from 'src/app/services/plan.service';
 import { ActivatedRoute } from '@angular/router';
 import { Plan } from 'src/app/models/plan.model';
@@ -13,13 +13,13 @@ export class PlanDetailsComponent implements OnInit {
   planId: any;
   plan!: Plan;
 
-
-  constructor(private dedviceService: PlanService, private activeRoute: ActivatedRoute) { }
+  constructor(private planService: PlanService, private activeRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+
     this.activeRoute.data.subscribe(id => {
       this.planId = id;
-      this.dedviceService.find(this.planId).subscribe(data => {
+      this.planService.find(this.planId).subscribe(data => {
         this.plan = data;
       });
     });

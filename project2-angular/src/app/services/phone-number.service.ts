@@ -24,7 +24,7 @@ export class PhoneNumberService {
   }
 
   //Returns a specific phone number
-  find(phoneNumber: PhoneNumber): Observable<PhoneNumber> {
-    return this.httpClient.get<PhoneNumber>(this.url + `/${phoneNumber.id}`);
+  find(phone: PhoneNumber): Observable<PhoneNumber> {
+    return this.httpClient.get<PhoneNumber>(this.url + `/${phone.id}`);
   }
 }

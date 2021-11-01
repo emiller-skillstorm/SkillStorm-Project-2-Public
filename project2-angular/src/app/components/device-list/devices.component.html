@@ -7,7 +7,7 @@
                 <td>Brand</td>
                 <td>Model</td>
                 <td>Phone Number</td>
-                <td></td>
+                <td>Actions</td>
             </tr>
         </thead>
         <tbody id="device-list-body">
@@ -15,11 +15,11 @@
                 <td>{{ device.brand }}</td>
                 <td>{{ device.model }}</td>
                 <td>{{ device.phoneNumber.phoneNumberVal }}</td>
-                <td><button (click)="details(device)">Details</button></td>
+                <td><button (click)="details(device)" class="btn btn-secondary">Details</button></td>
             </tr>
         </tbody>
     </table>
-    <div>
-        <button class="btn btn-primary" (click)="backToNav()">Back</button>
+    <div *ngIf="showDeviceDetails">
+        <router-outlet></router-outlet>
     </div>
 </div>

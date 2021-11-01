@@ -1,21 +1,21 @@
-<div id="phonenumber-listing">
+<div id="phone-number-listing">
     <h2>User {{user.userId}}'s Phone Numbers</h2>
 
-    <table id="device-list" class="table table-hover table-bordered table-striped" >
+    <table id="phone-number-list" class="table table-hover table-bordered table-striped" >
         <thead>
             <tr>
                 <td>Phone Number</td>
-                <td></td>
+                <td>Actions</td>
             </tr>
         </thead>
-        <tbody id="device-list-body">
+        <tbody id="phone-number-list-body">
             <tr *ngFor="let phone of PhoneNumberList">
-                <td>{{ formatPhoneNumber(phone) }}</td>
-                <td><button (click)="details(phone)">Details</button></td>
+                <td>{{ getFormattedPhoneNumber(phone) }}</td>
+                <td><button (click)="details(phone)" class="btn btn-secondary">Details</button></td>
             </tr>
         </tbody>
     </table>
-    <div>
-        <button class="btn btn-primary" (click)="backToNav()">Back</button>
+    <div *ngIf="showPhoneDetails">
+        <router-outlet></router-outlet>
     </div>
 </div>

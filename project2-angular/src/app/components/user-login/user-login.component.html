@@ -3,7 +3,7 @@
     <form id="returning-user" (ngSubmit)="attemptLogin()" #userRegistrationForm >
     <div class="form-group">
             <label for="Email">Email</label>
-            <input [(ngModel)]="username" type="text"name="Email" class="form-control" id="firstName" type="email" required maxlength="100" #Username="ngModel" />
+            <input [(ngModel)]="username" name="Email" class="form-control" id="username" type="email" required maxlength="100" #Username="ngModel" />
             <div class="alert" *ngIf="Username.invalid && (Username.dirty || Username.touched)">
                 <div *ngIf="Username.errors?.required">Email address is required</div>
                 <div *ngIf="Username.errors?.maxlength">Email cannot be more than 100 characters</div>
@@ -12,7 +12,7 @@
 
         <div class="form-group">
             <label for="Password">Password</label>
-            <input [(ngModel)]="password" type="text"name="Password" class="form-control" id="password" type="password" required #Password="ngModel" />
+            <input [(ngModel)]="password" name="Password" class="form-control" id="password" type="password" required #Password="ngModel" />
             <div class="alert" *ngIf="Password.invalid && (Password.dirty || Password.touched)">
                 <div *ngIf="Password.errors?.required">Password is required</div>
             </div>

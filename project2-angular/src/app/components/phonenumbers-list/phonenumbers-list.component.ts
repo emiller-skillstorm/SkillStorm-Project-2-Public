@@ -12,10 +12,11 @@ import { PhoneNumberService } from 'src/app/services/phone-number.service';
 export class PhonenumbersListComponent implements OnInit {
 
   PhoneNumberList: PhoneNumber[] = [];
+
   @Input() user!: User;
   userId: any;
 
-  @Output() back = new EventEmitter<boolean>();
+  showPhoneDetails: boolean = false;
 
   constructor(private phoneNumberService: PhoneNumberService, private router: Router, private activeRoute: ActivatedRoute) { }
 
@@ -23,7 +24,7 @@ export class PhonenumbersListComponent implements OnInit {
   ngOnInit(): void {
     // this.activeRoute.data.subscribe(id =>  {
     //   this.userId = id;
-    console.log("Showing devices for user " + this.user.userId);
+    console.log("Showing phone numbers for user " + this.user.userId);
 
     this.phoneNumberService.findPhoneNumbersForUser(this.user.userId).subscribe(data => 
       {
@@ -33,26 +34,23 @@ export class PhonenumbersListComponent implements OnInit {
    // });
   }
 
-  formatPhoneNumber(phone: PhoneNumber) : string{
+  getFormattedPhoneNumber(phone: PhoneNumber) : string{
     var pn = phone.phoneNumberVal;
-    var formattedPhoneNumber = `(${pn.substr(0, 3)}) ${pn.substr(3, 3)}-${pn.substr(6, 4)}`;
-    return formattedPhoneNumber;
+    console.log("Preparing to format phone number: " + pn);
+    var formattedNumber = `(${pn.substr(0, 3)}) ${pn.substr(3, 3)}-${pn.substr(6, 4)}`;
+    console.log("Formatted phone number: " + formattedNumber);
+
+    return formattedNumber;
   }
 
   details(phoneNumber: PhoneNumber): void {
     let route = this.router.config.find(r => r.path === 'phonenumber-details/:id');
+
     if (route) {
       route.data = phoneNumber;
-      this.router.navigateByUrl(`/device-details/${phoneNumber.id}`);
+      this.router.navigateByUrl(`/phonenumber-details/${phoneNumber.id}`);
     }
-  }
 
-  backToNav(){
-    //this.back.emit(true);
-    let route = this.router.config.find(r => r.path === 'nav-canvas');
-    if (route) {
-      this.router.navigateByUrl(`/nav-canvas}`);
-    }
+    this.showPhoneDetails = true;
   }
-
 }

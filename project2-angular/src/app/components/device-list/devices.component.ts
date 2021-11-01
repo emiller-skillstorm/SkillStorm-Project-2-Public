@@ -18,6 +18,7 @@ export class DevicesComponent implements OnInit {
   userId: any;
 
   @Output() back = new EventEmitter<boolean>();
+  showDeviceDetails: boolean = false;
 
   constructor(private deviceService: DeviceService, private router: Router, private activeRoute: ActivatedRoute) { }
 
@@ -43,9 +44,7 @@ export class DevicesComponent implements OnInit {
       route.data = device;
       this.router.navigateByUrl(`/device-details/${device.deviceId}`);
     }
-  }
 
-  backToNav(){
-    this.back.emit(true);
+    this.showDeviceDetails = true;
   }
 }

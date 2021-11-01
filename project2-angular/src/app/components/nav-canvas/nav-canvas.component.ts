@@ -13,11 +13,12 @@ export class NavCanvasComponent implements OnInit {
   @Input() user!: User;
   userId: any;
 
+  showNavButtons: boolean = true;
   showPlans: boolean = false;
   showDevices: boolean = false;
   showPhoneNumbers: boolean = false;
   showBilling: boolean = false;
-  showNavButtons: boolean = true;
+
   userNavigatedBack: boolean = false;
   
   constructor(private userservice: UserService, private router: Router, private activeRoute: ActivatedRoute) { }
