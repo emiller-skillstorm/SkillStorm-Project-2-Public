@@ -279,3 +279,5 @@
 /Users/ericmiller/Projects/SkillStorm/Project2/Net-Project-2.API/obj/Release/net5.0/ref/Net-Project-2.API.dll
 /Users/ericmiller/Projects/SkillStorm/Project2/Net-Project-2.API/obj/Release/net5.0/Net-Project-2.API.pdb
 /Users/ericmiller/Projects/SkillStorm/Project2/Net-Project-2.API/obj/Release/net5.0/Net-Project-2.API.genruntimeconfig.cache
+/Users/ericmiller/Projects/SkillStorm/Project2/Net-Project-2.API/bin/Release/net5.0/Azure.Identity.dll
+/Users/ericmiller/Projects/SkillStorm/Project2/Net-Project-2.API/bin/Release/net5.0/Microsoft.Identity.Client.Extensions.Msal.dll

@@ -48,6 +48,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Azure.Identity": {
+              "target": "Package",
+              "version": "[1.5.0, )"
+            },
             "Azure.Security.KeyVault.Secrets": {
               "target": "Package",
               "version": "[4.2.0, )"

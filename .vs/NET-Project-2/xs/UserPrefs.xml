@@ -1,8 +1,8 @@
 ﻿<Properties StartupConfiguration="{0D6FC3D6-CE4A-427E-B3B2-17AC7A64D45B}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Net-Project-2.API/Controllers/PlansController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Net-Project-2.API/Startup.cs">
     <Files>
       <File FileName="Net-Project-2.API/Controllers/DevicesController.cs" Line="56" Column="31" />
-      <File FileName="Net-Project-2.API/appsettings.json" />
+      <File FileName="Net-Project-2.API/appsettings.json" Line="8" Column="5" />
       <File FileName="Net-Project-2.API/Properties/launchSettings.json" />
       <File FileName="NET-Project-2.Domain/User.cs" />
       <File FileName="NET-Project-2.Domain/Plan.cs" />
@@ -10,9 +10,9 @@
       <File FileName="NET-Project-2.Domain/Device.cs" />
       <File FileName="Net-Project-2.API/Controllers/UsersController.cs" />
       <File FileName="Net-Project-2.Data/Project2Context.cs" />
-      <File FileName="Net-Project-2.API/Startup.cs" />
-      <File FileName="Net-Project-2.API/Controllers/PlansController.cs" Line="45" Column="37" />
-      <File FileName="Net-Project-2.API/Controllers/PhoneNumbersController.cs" />
+      <File FileName="Net-Project-2.API/Startup.cs" Line="65" Column="51" />
+      <File FileName="Net-Project-2.API/Controllers/PlansController.cs" />
+      <File FileName="Net-Project-2.API/Controllers/PhoneNumbersController.cs" Line="47" Column="101" />
       <File FileName="Net-Project-2.Data/Migrations/20211028151201_DB-Reset-Eric.cs" />
       <File FileName="Net-Project-2.API/Program.cs" />
     </Files>
@@ -20,10 +20,8 @@
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="NET-Project-2" expanded="True">
-            <Node name="Net-Project-2.API" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="PlansController.cs" selected="True" />
-              </Node>
+            <Node name="Net-Project-2.API" expanded="True" selected="True">
+              <Node name="Controllers" expanded="True" />
             </Node>
             <Node name="Net-Project-2.Data" expanded="True">
               <Node name="Migrations" expanded="True" />

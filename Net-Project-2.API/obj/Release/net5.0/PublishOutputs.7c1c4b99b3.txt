@@ -4,6 +4,7 @@
 /Users/ericmiller/Projects/SkillStorm/Project2/Net-Project-2.API/obj/Release/net5.0/PubTmp/Out/Net-Project-2.API.runtimeconfig.json
 /Users/ericmiller/Projects/SkillStorm/Project2/Net-Project-2.API/obj/Release/net5.0/PubTmp/Out/Net-Project-2.API.pdb
 /Users/ericmiller/Projects/SkillStorm/Project2/Net-Project-2.API/obj/Release/net5.0/PubTmp/Out/Azure.Core.dll
+/Users/ericmiller/Projects/SkillStorm/Project2/Net-Project-2.API/obj/Release/net5.0/PubTmp/Out/Azure.Identity.dll
 /Users/ericmiller/Projects/SkillStorm/Project2/Net-Project-2.API/obj/Release/net5.0/PubTmp/Out/Azure.Security.KeyVault.Secrets.dll
 /Users/ericmiller/Projects/SkillStorm/Project2/Net-Project-2.API/obj/Release/net5.0/PubTmp/Out/Humanizer.dll
 /Users/ericmiller/Projects/SkillStorm/Project2/Net-Project-2.API/obj/Release/net5.0/PubTmp/Out/Microsoft.AspNetCore.Razor.Language.dll
@@ -24,6 +25,7 @@
 /Users/ericmiller/Projects/SkillStorm/Project2/Net-Project-2.API/obj/Release/net5.0/PubTmp/Out/Microsoft.Extensions.Configuration.AzureKeyVault.dll
 /Users/ericmiller/Projects/SkillStorm/Project2/Net-Project-2.API/obj/Release/net5.0/PubTmp/Out/Microsoft.Extensions.DependencyInjection.dll
 /Users/ericmiller/Projects/SkillStorm/Project2/Net-Project-2.API/obj/Release/net5.0/PubTmp/Out/Microsoft.Identity.Client.dll
+/Users/ericmiller/Projects/SkillStorm/Project2/Net-Project-2.API/obj/Release/net5.0/PubTmp/Out/Microsoft.Identity.Client.Extensions.Msal.dll
 /Users/ericmiller/Projects/SkillStorm/Project2/Net-Project-2.API/obj/Release/net5.0/PubTmp/Out/Microsoft.IdentityModel.Clients.ActiveDirectory.dll
 /Users/ericmiller/Projects/SkillStorm/Project2/Net-Project-2.API/obj/Release/net5.0/PubTmp/Out/Microsoft.IdentityModel.JsonWebTokens.dll
 /Users/ericmiller/Projects/SkillStorm/Project2/Net-Project-2.API/obj/Release/net5.0/PubTmp/Out/Microsoft.IdentityModel.Logging.dll
