@@ -87,6 +87,16 @@ namespace Net_Project_2.API.Controllers
             return NoContent();
         }
 
+        //PUT:
+        //[HttpPut("{uId, pId}")]
+        //public async Task<IActionResult> AddPlanToUser(int uId, int pId, User user, Plan plan)
+        //{
+        //   var chosenPlan = _context.Plans.Find(pId);
+        //    var currentUser = _context.Users.Find(uId);
+        //    currentUser.Plans.Add(chosenPlan);
+        //    _context.SaveChanges();
+        //}
+
         // POST: api/Plans
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]

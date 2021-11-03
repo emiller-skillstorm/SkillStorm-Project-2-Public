@@ -54,4 +54,8 @@ export class PlansComponent implements OnInit {
     });
   }
 
+  addPlan() {
+    //add plan and return to user's plans list
+  }
+
 }

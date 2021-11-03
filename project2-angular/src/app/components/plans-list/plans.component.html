@@ -17,7 +17,8 @@
                 <td>{{ plan.price }}</td>
                 <td>{{ plan.deviceLimit }}</td>
                 <td>{{ plan.dataLimit }}</td>
-                <td><button (click)="details(plan)" class="btn btn-secondary">Details</button></td>
+                <td><button (click)="details(plan)" class="btn btn-secondary">Details</button>
+                    <button *ngIf="!showAddButton" (click)="addPlan()" class="btn btn-secondary">Add</button></td>
             </tr>
         </tbody>
     </table>
