@@ -28,6 +28,13 @@ namespace Net_Project_2.API.Controllers
             return await _context.Plans.Distinct().ToListAsync();
         }
 
+        // GET: api/AvailablePlans
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<AvailablePlan>>> GetAvailablePlans()
+        {
+            return await _context.AvailablePlans.Distinct().ToListAsync();
+        }
+
         // GET: api/Plans/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Plan>> GetPlan(int id)

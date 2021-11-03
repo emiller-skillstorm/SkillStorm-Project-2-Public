@@ -56,6 +56,7 @@ export class PlansComponent implements OnInit {
 
   addPlan() {
     //add plan and return to user's plans list
+    //use the planService to call the AddPlanToUser(userId, planId) controller method
   }
 
 }

@@ -98,6 +98,27 @@ namespace Net_Project_2.API.Controllers
             return CreatedAtAction("GetDevice", new { id = device.DeviceId }, device);
         }
 
+        // Change the phone number for a device
+        // POST: api/Devices/ChangePhoneNumber/?deviceId=1&phoneId=3
+        [HttpPost("/ChangePhoneNumber/")]
+        public async Task<ActionResult<Device>> ChangePhoneNumber(int deviceId, int phoneId)
+        {
+            var device = await _context.Devices.FindAsync(deviceId);
+            var oldDevice = (await _context.Devices.Include(d => d.PhoneNumber).Where(d => d.PhoneNumber.Id == phoneId).ToListAsync()).FirstOrDefault();
+
+            if (oldDevice != null) // The number was already in use. Remove it from the old device and add it to the new device.
+            {
+                oldDevice.PhoneNumber = null;
+                
+            }
+
+            device.PhoneNumber = await _context.PhoneNumbers.FindAsync(phoneId);
+
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("GetDevice", new { id = device.DeviceId }, device);
+        }
+
         // DELETE: api/Devices/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteDevice(int id)
