@@ -29,7 +29,7 @@ namespace Net_Project_2.API.Controllers
         }
 
         // GET: api/AvailablePlans
-        [HttpGet("/AvailablePlans/")]
+        [HttpGet("AvailablePlans/")]
         public async Task<ActionResult<IEnumerable<AvailablePlan>>> GetAvailablePlans()
         {
             return await _context.AvailablePlans.Distinct().ToListAsync();
