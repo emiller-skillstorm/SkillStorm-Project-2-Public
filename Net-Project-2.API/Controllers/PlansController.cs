@@ -87,15 +87,40 @@ namespace Net_Project_2.API.Controllers
             return NoContent();
         }
 
-        //PUT:
-        //[HttpPut("{uId, pId}")]
-        //public async Task<IActionResult> AddPlanToUser(int uId, int pId, User user, Plan plan)
-        //{
-        //   var chosenPlan = _context.Plans.Find(pId);
-        //    var currentUser = _context.Users.Find(uId);
-        //    currentUser.Plans.Add(chosenPlan);
-        //    _context.SaveChanges();
-        //}
+        //Add a new plan to a given user's account
+        //POST: api/AddPlanToUser/?uId=3&apId=2
+        [HttpPost("AddPlanToUser/")]
+        public async Task<IActionResult> AddPlanToUser(int uId, int apId)
+        {
+            //Get the user and the plan they want to sign up for
+            var selectedUser = await _context.Users.FindAsync(uId);
+            Console.WriteLine("user with id " + selectedUser.UserId);
+
+            var selectedPlan = await _context.AvailablePlans.FindAsync(apId);
+            Console.WriteLine("plan with id " + selectedPlan.Id);
+
+            if (selectedUser != null  && selectedPlan != null)
+            {
+                Plan p = new Plan
+                {
+                    Name = selectedPlan.Name,
+                    Price = selectedPlan.Price,
+                    DataLimit = selectedPlan.DataLimit,
+                    DeviceLimit = selectedPlan.DeviceLimit,
+                    Devices = new List<Device>(),
+                    UserId = selectedUser.UserId
+                };
+
+                //Add the plan info to the Plans table (plan detals + user identification)
+                _context.Plans.Add(p);
+
+                selectedUser.Plans.Add(p);
+
+                _context.SaveChanges();
+            }
+
+            return NoContent();
+        }
 
         // POST: api/Plans
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754

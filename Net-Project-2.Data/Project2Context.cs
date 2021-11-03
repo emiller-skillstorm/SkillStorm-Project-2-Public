@@ -10,18 +10,21 @@ namespace Net_Project_2.Data
         public DbSet<User> Users { get; set; }
         public DbSet<Device> Devices { get; set; }
         public DbSet<Plan> Plans { get; set; }
+        public DbSet<AvailablePlan> AvailablePlans { get; set; } 
         public DbSet<PhoneNumber> PhoneNumbers { get; set; }
-        // Not needed
-        // public DbSet<PlanUser> PlanUsers { get; set; } 
 
         public Project2Context(DbContextOptions options) : base(options) { }
 
         //Fluent API - we may need this later
         protected override void OnModelCreating(ModelBuilder modelBuilder)
          {
-             //modelBuilder.Entity<User>()
-             //    .HasMany(p => p.Plans)
-             //    .WithMany(u => u.Users);
+            //modelBuilder.Entity<User>()
+            //    .HasMany(p => p.Plans)
+            //    .WithMany(u => u.Users);
+
+            //modelBuilder.Entity<AvailablePlan>()
+            //    .HasKey(ap => ap.Id)
+            //    .HasName("Id");
          }
     }
 }
