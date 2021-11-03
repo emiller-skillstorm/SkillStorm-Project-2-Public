@@ -17,7 +17,9 @@ export class PlansComponent implements OnInit {
 
   @Output() hideList = new EventEmitter<boolean>();
   showPlanDetails: boolean = false;
+
   showAddButton: boolean = true;
+  showAddPlanComponent: boolean = false;
 
   constructor(private planService: PlanService, private router: Router,private activeRoute: ActivatedRoute) { }
   
@@ -46,17 +48,15 @@ export class PlansComponent implements OnInit {
     this.showPlanDetails = true;
   }
 
-  addPlanPage() {
-    this.showAddButton = false;
-    this.planService.findAll().subscribe(data => {
-      this.PlanList = data;
-      console.log(this.PlanList);
-    });
-  }
-
   addPlan() {
-    //add plan and return to user's plans list
-    //use the planService to call the AddPlanToUser(userId, planId) controller method
-  }
+    this.showAddButton = false;
+    this.showAddPlanComponent = true;
 
+    let route = this.router.config.find(r => r.path === 'add-plan/:id');
+
+    if (route) {
+      route.data = this.user;
+      this.router.navigateByUrl(`/add-plan/${this.user.userId}`);
+    }
+  }
 }

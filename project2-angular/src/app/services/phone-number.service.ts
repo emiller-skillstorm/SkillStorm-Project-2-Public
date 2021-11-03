@@ -22,7 +22,7 @@ export class PhoneNumberService {
   findPhoneNumbersForUser(id: number): Observable<PhoneNumber[]> {
     return this.httpClient.get<PhoneNumber[]>(`${this.url}/UserPhoneNumbers/${id}`);
   }
-
+  
   //Returns a specific phone number
   find(phone: PhoneNumber): Observable<PhoneNumber> {
     return this.httpClient.get<PhoneNumber>(this.url + `/${phone.id}`);

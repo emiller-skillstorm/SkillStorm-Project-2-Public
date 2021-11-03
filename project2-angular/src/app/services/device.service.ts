@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Device } from '../models/device.model';
 import { User } from '../models/user.model';
+import { PhoneNumber } from '../models/phonenumber.model';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,11 @@ export class DeviceService {
   //Add new device
   addDevice(device: Device): Observable<Device> {
     return this.httpClient.post<Device>(this.url, device);
+  }
+
+  //Changes a device's phone number and returns the updated device
+  changePhoneNumber(deviceId: number, phoneId: number): Observable<Device> {
+    return this.httpClient.post<Device>(this.url + '/ChangePhoneNumber/', {deviceId: deviceId, phoneId: phoneId});
   }
 
   //Returns all devices
