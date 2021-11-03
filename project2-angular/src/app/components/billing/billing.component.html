@@ -1,0 +1,19 @@
+<div id="billing">
+    <h4>User {{ user.userId }}'s Monthtly Bill</h4>
+    <table id="billing-plan-list" class="table table-hover table-bordered table-striped" >
+        <thead>
+            <tr>
+                <td>Plan Name</td>
+                <td>Price/month</td>
+            </tr>
+        </thead>
+        <tbody id="billing-plan-list-body">
+            <tr *ngFor="let plan of PlanList">
+                <td>{{ plan.name }}</td>
+                <td>${{ plan.price }}</td>
+            </tr>
+        </tbody>
+        <tr>Monthtly Bill</tr>
+        <td type="number">${{ monthlyBill }}</td>
+    </table>
+</div>

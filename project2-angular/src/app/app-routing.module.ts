@@ -13,6 +13,7 @@ import { LoginCanvasComponent } from './components/login-canvas/login-canvas.com
 import { NavCanvasComponent } from './components/nav-canvas/nav-canvas.component';
 import { PhonenumbersListComponent } from './components/phonenumbers-list/phonenumbers-list.component';
 import { PhonenumberDetailsComponent } from './components/phonenumber-details/phonenumber-details.component';
+import { BillingComponent } from './components/billing/billing.component';
 
 const routes: Routes = [
   {
@@ -50,6 +51,9 @@ const routes: Routes = [
   },
   {
     path: 'plan-details/:id', component: PlanDetailsComponent
+  },
+  {
+    path: 'billing', component: BillingComponent
   },
   { 
     path: 'home', component: HomeComponent

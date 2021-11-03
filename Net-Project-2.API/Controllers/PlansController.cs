@@ -45,7 +45,7 @@ namespace Net_Project_2.API.Controllers
         //GET: api/Plans/UserPlans/5 
         [HttpGet("UserPlans/{userId}")]
         public async Task<ActionResult<IEnumerable<Plan>>> GetPlansForUser(int userId)
-        { 
+        {
             var planList = await _context.Plans.Where(p => p.UserId == userId).ToListAsync();
 
             if (planList == null)
@@ -99,7 +99,7 @@ namespace Net_Project_2.API.Controllers
             var selectedPlan = await _context.AvailablePlans.FindAsync(apId);
             Console.WriteLine("plan with id " + selectedPlan.Id);
 
-            if (selectedUser != null  && selectedPlan != null)
+            if (selectedUser != null && selectedPlan != null)
             {
                 Plan p = new Plan
                 {

@@ -58,6 +58,29 @@ namespace Net_Project_2.API.Controllers
             return user.FirstOrDefault();
         }
 
+        // GET: api/Billing/5
+        [HttpGet("Billing/{id}")]
+        public async Task<ActionResult<double>> GetBill(int id)
+        {
+            var plans = await _context.Plans.Where(p => p.UserId == id).ToListAsync();
+
+            if (plans == null)
+            {
+                return 0;
+            }
+            else
+            {
+                double monthlyBill = 0;
+
+                foreach (Plan p in plans)
+                {
+                    monthlyBill += p.Price;
+                }
+
+                return monthlyBill;
+            }
+        }
+
         // PUT: api/Users/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]

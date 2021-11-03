@@ -8,7 +8,6 @@
             <button class="btn btn-primary" (click)="goToBilling()">My Bill</button>
         </div>
         <div *ngIf="showPlans">
-            <!-- Back button is not working yet -->
             <app-plans [user]="user"></app-plans>
         </div>
         <div *ngIf="showDevices">
@@ -17,12 +16,9 @@
         <div *ngIf="showPhoneNumbers">
             <app-phonenumbers [user]="user"></app-phonenumbers>
         </div>
-        <!-- Not implemented yet
         <div *ngIf="showBilling">
             <app-billing [user]="user"></app-billing>
         </div>
         <router-outlet></router-outlet>
-
-        -->
     </div>
 </div>

@@ -51,4 +51,8 @@ export class UserService {
     
     return this.httpClient.get<User>(this.url + `/Login/${loginString}`);
   }
+
+  getMonthlyBill(id: number): Observable<number>{
+    return this.httpClient.get<number>(this.url + 'Billing/' + `${id}`);
+  }
 }

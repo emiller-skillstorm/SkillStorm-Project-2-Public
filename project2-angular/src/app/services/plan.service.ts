@@ -27,5 +27,4 @@ export class PlanService {
   find(plan: Plan): Observable<Plan> {
     return this.httpClient.get<Plan>(this.url + `/${plan.planId}`);
   }
-
 }

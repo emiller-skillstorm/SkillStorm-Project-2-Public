@@ -5,7 +5,7 @@
         <thead>
             <tr>
                 <td>Plan Name</td>
-                <td>Price</td>
+                <td>Price/month</td>
                 <td>Device Limit</td>
                 <td>Data Limit</td>
                 <td>Actions</td>
@@ -14,7 +14,7 @@
         <tbody id="plan-list-body">
             <tr *ngFor="let plan of PlanList">
                 <td>{{ plan.name }}</td>
-                <td>{{ plan.price }}</td>
+                <td>${{ plan.price }}</td>
                 <td>{{ plan.deviceLimit }}</td>
                 <td>{{ plan.dataLimit }}</td>
                 <td><button (click)="details(plan)" class="btn btn-secondary">Details</button>
