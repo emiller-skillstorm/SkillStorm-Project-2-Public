@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AvailablePlan } from 'src/app/models/available-plan.model';
 import { User } from 'src/app/models/user.model';
@@ -14,8 +14,10 @@ export class AddPlanComponent implements OnInit {
   user!: User;
   userId: any;
 
-  SelectablePlans: AvailablePlan[] = [];
-  currentSelection: AvailablePlan = new AvailablePlan();
+  SelectablePlans!: AvailablePlan[];
+  currentSelection!: AvailablePlan;
+
+  showThisComponent!: boolean;
 
   constructor(private userService: UserService, private planService: PlanService, private activeRoute: ActivatedRoute) { }
 
@@ -33,8 +35,9 @@ export class AddPlanComponent implements OnInit {
     })
   }
 
-  update() {
+  onSubmit() {
     this.planService.addPlanToUser(this.userId, this.currentSelection.id);
+    this.showThisComponent = false;
   }
 
 }

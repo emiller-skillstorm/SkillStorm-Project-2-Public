@@ -43,7 +43,7 @@ namespace Net_Project_2.API.Controllers
         }
 
         // GET: api/Login
-        [HttpGet("Login/{loginString}")] //Testing
+        [HttpGet("Login/{loginString}")]
         public async Task<ActionResult<User>> Login(string loginString)
         {
             string[] s = loginString.Split('-');

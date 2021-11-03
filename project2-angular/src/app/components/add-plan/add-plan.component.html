@@ -1,7 +1,0 @@
-<h4>Sign Up for a New Plan</h4>
-<select #planOptions ng-change="update()">
-    <option *ngFor="let selection of SelectablePlans" [value]="currentSelection">
-        {{selection.name}} | ${{selection.price}} | {{selection.deviceLimit}} | {{selection.dataLimit}}GB
-    </option>
-</select>
-<button type="Accept" (click)="update()"></button>

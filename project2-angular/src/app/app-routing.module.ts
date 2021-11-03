@@ -14,7 +14,7 @@ import { NavCanvasComponent } from './components/nav-canvas/nav-canvas.component
 import { PhonenumbersListComponent } from './components/phonenumbers-list/phonenumbers-list.component';
 import { PhonenumberDetailsComponent } from './components/phonenumber-details/phonenumber-details.component';
 import { BillingComponent } from './components/billing/billing.component';
-import { AddPlanComponent } from './components/add-plan/add-plan.component';
+import { AddPlanComponent } from './add-plan/add-plan.component';
 
 const routes: Routes = [
   {

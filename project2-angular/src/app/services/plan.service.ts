@@ -21,7 +21,7 @@ export class PlanService {
   }
 
   findAllAvailablePlans(): Observable<AvailablePlan[]> {
-    return this.httpClient.get<AvailablePlan[]>(`${this.url}/AvailablePlans/`);
+    return this.httpClient.get<AvailablePlan[]>(this.url + '/AvailablePlans');
   }
 
   findPlansForUser(id: number): Observable<Plan[]> {
@@ -29,7 +29,7 @@ export class PlanService {
   }
 
   addPlanToUser(userId: number, planId: number) {
-    this.httpClient.post<Plan>(this.url + `/AddPlanToUser`, {userId: userId, planId: planId});
+    this.httpClient.post<Plan>(this.url + `/AddPlanToUser/`, JSON.stringify({"userId": userId, "planId": planId}));
   }
 
   //Returns a specific plan

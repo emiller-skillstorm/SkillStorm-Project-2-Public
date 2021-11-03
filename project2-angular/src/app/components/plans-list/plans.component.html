@@ -17,12 +17,13 @@
                 <td>${{ plan.price }}</td>
                 <td>{{ plan.deviceLimit }}</td>
                 <td>{{ plan.dataLimit }}</td>
-                <td><button (click)="details(plan)" class="btn btn-secondary">Details</button>
-                    <button *ngIf="!showAddButton" (click)="addPlan()" class="btn btn-secondary">Add</button></td>
+                <td>
+                    <button (click)="details(plan)" class="btn btn-secondary">Details</button>
+                </td>
             </tr>
         </tbody>
     </table>
-    <div *ngIf="showPlanDetails || showAddPlanComponent">
+    <div *ngIf="showRouterOutlet">
         <router-outlet></router-outlet>
     </div>
 </div>

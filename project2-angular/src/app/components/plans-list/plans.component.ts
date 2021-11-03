@@ -16,17 +16,14 @@ export class PlansComponent implements OnInit {
   userId: any;
 
   @Output() hideList = new EventEmitter<boolean>();
-  showPlanDetails: boolean = false;
 
   showAddButton: boolean = true;
-  showAddPlanComponent: boolean = false;
+  showRouterOutlet: boolean = false;
 
   constructor(private planService: PlanService, private router: Router,private activeRoute: ActivatedRoute) { }
   
   //Returns All Plans
   ngOnInit(): void {
-  //   this.activeRoute.data.subscribe(id =>  {
-  //     this.userId = id;
     console.log("Showing plans for user " + this.user.userId);
 
     this.planService.findPlansForUser(this.user.userId).subscribe(data => 
@@ -34,10 +31,14 @@ export class PlansComponent implements OnInit {
         this.PlanList = data;
         console.log(this.PlanList);
       });
-    // });
+
+      //this.showAddButton = true;
+      this.showRouterOutlet = false;
   }
   
   details(plan: Plan){
+    this.showRouterOutlet = false;
+
     let route = this.router.config.find(r => r.path === 'plan-details/:id');
 
     if (route) {
@@ -45,18 +46,20 @@ export class PlansComponent implements OnInit {
       this.router.navigateByUrl(`/plan-details/${plan.planId}`);
     }
 
-    this.showPlanDetails = true;
+    this.showRouterOutlet = true;
   }
 
-  addPlan() {
-    this.showAddButton = false;
-    this.showAddPlanComponent = true;
-
+  goToAddPlan() {
+    //this.showAddButton = false;
+    this.showRouterOutlet = false;
+    
     let route = this.router.config.find(r => r.path === 'add-plan/:id');
 
     if (route) {
       route.data = this.user;
       this.router.navigateByUrl(`/add-plan/${this.user.userId}`);
     }
+    
+    this.showRouterOutlet = true;
   }
 }

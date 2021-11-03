@@ -37,7 +37,8 @@ export class NavCanvasComponent implements OnInit {
   }
 
 goToPlans() {
-  //this.showNavButtons = false;
+  this.resetNavCanvas();
+
   this.showPlans = true;
   this.showDevices = false;
   this.showPhoneNumbers = false;
@@ -50,7 +51,8 @@ goToPlans() {
   }
 
 goToDevices() {
-  //this.showNavButtons = false;
+  this.resetNavCanvas();
+
   this.showDevices = true;
   this.showPlans = false;
   this.showPhoneNumbers = false;
@@ -64,7 +66,8 @@ goToDevices() {
   }
 
 goToPhoneNumbers(){
-  //this.showNavButtons = false;
+  this.resetNavCanvas();
+  
   this.showPhoneNumbers = true;
   this.showDevices = false;
   this.showPlans = false;
@@ -78,7 +81,8 @@ goToPhoneNumbers(){
   }
 
 goToBilling(){
-  //this.showNavButtons = false;
+  this.resetNavCanvas();
+  
   this.showBilling = true;
   this.showDevices = false;
   this.showPlans = false;
