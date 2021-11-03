@@ -21,6 +21,9 @@
             </tr>
         </tbody>
     </table>
+    <div *ngIf="showAddButton">
+        <button class="btn btn-primary" (click)="addPlanPage()">Add New Plan</button>
+    </div>
     <div *ngIf="showPlanDetails">
         <router-outlet></router-outlet>
     </div>

@@ -17,6 +17,7 @@ export class PlansComponent implements OnInit {
 
   @Output() hideList = new EventEmitter<boolean>();
   showPlanDetails: boolean = false;
+  showAddButton: boolean = true;
 
   constructor(private planService: PlanService, private router: Router,private activeRoute: ActivatedRoute) { }
   
@@ -44,4 +45,13 @@ export class PlansComponent implements OnInit {
 
     this.showPlanDetails = true;
   }
+
+  addPlanPage() {
+    this.showAddButton = false;
+    this.planService.findAll().subscribe(data => {
+      this.PlanList = data;
+      console.log(this.PlanList);
+    });
+  }
+
 }
