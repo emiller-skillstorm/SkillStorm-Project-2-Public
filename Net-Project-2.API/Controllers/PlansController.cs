@@ -96,7 +96,7 @@ namespace Net_Project_2.API.Controllers
 
         //Add a new plan to a given user's account
         //POST: api/AddPlanToUser/?uId=3&apId=2
-        [HttpPost("AddPlanToUser/")]
+        [HttpPost("Plans/AddPlanToUser/")]
         public async Task<IActionResult> AddPlanToUser(int uId, int apId)
         {
             //Get the user and the plan they want to sign up for
