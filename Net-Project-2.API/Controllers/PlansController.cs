@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NET_Project_2.Domain;
 using Net_Project_2.Data;
+using System.Data.Entity.Infrastructure;
 
 namespace Net_Project_2.API.Controllers
 {
@@ -79,7 +80,7 @@ namespace Net_Project_2.API.Controllers
             {
                 await _context.SaveChangesAsync();
             }
-            catch (DbUpdateConcurrencyException)
+            catch (Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException)
             {
                 if (!PlanExists(id))
                 {
@@ -155,7 +156,24 @@ namespace Net_Project_2.API.Controllers
 
             return NoContent();
         }
-
+        //add a device to a plan, up to specified device limit for that plan
+        [HttpPost("AddDeviceToPlan/")]
+        public async Task<IActionResult> AddDeviceToPlan(int pId, int dId)
+        {
+            var _selectedPlan = await _context.Plans.FindAsync(pId);
+            var _selectedDevice = await _context.Devices.FindAsync(dId);
+            if (_selectedDevice == null || _selectedPlan == null)
+            {
+                return NotFound();
+            }
+            if(_selectedPlan.DeviceLimit > _selectedPlan.Devices.Count)
+            {
+                _selectedPlan.Devices.Add(_selectedDevice);
+                await _context.SaveChangesAsync();
+            }
+            
+            return NoContent();
+        }
         private bool PlanExists(int id)
         {
             return _context.Plans.Any(e => e.PlanId == id);
