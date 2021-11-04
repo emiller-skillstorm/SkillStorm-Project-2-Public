@@ -33,19 +33,6 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-    
-- task: Npm@1
-  inputs:
-    command: 'install'
-    workingDir: 'project2-angular'
-  displayName: 'Install Node.js'
-  
-- script: |
-    cd project2-angular
-    npm install -g @angular/cli@12.2.11
-    npm install
-    ng build
-  displayName: 'npm install and build'
 
 - task: CopyFiles@1
   inputs:
