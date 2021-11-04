@@ -25,7 +25,7 @@ export class AddDeviceComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.activeRoute.data.subscribe(id => {
+     this.activeRoute.data.subscribe(id => {
       this.userId = id;
       this.userService.find(this.userId).subscribe(data => {
         this.user = data;

@@ -16,6 +16,7 @@ import { PhonenumberDetailsComponent } from './components/phonenumber-details/ph
 import { BillingComponent } from './components/billing/billing.component';
 import { AddPlanComponent } from './add-plan/add-plan.component';
 import { AddDeviceComponent } from './add-device/add-device.component';
+import { AddPhonenumberComponent } from './add-phonenumber/add-phonenumber.component';
 
 const routes: Routes = [
   {
@@ -43,7 +44,13 @@ const routes: Routes = [
     path: 'device-details/:id', component: DeviceDetailsComponent
   },
   {
+    path: 'add-device/:id', component: AddDeviceComponent
+  },
+  {
     path: 'phonenumbers', component: PhonenumbersListComponent
+  },
+  {
+    path: 'add-phonenumber/:id', component: AddPhonenumberComponent
   },
   {
     path: 'phonenumber-details/:id', component: PhonenumberDetailsComponent
@@ -60,9 +67,7 @@ const routes: Routes = [
   {
     path: 'billing', component: BillingComponent
   },
-  {
-    path: 'add-device/:id', component: AddDeviceComponent
-  },
+  
   { 
     path: 'home', component: HomeComponent
   }

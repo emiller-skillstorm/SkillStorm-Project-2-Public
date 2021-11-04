@@ -41,11 +41,11 @@ export class DeviceService {
     return this.httpClient.get<Device>(this.url + `/${device.deviceId}`);
   }
 
-  findAllAvailableDevices(): Observable<AvailableDevice[]> {
-    return this.httpClient.get<AvailableDevice[]>(this.url + '/AvailableDevicecs');
+  findAllAvailableDevices(): Observable<AvailableDevice[]> { 
+    return this.httpClient.get<AvailableDevice[]>(this.url + '/AvailableDevices');
   }
 
   addDeviceToUser(userId: number, deviceId: number) {
-    this.httpClient.post<Device>(this.url + `/AddDeviceToUser/`, JSON.stringify({"userId": userId, "planId": deviceId}));
+    this.httpClient.post<Device>(this.url + `/AddDeviceToUser/`, JSON.stringify({"userId": userId, "deviceId": deviceId}));
   }
 }
