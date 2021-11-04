@@ -65,12 +65,3 @@ steps:
     buildType: 'current'
     artifactName: 'EJW-Project-2'
     targetPath: '$(Pipeline.Workspace)'
-    
-- task: AzureRmWebAppDeployment@4
-  inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'Azure subscription 1(b8bc6e0a-4092-45fe-8320-2d2f94e8fd17)'
-    appType: 'webApp'
-    WebAppName: 'azuretraining-em-10202021'
-    packageForLinux: '$(System.ArtifactsDirectory)/**/*.zip'
-  displayName: "Azure app deployment"
