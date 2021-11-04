@@ -46,9 +46,10 @@ steps:
     ng build
   displayName: 'npm install and build'
 
-- task: Npm@1
+- task: AzureFileCopy@4
   inputs:
-    command: 'publish'
-    workingDir: 'project2-angular'
-    publishRegistry: 'useFeed'
-    publishFeed: 'npm-builds'
+    SourcePath: '$(Build.Repository.LocalPath)\project2-angular\dist\project2-angular'
+    azureSubscription: 'Azure subscription 1(b8bc6e0a-4092-45fe-8320-2d2f94e8fd17)'
+    Destination: 'AzureBlob'
+    storage: 'emillerazuretraining'
+    ContainerName: '$web'
