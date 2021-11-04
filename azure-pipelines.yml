@@ -56,9 +56,16 @@ steps:
 - task: PublishPipelineArtifact@1
   inputs:
     targetPath: '$(Pipeline.Workspace)'
-    artifact: 'Project2-1.0.$(Build.BuildNumber)'
+    artifact: 'EJW-Project-2'
     publishLocation: 'pipeline'
   displayName: 'Publish pipeline artifact'
+
+- task: DownloadPipelineArtifact@2
+  inputs:
+    buildType: 'current'
+    artifactName: 'EJW-Project-2'
+    targetPath: '$(Pipeline.Workspace)'
+    
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
