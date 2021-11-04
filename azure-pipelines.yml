@@ -46,7 +46,7 @@ steps:
   displayName: 'npm install and build'
 - task: AzureFileCopy@4
   inputs:
-    SourcePath: 'project2-angular/dist'
+    SourcePath: '~/project2-angular/dist/'
     azureSubscription: 'Azure subscription 1(b8bc6e0a-4092-45fe-8320-2d2f94e8fd17)'
     Destination: 'AzureBlob'
     storage: 'emillerazuretraining'
