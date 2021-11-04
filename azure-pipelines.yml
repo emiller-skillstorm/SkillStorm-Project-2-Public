@@ -46,8 +46,9 @@ steps:
     ng build
   displayName: 'npm install and build'
 
-- task: PublishPipelineArtifact@1
+- task: Npm@1
   inputs:
-    targetPath: '$(Pipeline.Workspace)'
-    artifact: 'build-artifact'
-    publishLocation: 'pipeline'
+    command: 'publish'
+    workingDir: 'project2-angular'
+    publishRegistry: 'useFeed'
+    publishFeed: 'npm-builds'
