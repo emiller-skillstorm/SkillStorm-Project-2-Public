@@ -32,3 +32,9 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+- task: Npm@1
+  inputs:
+    command: 'install'
+    workingDir: 'project2-angular'
+- script: |
+    npm run build:prod
