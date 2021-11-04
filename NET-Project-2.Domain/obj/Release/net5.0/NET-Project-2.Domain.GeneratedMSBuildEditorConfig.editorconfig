@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = NET_Project_2.Domain
-build_property.ProjectDir = C:\Users\Justin\Source\Repos\AzureProject2v4\NET-Project-2.Domain\
+build_property.ProjectDir = /Users/ericmiller/Projects/SkillStorm/Project2/NET-Project-2.Domain/

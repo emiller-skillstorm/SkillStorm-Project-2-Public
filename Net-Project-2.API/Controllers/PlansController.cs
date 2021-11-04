@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NET_Project_2.Domain;
 using Net_Project_2.Data;
-using System.Data.Entity.Infrastructure;
 
 namespace Net_Project_2.API.Controllers
 {

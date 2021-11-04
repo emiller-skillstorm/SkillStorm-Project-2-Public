@@ -9,6 +9,7 @@ namespace Net_Project_2.Data
         // DbSets for our classes go here
         public DbSet<User> Users { get; set; }
         public DbSet<Device> Devices { get; set; }
+        public DbSet<AvailableDevice> AvailableDevices { get; set; }
         public DbSet<Plan> Plans { get; set; }
         public DbSet<AvailablePlan> AvailablePlans { get; set; } 
         public DbSet<PhoneNumber> PhoneNumbers { get; set; }
