@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 import { Device } from '../models/device.model';
 import { User } from '../models/user.model';
 import { PhoneNumber } from '../models/phonenumber.model';
+import { AvailableDevice } from '../models/available-device.model';
 
 @Injectable({
   providedIn: 'root'
@@ -38,5 +39,13 @@ export class DeviceService {
   //Returns a specific device
   find(device: Device): Observable<Device> {
     return this.httpClient.get<Device>(this.url + `/${device.deviceId}`);
+  }
+
+  findAllAvailableDevices(): Observable<AvailableDevice[]> {
+    return this.httpClient.get<AvailableDevice[]>(this.url + '/AvailableDevicecs');
+  }
+
+  addDeviceToUser(userId: number, deviceId: number) {
+    this.httpClient.post<Device>(this.url + `/AddDeviceToUser/`, JSON.stringify({"userId": userId, "planId": deviceId}));
   }
 }

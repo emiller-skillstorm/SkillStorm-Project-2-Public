@@ -18,6 +18,7 @@ export class DevicesComponent implements OnInit {
 
   @Output() back = new EventEmitter<boolean>();
   showDeviceDetails: boolean = false;
+  showRouterOutlet: boolean = false;
 
   constructor(private deviceService: DeviceService, private router: Router, private activeRoute: ActivatedRoute) { }
 
@@ -32,6 +33,7 @@ export class DevicesComponent implements OnInit {
         this.DeviceList = data;
         console.log(this.DeviceList);
       });
+      this.showRouterOutlet = false;
    // });
   }
 
@@ -45,5 +47,23 @@ export class DevicesComponent implements OnInit {
     }
 
     this.showDeviceDetails = true;
+  }
+
+  goToAddDevice() {
+    //this.showAddButton = false;
+    this.showRouterOutlet = false;
+    
+    let route = this.router.config.find(r => r.path === 'add-device/:id');
+
+    if (route) {
+      route.data = this.user;
+      this.router.navigateByUrl(`/add-device/${this.user.userId}`);
+    }
+    
+    this.showRouterOutlet = true;
+  }
+
+  remove(device: Device) {
+    //implement
   }
 }

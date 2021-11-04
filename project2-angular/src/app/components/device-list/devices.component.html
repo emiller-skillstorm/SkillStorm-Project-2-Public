@@ -1,6 +1,6 @@
 <div id="device-listing">
     <h2>User {{user.userId}}'s Devices</h2>
-
+    <button (click)="goToAddDevice()" class="btn btn-secondary">Add a Device</button>
     <table id="device-list" class="table table-hover table-bordered table-striped" >
         <thead>
             <tr>
@@ -15,11 +15,15 @@
                 <td>{{ device.brand }}</td>
                 <td>{{ device.model }}</td>
                 <td>{{ device.phoneNumber.phoneNumberVal }}</td>
-                <td><button (click)="details(device)" class="btn btn-secondary">Details</button></td>
+                <td><button (click)="details(device)" class="btn btn-secondary">Details</button>
+                <button (click)="remove(device)" class="btn btn-danger">Remove</button></td>
             </tr>
         </tbody>
     </table>
     <div *ngIf="showDeviceDetails">
+        <router-outlet></router-outlet>
+    </div>
+    <div *ngIf="showRouterOutlet">
         <router-outlet></router-outlet>
     </div>
 </div>

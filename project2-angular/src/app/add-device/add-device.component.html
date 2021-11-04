@@ -1,0 +1,14 @@
+<div>
+    <h4>Add a new Device</h4>
+    <form action="submit">
+        <label>Choose a device: </label>
+        <select #deviceOptions id="deviceOptions">
+            <option *ngFor="let selection of SelectableDevices">
+                {{selection.brand}} | ${{selection.model}}
+            </option>
+        </select>
+        <div>
+            <input type="submit" value="Accept" class="btn btn-primary"/>
+        </div>
+    </form>
+</div>

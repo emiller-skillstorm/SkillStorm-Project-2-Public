@@ -20,6 +20,7 @@ import { PhonenumbersListComponent } from './components/phonenumbers-list/phonen
 import { PhonenumberDetailsComponent } from './components/phonenumber-details/phonenumber-details.component';
 import { BillingComponent } from './components/billing/billing.component';
 import { AddPlanComponent } from './add-plan/add-plan.component';
+import { AddDeviceComponent } from './add-device/add-device.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { AddPlanComponent } from './add-plan/add-plan.component';
     PhonenumbersListComponent,
     PhonenumberDetailsComponent,
     BillingComponent,
-    AddPlanComponent
+    AddPlanComponent,
+    AddDeviceComponent
   ],
   imports: [
     BrowserModule,

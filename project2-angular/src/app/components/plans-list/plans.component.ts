@@ -62,4 +62,8 @@ export class PlansComponent implements OnInit {
     
     this.showRouterOutlet = true;
   }
+
+  remove(plan: Plan) {
+    //implement
+  }
 }

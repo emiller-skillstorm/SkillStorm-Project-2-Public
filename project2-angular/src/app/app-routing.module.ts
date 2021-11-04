@@ -15,6 +15,7 @@ import { PhonenumbersListComponent } from './components/phonenumbers-list/phonen
 import { PhonenumberDetailsComponent } from './components/phonenumber-details/phonenumber-details.component';
 import { BillingComponent } from './components/billing/billing.component';
 import { AddPlanComponent } from './add-plan/add-plan.component';
+import { AddDeviceComponent } from './add-device/add-device.component';
 
 const routes: Routes = [
   {
@@ -58,6 +59,9 @@ const routes: Routes = [
   },
   {
     path: 'billing', component: BillingComponent
+  },
+  {
+    path: 'add-device/:id', component: AddDeviceComponent
   },
   { 
     path: 'home', component: HomeComponent
