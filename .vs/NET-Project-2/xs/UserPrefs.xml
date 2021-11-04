@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{0D6FC3D6-CE4A-427E-B3B2-17AC7A64D45B}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Net-Project-2.API/Controllers/PlansController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Net-Project-2.Data/Migrations/20211104215749_AvailableDevices.cs">
     <Files>
       <File FileName="Net-Project-2.API/Controllers/DevicesController.cs" Line="56" Column="31" />
       <File FileName="Net-Project-2.API/appsettings.json" />
@@ -7,27 +7,30 @@
       <File FileName="NET-Project-2.Domain/User.cs" />
       <File FileName="NET-Project-2.Domain/Plan.cs" />
       <File FileName="NET-Project-2.Domain/PhoneNumber.cs" />
-      <File FileName="NET-Project-2.Domain/Device.cs" />
+      <File FileName="NET-Project-2.Domain/Device.cs" Line="13" Column="42" />
       <File FileName="Net-Project-2.API/Controllers/UsersController.cs" />
-      <File FileName="Net-Project-2.Data/Project2Context.cs" />
+      <File FileName="Net-Project-2.Data/Project2Context.cs" Line="13" Column="47" />
       <File FileName="Net-Project-2.API/Startup.cs" />
-      <File FileName="Net-Project-2.API/Controllers/PlansController.cs" Line="90" Column="51" />
+      <File FileName="Net-Project-2.API/Controllers/PlansController.cs" Line="9" Column="26" />
       <File FileName="Net-Project-2.API/Controllers/PhoneNumbersController.cs" />
       <File FileName="Net-Project-2.Data/Migrations/20211028151201_DB-Reset-Eric.cs" />
       <File FileName="Net-Project-2.API/Program.cs" />
       <File FileName="Net-Project-2.Data/Migrations/20211103162804_AvailablePlans.cs" />
+      <File FileName="NET-Project-2.Domain/AvailableDevice.cs" Line="12" Column="6" />
+      <File FileName="NET-Project-2.Domain/AvailablePlan.cs" Line="1" Column="1" />
+      <File FileName="Net-Project-2.Data/Migrations/20211104215749_AvailableDevices.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="NET-Project-2" expanded="True">
             <Node name="Net-Project-2.API" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="PlansController.cs" selected="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
             </Node>
             <Node name="Net-Project-2.Data" expanded="True">
-              <Node name="Migrations" expanded="True" />
+              <Node name="Migrations" expanded="True">
+                <Node name="20211104215749_AvailableDevices.cs" selected="True" />
+              </Node>
             </Node>
             <Node name="NET-Project-2.Domain" expanded="True" />
           </Node>
