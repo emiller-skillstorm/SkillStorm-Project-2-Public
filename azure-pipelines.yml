@@ -33,6 +33,7 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+    
 - task: Npm@1
   inputs:
     command: 'install'
@@ -46,10 +47,23 @@ steps:
     ng build
   displayName: 'npm install and build'
 
-- task: AzureFileCopy@3
+- task: CopyFiles@1
   inputs:
-    SourcePath: "$(Build.SourcesDirectory)/project2-angular/dist/project2-angular"
+    SourceFolder: '$(Build.SourcesDirectory)'
+    Contents: '**/($(Build.Configuration)/**/?(*.exe|*.dll|*.pdb)'
+    TargetFolder: '$(Build.ArtifactStagindDirectory)'
+  displayName: 'Copy files'
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Pipeline.Workspace)'
+    artifact: 'Project2-1.0.$(Build.BuildNumber)'
+    publishLocation: 'pipeline'
+  displayName: 'Publish pipeline artifact'
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
     azureSubscription: 'Azure subscription 1(b8bc6e0a-4092-45fe-8320-2d2f94e8fd17)'
-    Destination: 'AzureBlob'
-    storage: 'emillerazuretraining'
-    ContainerName: '$web'
+    appType: 'webApp'
+    WebAppName: 'ejw-skillstorm-project-2'
+    packageForLinux: '$(System.ArtifactsDirectory)/**/*.zip'
+  displayName: "Azure app deployment"
