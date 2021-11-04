@@ -48,7 +48,7 @@ steps:
 
 - task: AzureFileCopy@3
   inputs:
-    SourcePath: "$(Pipeline.Workspace)/s/NET%Project%2/project2-angular/dist/project2-angular"
+    SourcePath: "$(Build.SourcesDirectory)/project2-angular/dist/project2-angular"
     azureSubscription: 'Azure subscription 1(b8bc6e0a-4092-45fe-8320-2d2f94e8fd17)'
     Destination: 'AzureBlob'
     storage: 'emillerazuretraining'
