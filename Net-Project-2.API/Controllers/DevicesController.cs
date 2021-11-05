@@ -56,6 +56,21 @@ namespace Net_Project_2.API.Controllers
             return deviceList;
         }
 
+        // Get all devivces available for purchase
+        // GET: api/Devices/AvailableDevices
+        [HttpGet("AvailableDevices")]
+        public async Task<ActionResult<IEnumerable<AvailableDevice>>> GetAvailableDevices()
+        {
+            var deviceList = await _context.AvailableDevices.ToListAsync();
+
+            if (deviceList == null)
+            {
+                return NotFound();
+            }
+
+            return deviceList;
+        }
+
         // PUT: api/Devices/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
