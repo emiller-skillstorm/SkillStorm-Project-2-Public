@@ -1,7 +1,7 @@
 <div id="device-listing">
-    <h2>User {{user.userId}}'s Devices</h2>
-    <button (click)="goToAddDevice()" class="btn btn-secondary">Add a Device</button>
-    <table id="device-list" class="table table-hover table-bordered table-striped" >
+    <h2 style="margin-left: 50%; margin-top: 25px;">User {{user.userId}}'s Devices</h2>
+    <button (click)="goToAddDevice()" class="btn btn-warning">Add a Device</button>
+    <table id="device-list" class="table table-hover table-bordered table-striped" style="margin-top: 25px;" >
         <thead>
             <tr>
                 <td>Brand</td>
@@ -16,7 +16,7 @@
                 <td>{{ device.model }}</td>
                 <td>{{ device.phoneNumber.phoneNumberVal }}</td>
                 <td><button (click)="details(device)" class="btn btn-secondary">Details</button>
-                <button (click)="remove(device)" class="btn btn-danger">Remove</button></td>
+                <button (click)="remove(device)" class="btn btn-danger" style="margin-left: 5px;">Remove</button></td>
             </tr>
         </tbody>
     </table>

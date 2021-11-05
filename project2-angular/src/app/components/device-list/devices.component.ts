@@ -63,8 +63,8 @@ export class DevicesComponent implements OnInit {
     this.showRouterOutlet = true;
   }
 
-  remove(device: Device) {
+   remove(device: Device) {
 
-    this.deviceService.removeDeviceFromUser(this.user.userId, device);
-  }
+  //   this.deviceService.removeDeviceFromUser(this.user.userId, device);
+   }
 }

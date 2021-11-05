@@ -1,7 +1,7 @@
 <div class="container">
     <!-- <p>(We can show or hide these buttons if we want)</p> -->
     <div [ngModel]="userNavigatedBack" (ngModelChange)="resetNavCanvas()">
-        <div class="row" *ngIf="showNavButtons">
+        <div style="margin-left: 115px;" class="row" *ngIf="showNavButtons">
             <button class="btn btn-primary" (click)="goToPlans()">My Plans</button>
             <button class="btn btn-primary" (click)="goToDevices()">My Devices</button>
             <button class="btn btn-primary" (click)="goToPhoneNumbers()">My Phone Numbers</button>

@@ -1,14 +1,14 @@
 <div>
     <h4>Sign Up for a New Plan</h4>
     <form action="submit">
-        <label>Choose a plan: </label>
+        <label style="margin-right: 10px;">Choose a plan: </label>
         <select #planOptions id="planOptions">
             <option *ngFor="let selection of SelectablePlans">
                 {{selection.name}} | ${{selection.price}} | {{selection.deviceLimit}} | {{selection.dataLimit}}GB
             </option>
         </select>
         <div>
-            <input type="submit" value="Accept" class="btn btn-primary"/>
+            <input type="submit" value="Accept" class="btn btn-success"/>
         </div>
     </form>
 </div>

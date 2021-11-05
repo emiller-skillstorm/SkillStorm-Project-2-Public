@@ -49,8 +49,8 @@ export class DeviceService {
     this.httpClient.post<Device>(this.url + `/AddDeviceToUser/`, JSON.stringify({"userId": userId, "deviceId": deviceId}));
   }
 
-  removeDeviceFromUser(userId: number, device: Device) {
+  // removeDeviceFromUser(userId: number, device: Device) {
 
-    this.httpClient.delete<Device>(this.url + `/RemoveDeviceFromUser/`, { userId: userId, deviceId: device.deviceId });
-  }
+  //   this.httpClient.delete<Device>(this.url + `/RemoveDeviceFromUser/`, { userId: userId, deviceId: device.deviceId });
+  // }
 }

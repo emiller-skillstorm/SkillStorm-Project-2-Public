@@ -1,6 +1,6 @@
 <div id="billing">
-    <h4>User {{ user.userId }}'s Monthtly Bill</h4>
-    <table id="billing-plan-list" class="table table-hover table-bordered table-striped" >
+    <h4 style="margin-left: 50%; margin-top: 25px;">User {{ user.userId }}'s Monthtly Bill</h4>
+    <table id="billing-plan-list" class="table table-hover table-bordered table-striped" style="margin-top: 25px; margin-left: 15%;" >
         <thead>
             <tr>
                 <td>Plan Name</td>
@@ -13,7 +13,7 @@
                 <td>${{ plan.price }}</td>
             </tr>
         </tbody>
-        <tr>Monthtly Bill</tr>
+        <tr>Monthtly Cost</tr>
         <td type="number">${{ monthlyBill }}</td>
     </table>
 </div>
