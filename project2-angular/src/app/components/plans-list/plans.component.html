@@ -1,8 +1,8 @@
 <div id="plan-listing">
-    <h2 style="margin-left: 50%; margin-top: 25px;">User {{ user.userId }}'s Plans</h2>
-    <button (click)="goToAddPlan()" class="btn btn-warning">Add a Plan</button>
+    <h2 style="margin-top: 25px;">User {{ user.userId }}'s Plans</h2>
+    <!-- <button (click)="goToAddPlan()" class="btn btn-warning">Add a Plan</button> -->
     <table id="plan-list" class="table table-hover table-bordered table-striped" style="margin-top: 25px;">
-        <thead>
+        <thead class="thead-custom">
             <tr>
                 <td>Plan Name</td>
                 <td>Price/month</td>
@@ -11,7 +11,7 @@
                 <td>Actions</td>
             </tr>
         </thead>
-        <tbody id="plan-list-body">
+        <tbody id="plan-list-body" class="tbody-custom">
             <tr *ngFor="let plan of PlanList">
                 <td>{{ plan.name }}</td>
                 <td>${{ plan.price }}</td>
@@ -24,6 +24,7 @@
             </tr>
         </tbody>
     </table>
+    <button (click)="goToAddPlan()" class="btn btn-primary">Add Plan</button>
     <div *ngIf="showRouterOutlet">
         <router-outlet></router-outlet>
     </div>

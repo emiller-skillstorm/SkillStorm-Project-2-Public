@@ -1,8 +1,8 @@
 <div id="device-listing">
-    <h2 style="margin-left: 50%; margin-top: 25px;">User {{user.userId}}'s Devices</h2>
-    <button (click)="goToAddDevice()" class="btn btn-warning">Add a Device</button>
-    <table id="device-list" class="table table-hover table-bordered table-striped" style="margin-top: 25px;" >
-        <thead>
+    <div>
+    <h2 style="margin-top: 25px;">User {{user.userId}}'s Devices</h2>
+    <table id="device-list" class="table table-hover table-bordered table-striped" style="margin-top: 25px;">
+        <thead class="thead-custom">
             <tr>
                 <td>Brand</td>
                 <td>Model</td>
@@ -10,20 +10,32 @@
                 <td>Actions</td>
             </tr>
         </thead>
-        <tbody id="device-list-body">
+        <tbody id="device-list-body" class="tbody-custom">
             <tr *ngFor="let device of DeviceList">
                 <td>{{ device.brand }}</td>
                 <td>{{ device.model }}</td>
-                <td>{{ device.phoneNumber.phoneNumberVal }}</td>
-                <td><button (click)="details(device)" class="btn btn-secondary">Details</button>
-                <button (click)="remove(device)" class="btn btn-danger" style="margin-left: 5px;">Remove</button></td>
+                <td *ngIf="!device.phoneNumber; else elseBlock">None</td>
+                <ng-template #elseBlock>
+                    <td>{{ getFormattedPhoneNumber(device.phoneNumber) }}</td>
+                </ng-template>
+                <td>
+                    <button (click)="details(device)" class="btn btn-secondary">Details</button>
+                    <button (click)="remove(device)" class="btn btn-danger" style="margin-left: 5px;">Remove</button>
+                </td>
             </tr>
         </tbody>
     </table>
-    <div *ngIf="showDeviceDetails">
-        <router-outlet></router-outlet>
+    <button (click)="goToAddDevice(user)" class="btn btn-primary">Add a Device</button>
     </div>
-    <div *ngIf="showRouterOutlet">
-        <router-outlet></router-outlet>
+    
+    <div class="container">
+        <div class="row">
+            <div *ngIf="showDetails" class="col-sm-8">
+                <app-device-details [device]="storedDevice"></app-device-details>
+            </div>
+            <div *ngIf="showAddDevice" class="col-sm-4">
+                <app-add-device [user]="user"></app-add-device>
+            </div>
+        </div>
     </div>
 </div>

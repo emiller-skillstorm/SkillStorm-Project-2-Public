@@ -1,15 +1,15 @@
 <div>
-    <div class="container" style="margin-left: 20px;">
+    <div class="container" style="align-self: center;">
         <div class="row" *ngIf="!loginSucceeded">
-            <div class="col-sm">
-                <button class="btn btn-primary" (click)="displaySignup()" *ngIf="showSignupButton">Register</button>
+            <div class="col-md-5">
+                <button class="btn btn-primary btn-lg" style="margin-left:50%;" (click)="displaySignup()" *ngIf="showSignupButton">Register</button>
                 <div *ngIf="showSignup">
                     <app-new-user (loggedIn)="loginSucceeded = $event" (currentUser)="user = $event"></app-new-user>
                 </div>
             </div>
             <br>
-            <div class="col-sm">
-                <button class="btn btn-primary" (click)="displayLogin()" *ngIf="showLoginButton">Log In</button>
+            <div class="col-md-5">
+                <button class="btn btn-primary btn-lg" style="margin-left:50%;" (click)="displayLogin()" *ngIf="showLoginButton">Log In</button>
                 <div *ngIf="showLogin">
                     <app-user-login (loggedIn)="loginSucceeded = $event" (currentUser)="user = $event"></app-user-login>
                 </div>

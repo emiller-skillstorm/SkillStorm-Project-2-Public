@@ -1,19 +1,20 @@
 <div id="billing">
-    <h4 style="margin-left: 50%; margin-top: 25px;">User {{ user.userId }}'s Monthtly Bill</h4>
-    <table id="billing-plan-list" class="table table-hover table-bordered table-striped" style="margin-top: 25px; margin-left: 15%;" >
-        <thead>
+    <h2 style="margin-top: 25px;">User {{ user.userId }}'s Monthtly Bill</h2>
+    <table id="billing-plan-list" class="table table-hover table-bordered table-striped">
+        <thead class="thead-custom">
             <tr>
                 <td>Plan Name</td>
                 <td>Price/month</td>
             </tr>
         </thead>
-        <tbody id="billing-plan-list-body">
+        <tbody id="billing-plan-list-body" class="tbody-custom">
             <tr *ngFor="let plan of PlanList">
                 <td>{{ plan.name }}</td>
                 <td>${{ plan.price }}</td>
             </tr>
         </tbody>
-        <tr>Monthtly Cost</tr>
-        <td type="number">${{ monthlyBill }}</td>
+        <hr/>
+        <tr class="billing-heading">Monthtly Bill</tr>
+        <td type="number" class="billing-total">${{ monthlyBill }}</td>
     </table>
 </div>

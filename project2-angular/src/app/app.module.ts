@@ -19,9 +19,9 @@ import { LoginCanvasComponent } from './components/login-canvas/login-canvas.com
 import { PhonenumbersListComponent } from './components/phonenumbers-list/phonenumbers-list.component';
 import { PhonenumberDetailsComponent } from './components/phonenumber-details/phonenumber-details.component';
 import { BillingComponent } from './components/billing/billing.component';
-import { AddPlanComponent } from './add-plan/add-plan.component';
-import { AddDeviceComponent } from './add-device/add-device.component';
-import { AddPhonenumberComponent } from './add-phonenumber/add-phonenumber.component';
+import { AddPlanComponent } from './components/add-plan/add-plan.component'
+import { AddPhonenumberToDeviceComponent } from './components/add-phonenumber-to-device/add-phonenumber-to-device.component';
+import { AddDeviceComponent } from './components/add-device/add-device.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +33,7 @@ import { AddPhonenumberComponent } from './add-phonenumber/add-phonenumber.compo
     UserDetailsComponent,
     HomeComponent,
     DeviceDetailsComponent,
+    AddDeviceComponent,
     PlanDetailsComponent,
     UserLoginComponent,
     NavCanvasComponent,
@@ -41,8 +42,7 @@ import { AddPhonenumberComponent } from './add-phonenumber/add-phonenumber.compo
     PhonenumberDetailsComponent,
     BillingComponent,
     AddPlanComponent,
-    AddDeviceComponent,
-    AddPhonenumberComponent
+    AddPhonenumberToDeviceComponent
   ],
   imports: [
     BrowserModule,

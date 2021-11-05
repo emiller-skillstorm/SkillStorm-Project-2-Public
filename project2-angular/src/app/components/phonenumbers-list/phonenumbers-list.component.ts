@@ -1,7 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Device } from 'src/app/models/device.model';
 import { PhoneNumber } from 'src/app/models/phonenumber.model';
 import { User } from 'src/app/models/user.model';
+import { DeviceService } from 'src/app/services/device.service';
 import { PhoneNumberService } from 'src/app/services/phone-number.service';
 
 @Component({
@@ -12,6 +14,7 @@ import { PhoneNumberService } from 'src/app/services/phone-number.service';
 export class PhonenumbersListComponent implements OnInit {
 
   PhoneNumberList: PhoneNumber[] = [];
+  DeviceList: Device[] = [];
 
   @Input() user!: User;
   userId: any;
@@ -19,12 +22,10 @@ export class PhonenumbersListComponent implements OnInit {
   showPhoneDetails: boolean = false;
   showRouterOutlet: boolean = false;
 
-  constructor(private phoneNumberService: PhoneNumberService, private router: Router, private activeRoute: ActivatedRoute) { }
+  constructor(private phoneNumberService: PhoneNumberService, private deviceService: DeviceService, private router: Router, private activeRoute: ActivatedRoute) { }
 
   // Display the list of phone numbers for the current user
   ngOnInit(): void {
-    // this.activeRoute.data.subscribe(id =>  {
-    //   this.userId = id;
     console.log("Showing phone numbers for user " + this.user.userId);
 
     this.phoneNumberService.findPhoneNumbersForUser(this.user.userId).subscribe(data => 
@@ -32,15 +33,33 @@ export class PhonenumbersListComponent implements OnInit {
         this.PhoneNumberList = data;
         console.log(this.PhoneNumberList);
       });
-      this.showRouterOutlet = false;
-   // });
+
+      this.deviceService.findDevicesForUser(this.user.userId).subscribe(data => 
+        {
+          this.DeviceList = data;
+          console.log(this.DeviceList);
+        });
+
+        this.showRouterOutlet = false;
   }
+
+  checkIfPhoneNumberIsUsed(phone: PhoneNumber): string{
+      for(let d of this.DeviceList){
+        if(d.phoneNumber){
+          if(d.phoneNumber.id === phone.id){
+            phone.isInUse = true;
+            return 'Yes';
+          }
+        }
+      }
+      return 'No';
+    }
 
   getFormattedPhoneNumber(phone: PhoneNumber) : string{
     var pn = phone.phoneNumberVal;
-    console.log("Preparing to format phone number: " + pn);
+    //console.log("Preparing to format phone number: " + pn);
     var formattedNumber = `(${pn.substr(0, 3)}) ${pn.substr(3, 3)}-${pn.substr(6, 4)}`;
-    console.log("Formatted phone number: " + formattedNumber);
+    //console.log("Formatted phone number: " + formattedNumber);
 
     return formattedNumber;
   }

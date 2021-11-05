@@ -1,16 +1,16 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { AvailablePhonenumber } from '../models/available-phonenumber.model';
 import { PhoneNumber } from '../models/phonenumber.model';
+import { AvailablePhonenumber } from '../models/available-phonenumber.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PhoneNumberService {
 
-  url = environment.phonenumberAPIurl; 
+  url = environment.phonenumberAPIurl;
 
 
   constructor(private httpClient: HttpClient) { }
@@ -34,6 +34,6 @@ export class PhoneNumberService {
   }
 
   addPhoneNumberToUser(userId: number, phoneId: number) {
-    this.httpClient.post<PhoneNumber>(this.url + `/AddPhoneNumberToUser/`, JSON.stringify({"userId": userId, "phoneId": phoneId}));
+    return this.httpClient.post<any>(this.url + '/AddPhoneNumberToUser/', {userId: userId, phoneId: phoneId});
   }
 }

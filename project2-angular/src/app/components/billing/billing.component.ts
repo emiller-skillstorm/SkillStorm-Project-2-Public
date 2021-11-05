@@ -28,6 +28,7 @@ export class BillingComponent implements OnInit {
     this.userService.getMonthlyBill(this.user.userId).subscribe(data => {
       this.monthlyBill = data;
       console.log(this.monthlyBill);
+      //Test
     });
   }
 

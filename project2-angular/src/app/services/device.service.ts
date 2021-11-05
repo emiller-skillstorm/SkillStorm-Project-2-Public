@@ -21,9 +21,12 @@ export class DeviceService {
     return this.httpClient.post<Device>(this.url, device);
   }
 
-  //Changes a device's phone number and returns the updated device
+  //Changes a device's phone number
   changePhoneNumber(deviceId: number, phoneId: number): Observable<Device> {
-    return this.httpClient.post<Device>(this.url + '/ChangePhoneNumber/', {deviceId: deviceId, phoneId: phoneId});
+    const params = new URLSearchParams();
+    params.set('deviceId', `${ deviceId }`);
+    params.set('phoneId',  `${ phoneId }`);
+    return this.httpClient.post<Device>(this.url + '/ChangePhoneNumber/', {deviceId: `${deviceId}`, phoneId: `${phoneId}`});
   }
 
   //Returns all devices
@@ -46,11 +49,16 @@ export class DeviceService {
   }
 
   addDeviceToUser(userId: number, deviceId: number) {
-    this.httpClient.post<Device>(this.url + `/AddDeviceToUser/`, JSON.stringify({"userId": userId, "deviceId": deviceId}));
+    var data = { userId: userId, adId: deviceId }
+    this.httpClient.post<any>(this.url + '/AddDeviceToUser/', { userId: `${ userId }`, deviceId: `${ deviceId }` });
+  }
+
+  removeDevice(deviceId: number){
+    this.httpClient.delete(this.url + `/${deviceId}`);  
   }
 
   // removeDeviceFromUser(userId: number, device: Device) {
-
-  //   this.httpClient.delete<Device>(this.url + `/RemoveDeviceFromUser/`, { userId: userId, deviceId: device.deviceId });
+        
+  //   this.httpClient.delete<Device>(this.url + `/RemoveDeviceFromUser/`, {userId: userId, deviceId: device.deviceId});
   // }
 }

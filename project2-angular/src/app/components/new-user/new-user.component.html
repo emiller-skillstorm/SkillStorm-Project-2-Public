@@ -1,9 +1,9 @@
 <div id="new-user-registration">
     <h2>New User Registration</h2>
-    <form id="new-user" (ngSubmit)="registerNewUser()" #userRegistrationForm >
+    <form id="new-user" (ngSubmit)="registerNewUser()" #userRegistrationForm>
         <div class="form-group">
             <label for="FirstName">First Name</label>
-            <input [(ngModel)]="newUser.firstName" type="text"name="FirstName" class="form-control" id="firstName" type="text" required maxlength="100" #FirstName="ngModel" />
+            <input [(ngModel)]="newUser.firstName" type="text" name="FirstName" class="form-control" id="firstName" type="text" required maxlength="100" #FirstName="ngModel" />
             <div class="alert" *ngIf="FirstName.invalid && (FirstName.dirty || FirstName.touched)">
                 <div *ngIf="FirstName.errors?.required">First name is required</div>
                 <div *ngIf="FirstName.errors?.maxlength">First name cannot be more than 100 characters</div>
@@ -38,7 +38,7 @@
             </div>
         </div>
         <div>
-            <input class="btn btn-primary submit-button" type="submit" value="Register" style="margin-top: 5px;" />
+            <input class="btn btn-primary submit-button btn-large" type="submit" value="Register" />
         </div>
     </form>
 </div>

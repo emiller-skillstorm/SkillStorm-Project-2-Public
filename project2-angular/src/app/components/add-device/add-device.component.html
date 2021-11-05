@@ -1,10 +1,10 @@
 <div>
     <h4>Add a new Device</h4>
-    <form action="submit">
+    <form (ngSubmit)="addDevice()">
         <label>Choose a device: </label>
-        <select #deviceOptions id="deviceOptions">
+        <select #deviceOptions id="deviceOptions" (change)="selectChangeHandler($event)">
             <option *ngFor="let selection of SelectableDevices">
-                {{selection.brand}} | ${{selection.model}}
+                {{ selection.brand }} | {{ selection.model }}
             </option>
         </select>
         <div>

@@ -6,6 +6,7 @@ export class Plan {
     price: number = 0;
     deviceLimit: number = 0;
     dataLimit: number = 0;
+    userId: number = 0;
     
     constructor() { }
 }

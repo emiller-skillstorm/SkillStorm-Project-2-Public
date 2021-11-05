@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { AvailablePhonenumber } from '../models/available-phonenumber.model';
 import { User } from 'src/app/models/user.model';
 import { UserService } from 'src/app/services/user.service';
 import { PlanService } from 'src/app/services/plan.service';
 import { PhoneNumberService } from 'src/app/services/phone-number.service';
-import { DeviceService } from '../services/device.service';
 import { ActivatedRoute } from '@angular/router';
+import { AvailablePhonenumber } from 'src/app/models/available-phonenumber.model';
 
 @Component({
   selector: 'app-add-phonenumber',
@@ -38,7 +37,12 @@ export class AddPhonenumberComponent implements OnInit {
     })
   }
 
-  onSubmit() {
+  selectChangeHandler(event: any){
+    this.currentSelection = event.target.value;
+    console.log(this.currentSelection);
+  }
+  
+  addPhoneNumber() {
     this.phonenumberService.addPhoneNumberToUser(this.userId, this.currentSelection.id);
     this.showThisComponent = false;
   }

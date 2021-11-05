@@ -24,16 +24,7 @@ export class NavCanvasComponent implements OnInit {
   constructor(private userservice: UserService, private router: Router, private activeRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    // this.activeRoute.data.subscribe(id =>  {
-    //   this.userId = id;
     console.log("Displaying nav for user " + this.user.userId);
-
-    // this.userservice.find(this.user).subscribe(data => 
-    //   {
-    //     this.user = data;
-    //     console.log(this.user);
-    //   });
-    // });
   }
 
 goToPlans() {

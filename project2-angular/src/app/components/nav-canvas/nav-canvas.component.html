@@ -1,23 +1,27 @@
-<div class="container">
+<div>
     <!-- <p>(We can show or hide these buttons if we want)</p> -->
     <div [ngModel]="userNavigatedBack" (ngModelChange)="resetNavCanvas()">
-        <div style="margin-left: 115px;" class="row" *ngIf="showNavButtons">
-            <button class="btn btn-primary" (click)="goToPlans()">My Plans</button>
-            <button class="btn btn-primary" (click)="goToDevices()">My Devices</button>
-            <button class="btn btn-primary" (click)="goToPhoneNumbers()">My Phone Numbers</button>
-            <button class="btn btn-primary" (click)="goToBilling()">My Bill</button>
-        </div>
-        <div *ngIf="showPlans">
-            <app-plans [user]="user"></app-plans>
-        </div>
-        <div *ngIf="showDevices">
-            <app-devices [user]="user"></app-devices>
-        </div>
-        <div *ngIf="showPhoneNumbers">
-            <app-phonenumbers [user]="user"></app-phonenumbers>
-        </div>
-        <div *ngIf="showBilling">
-            <app-billing [user]="user"></app-billing>
+        <div class="container">
+            <div *ngIf="showNavButtons" class="row">
+                <div class="col-md-8" style="margin-left:30%; margin-right:30%;">
+                    <button class="btn btn-primary" (click)="goToPlans()">My Plans</button>
+                    <button class="btn btn-primary" (click)="goToDevices()">My Devices</button>
+                    <button class="btn btn-primary" (click)="goToPhoneNumbers()">My Phone Numbers</button>
+                    <button class="btn btn-primary" (click)="goToBilling()">My Bill</button>
+                </div>
+            </div>
+            <div *ngIf="showPlans">
+                <app-plans [user]="user"></app-plans>
+            </div>
+            <div *ngIf="showDevices">
+                <app-devices [user]="user"></app-devices>
+            </div>
+            <div *ngIf="showPhoneNumbers">
+                <app-phonenumbers [user]="user"></app-phonenumbers>
+            </div>
+            <div *ngIf="showBilling">
+                <app-billing [user]="user"></app-billing>
+            </div>
         </div>
         <!-- <router-outlet></router-outlet> -->
     </div>

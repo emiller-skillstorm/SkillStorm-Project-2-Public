@@ -1,8 +1,8 @@
 <div>
     <h4>Get a new Phone Number</h4>
-    <form action="submit">
+    <form (ngSubmit)="addPhoneNumber()" id="addPhoneNumberDropdown">
         <label>Choose a number: </label>
-        <select #phonenumberOptions id="phonenumberOptions">
+        <select #phonenumberOptions id="phonenumberOptions" (change)="selectChangeHandler($event)">
             <option *ngFor="let selection of SelectablePhoneNumbers">
                 {{selection.phoneNumberVal}} 
             </option>

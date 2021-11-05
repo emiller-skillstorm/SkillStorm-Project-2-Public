@@ -1,0 +1,15 @@
+<div>
+    <h5>Add a Phone Number to Your {{ device.brand }} {{ device.model }}</h5>
+    <hr/>
+    <form (ngSubmit)="addPhoneNumberToDevice()">
+        <label>Choose a phone number: </label>
+        <select #phoneOptions id="phoneOptions" (change)="selectChangeHandler($event)">
+            <option *ngFor="let selection of SelectablePhoneNumbers">
+                {{ getFormattedPhoneNumber(selection) }}
+            </option>
+        </select>
+        <div>
+            <input type="submit" value="Accept" class="btn btn-primary"/>
+        </div>
+    </form>
+</div>

@@ -21,7 +21,7 @@ export class NewUserComponent implements OnInit {
 
   registerNewUser(): void {
     //When the form is submitted, run the password hash aglorithm
-    //Store that hash in the user's passHas property before adding them to the database
+    //Store that hash in the user's passHash property before adding them to the database
 
     this.userService.registerNewUser(this.newUser).subscribe(data => {
       this.user = data;
@@ -29,13 +29,6 @@ export class NewUserComponent implements OnInit {
 
       this.loggedIn.emit(true);
       this.currentUser.emit(this.user);
-
-    //   let route = this.router.config.find(r => r.path === 'home/:id');
-    //   if(route){
-    //     this.router.navigateByUrl(`/home/${this.currentUser.userId}`);
-    //   }
-    // });
-  //}
     });
   }
 }

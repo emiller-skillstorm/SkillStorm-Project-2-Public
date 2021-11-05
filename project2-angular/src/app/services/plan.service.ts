@@ -12,9 +12,7 @@ export class PlanService {
 
   url = environment.planAPIurl;
 
-
   constructor(private httpClient: HttpClient) { }
-
 
   findAll(): Observable<Plan[]> {
     return this.httpClient.get<Plan[]>(this.url);
@@ -29,11 +27,15 @@ export class PlanService {
   }
 
   addPlanToUser(userId: number, planId: number) {
-    this.httpClient.post<Plan>(this.url + `/AddPlanToUser/`, JSON.stringify({"userId": userId, "planId": planId}));
+    var data = {'uId': userId, 'apId': planId};
+    this.httpClient.post<Plan>(this.url + '/AddPlanToUser/', {uId: `${userId}`, apId: `${planId}`});
   }
 
-  //Returns a specific plan
   find(plan: Plan): Observable<Plan> {
     return this.httpClient.get<Plan>(this.url + `/${plan.planId}`);
+  }
+
+  removePlan(planId: number){
+    this.httpClient.delete(this.url + `/${planId}`, {observe: "response"});
   }
 }

@@ -3,6 +3,8 @@ import { PlanService } from '../../services/plan.service';
 import { Plan } from '../../models/plan.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/models/user.model';
+import { Device } from 'src/app/models/device.model';
+import { DeviceService } from 'src/app/services/device.service';
 
 @Component({
   selector: 'app-plans',
@@ -20,9 +22,9 @@ export class PlansComponent implements OnInit {
   showAddButton: boolean = true;
   showRouterOutlet: boolean = false;
 
-  constructor(private planService: PlanService, private router: Router,private activeRoute: ActivatedRoute) { }
+  constructor(private planService: PlanService, private router: Router, private activeRoute: ActivatedRoute) { }
   
-  //Returns All Plans
+  //Returns all plans for user
   ngOnInit(): void {
     console.log("Showing plans for user " + this.user.userId);
 
@@ -32,12 +34,12 @@ export class PlansComponent implements OnInit {
         console.log(this.PlanList);
       });
 
-      //this.showAddButton = true;
+      this.showAddButton = true;
       this.showRouterOutlet = false;
   }
   
   details(plan: Plan){
-    this.showRouterOutlet = false;
+    //this.showRouterOutlet = false;
 
     let route = this.router.config.find(r => r.path === 'plan-details/:id');
 
@@ -50,8 +52,7 @@ export class PlansComponent implements OnInit {
   }
 
   goToAddPlan() {
-    //this.showAddButton = false;
-    this.showRouterOutlet = false;
+    //this.showRouterOutlet = false;
     
     let route = this.router.config.find(r => r.path === 'add-plan/:id');
 
@@ -64,6 +65,6 @@ export class PlansComponent implements OnInit {
   }
 
   remove(plan: Plan) {
-    //implement
+    this.planService.removePlan(plan.dataLimit);
   }
 }

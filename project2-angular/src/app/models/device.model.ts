@@ -5,6 +5,7 @@ export class Device {
     brand: string = "";
     model: string = "";
     phoneNumber: PhoneNumber = new PhoneNumber();
+    userId: number = 0;
 
     /**
      *
