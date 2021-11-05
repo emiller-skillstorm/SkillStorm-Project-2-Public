@@ -17,6 +17,7 @@ export class PhonenumbersListComponent implements OnInit {
   userId: any;
 
   showPhoneDetails: boolean = false;
+  showRouterOutlet: boolean = false;
 
   constructor(private phoneNumberService: PhoneNumberService, private router: Router, private activeRoute: ActivatedRoute) { }
 
@@ -31,6 +32,7 @@ export class PhonenumbersListComponent implements OnInit {
         this.PhoneNumberList = data;
         console.log(this.PhoneNumberList);
       });
+      this.showRouterOutlet = false;
    // });
   }
 
@@ -52,5 +54,23 @@ export class PhonenumbersListComponent implements OnInit {
     }
 
     this.showPhoneDetails = true;
+  }
+
+  goToAddPhoneNumber() {
+    //this.showAddButton = false;
+    this.showRouterOutlet = false;
+    
+    let route = this.router.config.find(r => r.path === 'add-phonenumber/:id');
+
+    if (route) {
+      route.data = this.user;
+      this.router.navigateByUrl(`/add-phonenumber/${this.user.userId}`);
+    }
+    
+    this.showRouterOutlet = true;
+  }
+
+  remove(phonenumber: PhoneNumber) {
+    //implement
   }
 }

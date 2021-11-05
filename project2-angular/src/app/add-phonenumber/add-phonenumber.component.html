@@ -1,0 +1,14 @@
+<div>
+    <h4>Get a new Phone Number</h4>
+    <form action="submit">
+        <label>Choose a number: </label>
+        <select #phonenumberOptions id="phonenumberOptions">
+            <option *ngFor="let selection of SelectablePhoneNumbers">
+                {{selection.phoneNumberVal}} 
+            </option>
+        </select>
+        <div>
+            <input type="submit" value="Accept" class="btn btn-primary"/>
+        </div>
+    </form>
+</div>

@@ -21,6 +21,7 @@ import { PhonenumberDetailsComponent } from './components/phonenumber-details/ph
 import { BillingComponent } from './components/billing/billing.component';
 import { AddPlanComponent } from './add-plan/add-plan.component';
 import { AddDeviceComponent } from './add-device/add-device.component';
+import { AddPhonenumberComponent } from './add-phonenumber/add-phonenumber.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { AddDeviceComponent } from './add-device/add-device.component';
     PhonenumberDetailsComponent,
     BillingComponent,
     AddPlanComponent,
-    AddDeviceComponent
+    AddDeviceComponent,
+    AddPhonenumberComponent
   ],
   imports: [
     BrowserModule,

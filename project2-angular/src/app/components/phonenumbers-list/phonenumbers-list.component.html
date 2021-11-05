@@ -1,6 +1,6 @@
 <div id="phone-number-listing">
     <h2>User {{user.userId}}'s Phone Numbers</h2>
-
+    <button (click)="goToAddPhoneNumber()" class="btn btn-secondary">Get another Phone Number</button>
     <table id="phone-number-list" class="table table-hover table-bordered table-striped" >
         <thead>
             <tr>
@@ -11,11 +11,15 @@
         <tbody id="phone-number-list-body">
             <tr *ngFor="let phone of PhoneNumberList">
                 <td>{{ getFormattedPhoneNumber(phone) }}</td>
-                <td><button (click)="details(phone)" class="btn btn-secondary">Details</button></td>
+                <td><button (click)="details(phone)" class="btn btn-secondary">Details</button>
+                <button (click)="remove(phone)" class="btn btn-danger">Remove</button></td>
             </tr>
         </tbody>
     </table>
     <div *ngIf="showPhoneDetails">
+        <router-outlet></router-outlet>
+    </div>
+    <div *ngIf="showRouterOutlet">
         <router-outlet></router-outlet>
     </div>
 </div>
