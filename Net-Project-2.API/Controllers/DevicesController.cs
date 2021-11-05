@@ -100,7 +100,7 @@ namespace Net_Project_2.API.Controllers
 
         // Change the phone number for a device
         // POST: api/Devices/ChangePhoneNumber/?deviceId=1&phoneId=3
-        [HttpPost("/ChangePhoneNumber/")]
+        [HttpPost("ChangePhoneNumber/")]
         public async Task<ActionResult<Device>> ChangePhoneNumber(int deviceId, int phoneId)
         {
             var device = await _context.Devices.FindAsync(deviceId);
@@ -131,6 +131,38 @@ namespace Net_Project_2.API.Controllers
 
             _context.Devices.Remove(device);
             await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
+        //Add a new device to a given user's account
+        //POST: api/Devices/AddDeviceToUser/?uId=3&apId=2
+        [HttpPost("AddDeviceToUser/")]
+        public async Task<IActionResult> AddDeviceToUser(int userId, int adId)
+        {
+            //Get the user and the device they want to add
+            var selectedUser = await _context.Users.FindAsync(userId);
+            Console.WriteLine("user with id " + selectedUser.UserId);
+
+            var selectedDevice = await _context.AvailableDevices.FindAsync(adId);
+            Console.WriteLine("device with id " + selectedDevice.Id);
+
+            if (selectedUser != null && selectedDevice != null)
+            {
+                Device d = new Device
+                {
+                    Brand = selectedDevice.Brand,
+                    Model = selectedDevice.Model,
+                    UserId = selectedUser.UserId
+                };
+
+                //Add the device to the database
+                _context.Devices.Add(d);
+
+                //selectedUser.Devices.Add(d);
+
+                _context.SaveChanges();
+            }
 
             return NoContent();
         }
