@@ -123,6 +123,28 @@ namespace Net_Project_2.API.Controllers
             return CreatedAtAction("GetUser", new { id = user.UserId }, user);
         }
 
+        // Remove a Device from a User
+        // DELETE: api/RemoveDeviceFromUser/...
+        [HttpDelete("RemoveDeviceFromUser/")]
+        public async Task<IActionResult> RemoveDeviceFromUser(int uId, int dId)
+        {
+            //get user and device they want to remove
+            var selectedUser = await _context.Users.FindAsync(uId);
+            Console.WriteLine("user with id " + selectedUser.UserId);
+
+            var selectedDevice = await _context.Devices.FindAsync(dId);
+            Console.WriteLine("plan with id " + selectedDevice.DeviceId);
+
+            if (selectedUser != null && selectedDevice != null)
+            {
+                var UserWithDevices = _context.Users.Include(u => u.Devices.Where(d => d.DeviceId == dId)).Single(u => u.UserId == uId);
+                var device = UserWithDevices.Devices[0];
+                UserWithDevices.Devices.Remove(device);
+                _context.SaveChanges();
+            }
+            return NoContent();
+        }
+
         // DELETE: api/Users/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUser(int id)

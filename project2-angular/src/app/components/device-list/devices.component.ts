@@ -64,6 +64,7 @@ export class DevicesComponent implements OnInit {
   }
 
   remove(device: Device) {
-    //implement
+
+    this.deviceService.removeDeviceFromUser(this.user.userId, device);
   }
 }
