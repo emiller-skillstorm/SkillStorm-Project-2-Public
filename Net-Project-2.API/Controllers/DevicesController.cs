@@ -116,18 +116,20 @@ namespace Net_Project_2.API.Controllers
         // Change the phone number for a device
         // POST: api/Devices/ChangePhoneNumber/?deviceId=1&phoneId=3
         [HttpPost("ChangePhoneNumber/")]
-        public async Task<ActionResult<Device>> ChangePhoneNumber(int deviceId, int phoneId)
+        public async Task<ActionResult<Device>> ChangePhoneNumber(Device incomingDevice)
         {
-            var device = await _context.Devices.FindAsync(deviceId);
-            var oldDevice = (await _context.Devices.Include(d => d.PhoneNumber).Where(d => d.PhoneNumber.Id == phoneId).ToListAsync()).FirstOrDefault();
+            //Send in a dummy device with the device ID and desired phone number
+            var device = await _context.Devices.FindAsync(incomingDevice.DeviceId);
+            PhoneNumber temp = incomingDevice.PhoneNumber;
+
+            var oldDevice = (await _context.Devices.Include(d => d.PhoneNumber).Where(d => d.PhoneNumber.Id == temp.Id).ToListAsync()).FirstOrDefault();
 
             if (oldDevice != null) // The number was already in use. Remove it from the old device and add it to the new device.
             {
                 oldDevice.PhoneNumber = null;
-                
             }
 
-            device.PhoneNumber = await _context.PhoneNumbers.FindAsync(phoneId);
+            device.PhoneNumber = temp;
 
             await _context.SaveChangesAsync();
 
